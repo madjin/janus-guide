@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from vrsites.com/hub1/janus_guide/ by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 04 Aug 2015 00:42:00 GMT -->
+<head>
+<meta charset="UTF-8">
+<title>Janus VR Guide</title>
+<link rel="stylesheet" href="../bootstrap.min.css">
+<link rel="stylesheet" href="../bootstrap-theme.min.css">
+<script src="../jquery.min.js"></script>
+<script src="../bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+    $("#myTab li:eq(1) a").tab('show');
+});
+</script>
+<style type="text/css">
+	.bs-example{
+		margin: 20px;
+	}
+.style1 {font-weight: bold}
+.style2 {
+	color: #FF0000;
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div style="height:70px;"></div>
+<p>
+<a style="float:right" class="btn btn-success btn-sm" href="index.html">Janus VR Guide</a>
+<a style="float:right;" class="btn btn-primary btn-sm" href="../Notes/index.html">Janus VR Markup language</a>
+<a style="float:right" class="btn btn-primary btn-sm" href="../FAQ/index.html">Janus VR FAQs</a>
+<a style="float:right;" class="btn btn-primary btn-sm" href="../Script/index.html">JavaScript API(Janus)</a>
+</p>
+<h1>Janus VR Guide</h1>
+
+<div class="bs-example">
+    <ul class="nav nav-tabs" id="myTab">
+        <li><a data-toggle="tab" href="#sectionB">XBOX360 GAMEPAD NAVIGATION</a></li>   
+        <li><a data-toggle="tab" href="#sectionA">KB+MOUSE NAVIGATION </a></li>     
+        <li><a data-toggle="tab" href="#sectionC">KB SHORTCUTS</a></li>
+        <li><a data-toggle="tab" href="#sectionD">KB+MOUSE EDITING</a></li>
+        <li><a data-toggle="tab" href="#sectionE">CHAT WINDOW COMMANDS</a></li>        
+    </ul>
+    <div class="tab-content">
+
+<div id="sectionA" class="tab-pane fade in active">
+<h3>KB+MOUSE NAVIGATION</h3>
+<table class="table table-striped">
+  <tr>
+    <td><strong>Action</strong></td>
+    <td><strong>Command</strong></td>
+  </tr>
+  <tr>
+    <td>Open/Close portal</td>
+    <td>Left mouse button</td>
+  </tr>
+  <tr>
+    <td>Select/Deselect websuface</td>
+    <td>Left mouse button - Right mouse button</td>
+  </tr>
+  <tr>
+    <td>Rotate body</td>
+    <td>Mouse Left/Right or Q/E</td>
+  </tr>
+  <tr>
+    <td>Walk in direction</td>
+    <td>W (forward) - S (backward) - A (Left) - D (Right) or Cursor keys</td>
+  </tr>
+  <tr>
+    <td>Run</td>
+    <td>Hold shift</td>
+  </tr>
+  <tr>
+    <td>Jump</td>
+    <td>Spacebar</td>
+  </tr>
+  <tr>
+    <td>Text chat</td>
+    <td>T</td>
+  </tr>
+  <tr>
+    <td>Flight mode</td>
+    <td>F</td>
+  </tr>
+</table>
+</div>
+      
+<div id="sectionB" class="tab-pane fade">
+<h3>XBOX360 GAMEPAD NAVIGATION</h3>
+<img src="x360move.jpg" width="543" height="355" /></div>
+        
+<div id="sectionC" class="tab-pane fade">
+<h3>KB SHORTCUTS</h3>
+<table class="table table-striped">
+  <tr>
+    <td><strong>Action</strong></td>
+    <td><strong>Command</strong></td>
+  </tr>
+  <tr>
+    <td>Re-centre Oculus Rift</td>
+    <td>R</td>
+  </tr>
+  <tr>
+    <td>Voice chat</td>
+    <td>Left Alt</td>
+  </tr>
+  <tr>
+    <td>Text chat</td>
+    <td>T</td>
+  </tr>
+  <tr>
+    <td>New portal</td>
+    <td>Tab</td>
+  </tr>
+  <tr>
+    <td>Mute</td>
+    <td>M</td>
+  </tr>
+  <tr>
+    <td>Menu</td>
+    <td>Escape</td>
+  </tr>
+  <tr>
+    <td>Smallthumb (door size)</td>
+    <td>F7</td>
+  </tr>
+  <tr>
+    <td>Screenshot</td>
+    <td>F8</td>
+  </tr>
+  <tr>
+    <td>Release mouse</td>
+    <td>F9</td>
+  </tr>
+  <tr>
+    <td>Fullscreen</td>
+    <td>F11</td>
+  </tr>
+  <tr>
+    <td>Info</td>
+    <td>Forward or back slash</td>
+  </tr>
+  <tr>
+    <td>Show chat</td>
+    <td>C</td>
+  </tr>
+</table></div>
+               
+<div id="sectionD" class="tab-pane fade">
+<h3>KB+MOUSE EDITING</h3>
+<p><strong>Make sure editing mode is enabled in the escape menu and editing mode has been enabled for that room (this is up to the discretion of the room owner).</strong></p>
+<table class="table table-striped">
+  <tr>
+    <td><strong>Action</strong></td>
+    <td><strong>Command</strong></td>
+  </tr>
+  <tr>
+    <td>Select</td>
+    <td>Right click on object</td>
+  </tr>
+  <tr>
+    <td>Choose property</td>
+    <td>Tab</td>
+  </tr>
+  <tr>
+    <td>Modify property</td>
+    <td>W,A,S,D,Q,E</td>
+  </tr>
+  <tr>
+    <td>Accept change</td>
+    <td>Left click</td>
+  </tr>
+  <tr>
+    <td>Cancel change</td>
+    <td>Right click</td>
+  </tr>
+  <tr>
+    <td>Delete selected</td>
+    <td>Delete or backspace</td>
+  </tr>
+  <tr>
+    <td>Copy selected</td>
+    <td>Control + C</td>
+  </tr>
+  <tr>
+    <td>Paste selected</td>
+    <td>Control + V</td>
+  </tr>
+  <tr>
+    <td>New object</td>
+    <td>Right click blank area</td>
+  </tr>
+  <tr>
+    <td>New image</td>
+    <td>Control + right click blank area</td>
+  </tr>
+  <tr>
+    <td>New text</td>
+    <td>Shift + right click blank area</td>
+  </tr>
+  <tr>
+    <td>Snap amount</td>
+    <td>1,2,3,4</td>
+  </tr>
+  <tr>
+    <td>Save room</td>
+    <td>Control + S</td>
+  </tr>
+  <tr>
+    <td>Reload room</td>
+    <td>Control + R</td>
+  </tr>
+  <tr>
+    <td>Bookmark room</td>
+    <td>Control + B</td>
+  </tr>
+</table></div>
+        
+<div id="sectionE" class="tab-pane fade">
+<h3>CHAT WINDOW COMMANDS</h3>
+<style type="text/css">
+<!--
+.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+-->
+</style>
+
+<p><strong>These commands can be entered into the chat window, your current settings can be found in the userid.txt file in your Janus VR folder, if you are unsure of changing any settings then you probably should leave them alone.</strong></p>
+<p><span class="style1">WARNING: If make changes that render Janus unusable  you can remove settings.txt from your Janus VR directory to revert to default settings.</span></p>
+<table class="table table-striped">
+  <tr>
+    <td><strong>Action</strong></td>
+    <td><strong>Command</strong></td>
+  </tr>
+  <tr>
+    <td>#userid</td>
+    <td>Change your name*</td>
+  </tr>
+  <tr>
+    <td>#sync</td>
+    <td>Sync objects with other players</td>
+  </tr>
+  <tr>
+    <td>#eye_pos</td>
+    <td>Change your view position</td>
+  </tr>
+  <tr>
+    <td>#eye_ipd</td>
+    <td>Changes distance between eyes</td>
+  </tr>
+  <tr>
+    <td>#head_pos</td>
+    <td>Changes your head position</td>
+  </tr>
+  <tr>
+    <td>#clearchat</td>
+    <td>Clears the chatlog</td>
+  </tr>
+  <tr>
+    <td>#scale</td>
+    <td>Scales your avatar</td>
+  </tr>
+  <tr>
+    <td>#pos</td>
+    <td>Changes your position</td>
+  </tr>
+  <tr>
+    <td>#lighting_false</td>
+    <td>Lighting true or false</td>
+  </tr>
+  <tr>
+    <td>#cull_face_back</td>
+    <td>Cull face back, front or none</td>
+  </tr>
+  <tr>
+    <td>#head_src</td>
+    <td>Url to head .obj / .dae</td>
+  </tr>
+  <tr>
+    <td>#head_mtl</td>
+    <td>Url to head .mtl</td>
+  </tr>
+  <tr>
+    <td>#body_src</td>
+    <td>Url to body .obj / .dae</td>
+  </tr>
+  <tr>
+    <td>#budy_mtl</td>
+    <td>Url to body .mtl</td>
+  </tr>
+</table>
+
+<p>*Your name should be the same as you use in the mumble chat.
+</p>
+</div>
+        
+        
+    </div>
+</div>
+</div>
+</body>
+
+<!-- Mirrored from vrsites.com/hub1/janus_guide/ by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 04 Aug 2015 00:42:00 GMT -->
+</html>                                		

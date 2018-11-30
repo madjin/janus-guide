@@ -1,0 +1,290 @@
+<html>
+
+<!-- Mirrored from vrsites.com/hub1/janus_faqs/ by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 04 Aug 2015 00:41:58 GMT -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>Janus VR FAQs</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="../bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="../bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="../jquery.min.js"></script>
+<script src="../bootstrap.min.js"></script>
+<script src="../run_prettify.js"></script>
+</head>
+<body>
+<div class="container">
+<div style="height:70px;"></div>
+<p>
+<a style="float:right" class="btn btn-primary btn-sm" href="../Guide/index.html">Janus VR Guide</a>
+<a style="float:right;" class="btn btn-primary btn-sm" href="../Notes/index.html">Janus VR Markup language</a>
+<a style="float:right" class="btn btn-success btn-sm" href="index.html">Janus VR FAQs</a>
+<a style="float:right;" class="btn btn-primary btn-sm" href="../Script/index.html">JavaScript API(Janus)</a>
+</p>
+<h1>Janus VR FAQs</h1>
+<p>
+<h3><center>
+Janus VR FAQ
+</center>
+</h3>
+<p><b>
+<a name="settings">Where are the settings files located?</a>
+</b></p>
+<i>
+<p>
+Since 40.4, userid.txt and other settings files are in an OS-dependent location (note that since 42.5, you can use the "Settings Folder" button found in the ESC menu to take you directly to the location):
+<ul>
+<li>Windows: "C:/Users/USER/AppData/Roaming/janusvr"</li>
+<li>Mac OSX: ~/Library/Application Support/janusvr</li>
+<li>Linux: ~/.local/share/janusvr</li>
+</ul>
+</p>
+</i>
+
+<p>
+<b>How do I switch Janus VR between monitors (running multiple monitor desktop, or using with Oculus Rift)?</b>
+</p>
+<i>
+<p>
+First, it's worth noting you can run Janus VR and use the <b>-adapter X</b> command line parameter, which launches Janus fullscreen onto screen X.  (To do this on Windows, right click janusvr.exe and create a shortcut to it.  Right click the shortcut and under "properties", for "target", add e.g. -adapter 0 to launch directly onto screen 0)
+</p>
+<p>
+Second, for Windows, a quick shortcut key to move Janus between screens is Shift+Windows+Left/Right Arrow.
+</p>
+<p>
+Finally, you can also move the Janus window around by doing the following: <b>press F9 to free the mouse</b> (also brings Janus into windowed mode if fullscreen). Drag the window over to the screen you want. Click in the window (attaches the mouse again) then <b>press F11 to toggle fullscreen</b>.  
+</p>
+</i>
+
+<p>
+<b>How do I create a new local workspace?</b>
+</p>
+<i>
+<p>
+Edit the workspaces.txt settings file (see <a href="#settings">here</a> for where it can be found), and add a line providing a relative path to the new workspace - specifically the HTML file which defines the content of the new room.  (Personally, I tend to keep these workspaces organized in their own subdirectories within the "workspace" directory - but it is possible to create workspaces elsewhere.)
+</p>
+</i>
+
+
+<p>
+<b>I want to view the FireBoxRoom code ("view the page source") for a site I am visiting, how can I do this?</b>
+</p>
+<i>
+<p>
+Within Janus VR and standing in the room, press Ctrl + S.  You will hear "FireBoxRoom saved".  Then, in the "workspace" directory (relative to the Janus VR program directory), you will see an html file called "out" with a timestamp in the filename with the date and time you saved the file. 
+</p>
+</i>
+
+
+<p>
+<b>How do I add a bookmark for a room I am in?</b>
+</p>
+<i>
+<p>
+From within Janus, press Ctrl + B and the URL will be added to your bookmarks list.  Another way is to copy (Ctrl + C) within Janus and paste it in the "bookmarks.txt" file (see <a href="#settings">here</a> for where it can be found).
+</p>
+</i>
+
+
+<p>
+<b>How do I access bookmarks or workspaces?</b>
+</p>
+<i>
+<p>
+Bookmarks and workspaces can be accessed from anywhere by doing the following: press Tab to specify a URL for a portal, and into the dialog type either:
+<pre class="prettyprint">bookmarks</pre>
+or
+<pre class="prettyprint">workspaces</pre>
+as the URL, and Janus VR will generate a room with portals for each of your bookmarks/workspaces.
+</p>
+<p>
+More recently, bookmarks can now be directly accessed via a portal which is created in the escape menu, which is located to your left.
+</i>
+
+
+<p>
+<b>How do I take screenshots/thumbnails for portals?</b>
+</p>
+<i>
+<p>
+Press F8 to take screenshots.  Press F7 to take "thumbnail" screenshots suitable for using on portals.  Screenshots are in jpeg format and will be in the workspaces folder, with the filename "out" and a timestamp in the filename.  Screenshots (taken with F8) will be the same resolution as the Janus VR window at the time they were taken.
+</p>
+</i>
+
+
+<p>
+<b>What is the default eye height?</b>
+</p>
+<i>
+<p>
+The default eye height is presently 1.6 metres from the ground.
+</p>
+</i>
+
+<p>
+<b>How is the "in room" height and width determined for image elements?</b>
+</p>
+<i>
+<p>
+The width of images will always be 2 metres wide at the default scale.
+Height is determined by the aspect ratio (height to width) of the particular image.
+The depth/thickness is always 0.1 metres (or 10 centimetres) at the default scale.
+From there, you're free to scale things by a multiple of your choosing using the scale="" property for the Image (x width, y height, z thickness/depth).
+The anchor point (local origin) will be at the centre of the rectangle (width/height wise), and lying on "the back" of the image.
+</p>
+</i>
+
+<p>
+<b>How do I change my name in multiplayer?</b>
+</p>
+<i>
+<p>
+Method 1 (outside of Janus): Open the userid.txt file (see <a href="#settings">here</a> for where it can be found), and change the "id" attribute of the Ghost tag.  
+</p>
+<p>
+Method 2 (from within Janus): Press T to type a message, and do
+<pre class="prettyprint">#userid NAME</pre> where NAME is the user id you want, then press enter.
+</p>
+</i>
+
+<p>
+<b>I have a body and head for my avatar, but the head is not rotating correctly?</b>
+</p>
+<i>
+<p>
+To fix this, you need to set the <b>head_pos</b> property of the Ghost (in the userid.txt file), or from within Janus, use <b>#head_pos X Y Z</b> command where (X,Y,Z) is the coordinate for the head's pivot point (in the model space, e.g. if you modelled the torso in Blender and the point at the base of the neck is at (0,2,0), this is the value to assign head_pos).  So in that example, one would type: 
+<pre class="prettyprint">#head_pos 0 2 0</pre>
+Having the escape menu open while changing the head_pos value is handy since you can see your avatar and can observe the change as it is made.
+</p>
+</i>
+
+<p>
+<b>How do I change my avatar or its appearance?</b>
+</p>
+<i>
+<p>
+Easiest way: find a Ghost (or "non-player character") in Janus, and <b>Ctrl + Left click the Ghost</b>.  Your avatar's appearance will then be the same as the Ghost.  You can also change some properties of your avatar by using commands in chat.  For example, the command <b>#scale 3 3 3</b> will scale up your avatar by a factor of 3.  The command <b>#col 1 0 0</b> will make your avatar red (format is #col r g b, where r,g,b range between 0 and 1).  <b>#pos X Y Z</b> will move your avatar to position (X,Y,Z) in the current room.  The command #lighting true (true is default, can also be false) sets whether to use the default lighting.
+</p>
+<p>
+The userid.txt now contains something akin to a FireBoxRoom, but which instead defines the avatar for the player. A simple version is the following example, which uses the "boxy default model" and has a numeric id set by default (set the id of the Ghost to the name you want to use (Change USER_ID to your nickname):
+<pre class="prettyprint">&lt;FireBoxRoom&gt;
+&lt;Assets&gt;
+&lt;/Assets&gt;
+&lt;Room&gt;
+&lt;Ghost id="USER_ID" head_pos="0 0 0" scale=".925 .925 .925"/&gt;
+&lt;/FireBoxRoom&gt;
+</pre>
+A more complex Ghost defines custom geometry for the head and body portions. The userid.txt avatar file contains two AssetObjects for the geometry of the head and body.  These are connected by setting the head_id and body_id tags for the Ghost, like in the following example (change USER_ID to your nickname).
+</p>
+<p>
+Example userid.txt:
+<pre class="prettyprint">&lt;FireBoxRoom&gt;
+&lt;Assets&gt;
+&lt;AssetObject id="kerghead" src="http://vrsites.com/assets/Firefoxg/4/kerghead.obj" mtl="http://vrsites.com/assets/Firefoxg/4/kerghead.mtl" /&gt;
+&lt;AssetObject id="kergbody" src="http://vrsites.com/assets/Firefoxg/4/kergbody.obj" mtl="http://vrsites.com/assets/Firefoxg/4/kergbody.mtl" /&gt;
+&lt;/Assets&gt;
+&lt;Room&gt;
+&lt;Ghost id="USER_ID" head_id="kerghead" head_pos="0.000 3.200 0.000" body_id="kergbody" scale="0.325 0.325 0.325" col="1 1 1" cull_face="none" /&gt;
+&lt;/Room&gt;
+&lt;/FireBoxRoom&gt;
+</pre>
+</p>
+<p>
+Another example userid.txt:
+<pre class="prettyprint">&lt;FireBoxRoom&gt;
+&lt;Assets&gt;
+&lt;AssetObject id="head" src="http://vrsites.com/assets/JamesMcCrae/2/rikku_head.obj" mtl="http://vrsites.com/assets/JamesMcCrae/2/rikku_head.mtl" /&gt;
+&lt;AssetObject id="body" src="http://vrsites.com/assets/JamesMcCrae/2/rikku_body.obj" mtl="http://vrsites.com/assets/JamesMcCrae/2/rikku_body.mtl" /&gt;
+&lt;/Assets&gt;
+&lt;Room&gt;
+&lt;Ghost id="USER_ID" head_id="head" body_id="body" head_pos="0 1 0" cull_face="none" lighting="false" /&gt;
+&lt;/Room&gt;
+&lt;/FireBoxRoom&gt;
+</pre>
+</p>
+<p>
+Note: since 33.1, additional AssetObject and Object tags can be used for avatars!
+</p>
+<p>
+Note: since 40.4, userid.txt and other settings files are in an OS-dependent location:
+<ul>
+<li>Windows: "C:/Users/USER/AppData/Roaming/janusvr"</li>
+<li>Mac OSX: ~/Library/Application Support/janusvr</li>
+<li>Linux: ~/.local/share/janusvr</li>
+</ul>
+</p>
+</i>
+
+<p>
+<b>Can I adjust virtual IPD (interpupillary distance) or the eye position relative to the avatar from within Janus VR?</b>
+</p>
+<i>
+<p>
+Yes.  To change IPD use the command: <b>#eye_ipd X</b> where X is the distance between your virtual eyes in metres.  To change eye position use the command: <b>#eye_pos X Y Z</b> where (X,Y,Z) is the new central eye position relative to your avatar.  The default virtual IPD used is taken from the physically calibrated IPD value reported by the Rift.
+</p>
+</i>
+
+<p>
+<b>How do I make Janus VR start at a URL other than the default lobby?</b>
+</p>
+<i>
+<p>
+Run Janus VR passing the initial URL to use as a parameter.  For instance, to start on <a href="http://www.google.ca/">http://www.google.ca</a> you would run Janus VR using the following:
+<pre class="prettyprint">janusvr http://www.google.ca</pre>
+</p>
+</i>
+
+
+<p>
+<b>I made a DIY HMD, how can I experience Janus VR with it using SBS (Side By Side) rendering?</b>
+</p>
+<i>
+<p>
+Use the command line parameter to specify the render mode (use "sbs" with the -render flag):
+</p>
+<p>
+<pre class="prettyprint">janusvr -render sbs</pre>
+</p>
+<p>
+or if the left/right eye images seem flipped/reversed, you can also run Janus VR using:
+<pre class="prettyprint">janusvr -render sbs_reverse</pre>
+<p>
+Note: a complete list of all command-line parameters can be found by the following:
+<pre class="prettyprint">janusvr -help</pre>
+</p>
+</i>
+
+<p>
+<b>What are all the command line parameters available?</b>
+</p>
+<i>
+<p>
+Use the command line parameter -help to show all the parameters:
+</p>
+<p>
+<pre class="prettyprint">Janus VR - Help
+
+Command line usage:\n\n";
+
+janusvr [-server SERVER] [-port PORT] [-rate RATE] [-ms SAMPLES] [-adapter X] [-render MODE] [-window] [-help] [url]
+ 
+-server  - SERVER specifies the server to create an initial portal
+-port    - PORT is a number that specifies the port of the server to connect to
+-rate    - RATE specifies update rate in milliseconds with multiplayer server (default 100ms)
+-ms      - SAMPLES specifies number of anti-aliasing samples to use (default 0)
+-adapter - X specifies the screen that the Janus window will be positioned on
+-render  - MODE specifies render mode (can be any of: 2d, sbs, sbs_reverse, rift)
+-window  - launch as a window instead of fullscreen
+-help    - prints out this help information, then exits
+url      - location to start in</pre>
+</p>
+</i>
+
+</div>
+</body>
+
+<!-- Mirrored from vrsites.com/hub1/janus_faqs/ by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 04 Aug 2015 00:41:58 GMT -->
+</html>

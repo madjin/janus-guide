@@ -1,0 +1,858 @@
+<html>
+
+<!-- Mirrored from vrsites.com/hub1/janus_notes/ by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 04 Aug 2015 00:41:59 GMT -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>Janus VR markup language</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="../bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="../bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="../jquery.min.js"></script>
+<script src="../bootstrap.min.js"></script>
+<script src="../run_prettify.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="navbar navbar-default navbar-fixed-top">
+
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">TOP</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assets <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#assetimage">AssetImage</a></li>
+            <li><a href="#assetsound">AssetSound</a></li>
+            <li><a href="#assetvideo">AssetVideo</a></li>
+            <li><a href="#assetobject">AssetObject</a></li>
+            <li><a href="#assetshader">AssetShader</a></li>
+            <li><a href="#assetghost">AssetGhost</a></li>
+            <li><a href="#assetwebsurface">AssetWebSurface</a></li>
+            <li><a href="#assetscript">AssetScript</a></li>            
+          </ul>
+        </li>
+      </ul>
+      
+      
+      
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Room <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#skybox">Skybox</a></li>
+            <li><a href="#roomtemplate">Room Template</a></li>
+            <li><a href="#entrance">Entrance Portal</a></li>
+            <li><a href="#nearfarplane">Near and Far Plane Distances</a></li>
+            <li><a href="#defaultsounds">Default Sounds</a></li>
+            <li><a href="#gravityjumpvelocity">Gravity, Jump Velocity, Walk and Run Speeds</a></li>
+            <li><a href="#cursorvisible">Cursor Visibility</a></li>
+            <li><a href="#for">Fog</a></li>
+            <li><a href="#teleport">Teleport Distance</a></li>
+            <li><a href="#globalshader">Global Shader</a></li>            
+            <li><a href="#multiserver">Multiplayer Server</a></li>   
+
+          </ul>
+        </li>
+      </ul>
+      
+      
+      
+      
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Room Contents <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#text">Text</a></li>
+            <li><a href="#paragraph">Paragraph</a></li>
+            <li><a href="#link">Link</a></li>
+            <li><a href="#image">Image</a></li>
+            <li><a href="#image3d">Image3D</a></li>
+            <li><a href="#sound">Sound</a></li>
+            <li><a href="#video">Video</a></li>
+            <li><a href="#object">Object</a></li>
+            <li><a href="#ghost">Ghost</a></li>
+         
+          </ul>
+        </li>
+      </ul>      
+      
+      
+            
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+
+
+
+</nav>
+<div style="height:70px;"></div>
+<p>
+<a style="float:right" class="btn btn-primary btn-sm" href="../Guide/index.html">Janus VR Guide</a>
+<a style="float:right;" class="btn btn-success btn-sm" href="index.html">Janus VR Markup language</a>
+<a style="float:right" class="btn btn-primary btn-sm" href="../FAQ/index.html">Janus VR FAQs</a>
+<a style="float:right;" class="btn btn-primary btn-sm" href="../Script/index.html">JavaScript API(Janus)</a>
+</p>
+<h1>Janus VR markup language</h1>
+
+<p><a id="intro"></a></p>
+<h3>1.  Introduction</h3>
+<p>
+FireBox can read the content of ordinary HTML webpages, and arrange the content in particular patterns on pre-defined geometry.  However, for those looking to create more interesting rooms with rich 3D content, a "<b>FireBoxRoom</b>" can be constructed by adding extra tags to existing an HTML file.  Those already familiar with basic HTML should be able to wrap their head around how to make a FireBoxRoom fairly easily.  It is my intention that creating a FireBoxRoom should be easy to pick up and learn.
+</p>
+<p>
+<a id="fireboxroom"></a>
+</p>
+<h3>2.  The FireBoxRoom</h3>
+<p>
+FireBoxRooms are defined by embedding an HTML-like language (technically XML) within an existing HTML file.  A barebones HTML file has the following structure, with a <b>head</b> and a <b>body</b>:
+</p>
+<p>
+<pre class="prettyprint">&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</p>
+<p>
+The <b>head</b> is important for two reasons.  The first is because it's used as the title for the FireBoxRoom.  So we create a title for our FireBoxRoom (which also serves as the page's title) by doing the following using standard HTML:
+<pre class="prettyprint">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Example title&lt;/title&gt;
+&lt;meta http-equiv="refresh" content="0; url=http://janusvr.com/index2.html" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+The second purpose of the head tag is that you can add within it a "meta" tag to cause JanusVR's built in 2D browser to display a particular alternate webpage, which will be shown when pressing escape from within JanusVR (in the above example, pressing escape in JanusVR will reveal an interactive 2D webpage set to the URL http://janusvr.com/index2.html ).
+<p>
+Note that specifying the title and the redirect page are both optional.
+<p>
+A <b>FireBoxRoom</b> is created within an existing HTML page by placing the FireBoxRoom tag within the body tag, as in the following example:
+<pre class="prettyprint">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Example title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;FireBoxRoom&gt;
+&lt;/FireBoxRoom&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+Elements within a FireBoxRoom may appear as text within the page.  To suppress this, the <b>FireBoxRoom</b> tags can be encapsulated using standard HTML comment tags.  The FireBox application will still detect the FireBoxRoom, but other existing browsers will ignore the content.  Here is an example:
+<pre class="prettyprint">&lt;html>
+&lt;head&gt;
+&lt;title&gt;Example title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!--
+&lt;FireBoxRoom&gt;
+&lt;/FireBoxRoom&gt;
+--&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+Congratulations - you have created a FireBoxRoom!  The remainder of this document defines the content which is placed within the <b>FireBoxRoom</b> tags, in order to create the 3D content for your room.  The remainder of the document discusses linking all <b>Assets</b> to your FireBoxRoom (content such as images, 3D geometry, JS scripts, or sounds), followed by how to create <b>Room</b> contents, which involves creating instances of the defined assets and spatially arranging them within the room.
+</p>
+<p>
+<a id="assets"></a>
+</p>
+<h3>3.  Assets</h3>
+
+<p>
+To create an ordinary webpage, the designer first creates and collects the materials which will appear in the page - content such as text and images.  Creating a FireBoxRoom is similar - URLs need to be specified which inform FireBox where different forms of content can be found.  However, for a FireBoxRoom all assets (external page contents like images, etc., referred to by a URL) are defined in advance of their placement within the room.  The reason is that by first creating a "collection" of items, one can then interactively choose amongst them when placing instances ("copies") of them in the room.
+</p>
+<p>
+All assets are defined within the <b>Assets</b> tag, which appears within a <b>FireBoxRoom</b> tag, like the following:
+<pre class="prettyprint">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Example title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;FireBoxRoom&gt;
+&lt;Assets&gt;
+&lt;/Assets&gt;
+&lt;/FireBoxRoom&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>
+Almost all assets must have an <b>id</b> defined, which is short for "identifier".  The <b>id</b> is unique and used to refer to a particular asset (no two assets should possess the same <b>id</b>).  <b>id</b>'s are case insensitive, therefore as an example "test_id" and "TEST_id" are considered the same.
+<p>
+All assets also must have a <b>src</b> defined, which is short for "source".  As with standard HTML, the <b>src</b> attribute is set to the URL where the content can be accessed.
+<p>
+<a id="assetimage"></a>
+<h4>3.1  AssetImage</h4>
+<p>
+These are images which are used in the room.  Formats like PNG, JPG and GIF are supported - and likely many others too.  Images with a transparency layer (such as with the PNG format) are supported.  Here is the complete list of attributes:
+<p>
+<b>id</b> - id of the AssetImage<br>
+<b>src</b> - location of the image file<br>
+<b>sbs3d</b> (default "false") - when set to true, the image is treated as a SBS (side-by-side) formatted image.  By default, the left eye will see the content on the left and the right eye the content on the right.  Set the <b>reverse3d</b> attribute to true if you want to flip which side goes to each eye.<br>
+<b>ou3d</b> (default "false") - when set to true, the image is treated as an UO (under-over) format video.  By default, the left eye will see the content on the top and the right eye the content on the bottom.  Set the <b>reverse3d</b> attribute to true if you want to flip which side goes to each eye.<br>
+<b>reverse3d</b> (default "false") - flips which half of the image is shown to each eye, when either <b>sbs3d</b> or <b>ou3d</b> are set to true.<br>
+<b>tex_clamp</b> (default "false") - whether to perform texture clamping (GL_CLAMP_TO_EDGE), or allow textures to repeat (GL_REPEAT)<br>
+<b>tex_linear</b> (default "true") - if true, textures have bilinear filtering applied (GL_LINEAR).  If false, a nearest sampling method (GL_NEAREST) is used which gives textures a pixellated look<br>
+<b>tex_compress</b> (default "false") - if true, uses hardware-supported texture compression on the image texture (GL_COMPRESSED_RGBA).<br>
+<p>
+Here is an example of how to use the <b>AssetImage</b> tag to add an image to the collection of assets:
+<pre class="prettyprint">&lt;AssetImage id="woodplanks_img" src="WoodPlanks.jpg" /&gt
+</pre>
+This creates a new AssetImage for the FireBoxRoom with id "woodplanks_img".  The URL to the image was specified as a relative URL, so we expect to find "WoodPlanks.jpg" in the same directory that the FireBoxRoom HTML file itself is located.  Note that absolute URLs are also supported. 
+<p>
+<a id="assetsound"></a>
+<h4>3.2  AssetSound</h4>
+<p>
+These are sounds which can be used within the FireBoxRoom.  Here is the complete list of attributes:
+<p>
+<b>id</b> - id of the AssetSound<br>
+<b>src</b> - location of the sound file<br>
+<p>
+Supported formats are dependent upon the multimedia capabilities of the underlying platform (e.g. DirectShow on Windows, gstreamer on Linux).  Uncompressed WAV will work universally, but is not bandwidth friendly.  MP2 or MP3 are compressed formats which seem to work universally and offer great compression.  The OGG format, while also great, does not seem to be supported on a default Windows installation, so I would discourage its use (unless you don't care about those Windows users not capable of OGG format playback).
+<p>
+Here is an example of how to use the <b>AssetSound</b> tag to add the sound "localmap.mp3" to the collection of assets, assigning it id "localmap_sound":
+<pre class="prettyprint">&lt;AssetSound id="localmap_sound" src="localmap.mp3" /&gt;
+</pre>
+<p>
+<a id="assetvideo"></a>
+<h4>3.3  AssetVideo</h4>
+<p>
+These are videos which can be used within the FireBoxRoom.  Here is the complete list of attributes:
+<p>
+<b>id</b> - id of the AssetVideo<br>
+<b>src</b> - location of the video file<br>
+<b>loop</b> (default "false") - normally the video plays only one time, but when this attribute is set to true, the video will play indefinitely until the player leaves the room<br>
+<b>auto_play</b> (default "false") - when set to true, video will play immediately when the room is entered.  If set to false (the default), the user must click on the Video (or any Object!) to play it.<br>
+<b>tex_compress</b> (default "false") - if true, uses hardware-supported texture compression on the video texture (GL_COMPRESSED_RGBA).<br>
+<b>sbs3d</b> (default "false") - when set to true, video is treated as an SBS (side-by-side) format video.  By default, the left eye will see the content on the left and the right eye the content on the right in each frame of video.  Set <b>reverse3d</b> to true if you want to flip this.<br>
+<b>ou3d</b> (default "false") - when set to true, video is treated as an UO (under-over) format video.  By default, the left eye will see the content on the top and the right eye the content on the bottom in each frame of video.  Set <b>reverse3d</b> to true if you want to flip this.<br>
+<b>reverse3d</b> (default "false") - flips which half of each frame is shown to each eye, when either <b>sbs3d</b> or <b>ou3d</b> are set to true. 
+<p>
+Supported formats are dependent upon the multimedia capabilities of the underlying platform (e.g. DirectShow on Windows, gstreamer on Linux).  (On Windows, I used the <a href="http://www.codecguide.com/download_k-lite_codec_pack_basic.htm">K-Lite Codec Pack (Basic)</a> to make a much wider variety of video formats available.)
+<p>
+Here is an example of how to use the <b>AssetVideo</b> tag to add the video "las_firebox_clip.mp4" to the collection of assets, assigning it id "vid_id":
+<pre class="prettyprint">&lt;AssetVideo id="vid_id" src="las_firebox_clip.mp4" /&gt;</pre>
+<p>
+<a id="assetobject"></a>
+<h4>3.4  AssetObject</h4>
+<p>
+These are the 3D geometric objects which can be used within the FireBoxRoom.  Presently, Wavefront OBJ is the only supported format.  Here is the complete list of attributes:
+<p>
+<b>id</b> - id of the AssetObject<br>
+<b>src</b> - location of the OBJ file<br>
+<b>tex0</b> (default "") - location of a texture image (not using a material file)<br>
+<b>tex1</b> (default "") - location of a texture image (not using a material file)<br>
+<b>tex2</b> (default "") - location of a texture image (not using a material file)<br>
+<b>tex3</b> (default "") - location of a texture image (not using a material file)<br>
+<b>mtl</b> (default "") - location of the material file (not using texture images)<br>
+<b>tex_clamp</b> (default "false") - whether to perform texture clamping (GL_CLAMP_TO_EDGE), or allow textures to repeat (GL_REPEAT)<br>
+<b>tex_linear</b> (default "true") - if true, textures have bilinear filtering applied (GL_LINEAR).  If false, a nearest sampling method (GL_NEAREST) is used which gives textures a pixellated look<br>
+<b>tex_compress</b> (default "false") - if true, uses hardware-supported texture compression on textures (GL_COMPRESSED_RGBA).<br>
+<b>tex_mipmap</b> (default "true") - if true, uses mipmapping for textures.<br>
+<p>
+The URL to the OBJ file is specified by the <b>src</b> attribute.  You can also specify materials for the OBJ file using either a single texture file (specified with the <b>tex</b> attribute), or more traditionally by specifying the location of the material file (specified with the <b>mtl</b> attribute).  Here is an example of the first method (specifying a single image as a texture):
+<pre class="prettyprint">&lt;AssetObject id="pinetree" src="pinetree.obj" tex="pinetree.png" /&gt;</pre>
+Here is how to specify a material file (which may reference many textures):
+<pre class="prettyprint">&lt;AssetObject id="pinetree" src="pinetree.obj" mtl="pinetree.mtl" /&gt;</pre>
+<p>
+Note above that since both <b>src</b>, <b>tex</b> and <b>mtl</b> were specified as relative URLs, the files are expected to be located in the same directory as the HTML file itself.  Texture formats such as JPG, PNG and GIF have been tested, it is likely that many other formats will also work.  Also, note that images with a transparency or "alpha channel" are supported as textures. 
+<p>
+<i>Details for the more technical reader: If per-vertex normals are not specified in the file (specified by "vn" lines in the file), normals which are per-face will be generated by FireBox and assigned to each vertex.  If textures are to be used, texture coordinates should be exported (these are "vt" lines in the file).  Finally, meshes with 4 or more vertices used to define a polygonal face are supported - however FireBox's treatment is to divide these polygons into triangles using a naive triangle fan method, therefore only convex polygonal faces are properly supported and will render correctly. </i>
+<a id="assetshader"></a>
+<h4>3.5  AssetShader</h4>
+<p>
+An <b>AssetShader</b> allows you to use either a GLSL fragment shader to shade geometry (set <b>src</b>), or a GLSL vertex shader to deform geometry (set <b>vertex_src</b>), or both.  Attributes to set are the following:
+<p>
+<b>id</b> - id of the AssetShader<br>
+<b>src</b> - (default "") location of a GLSL fragment shader (plaintext file with GLSL code)<br>
+<b>vertex_src</b> - (default "") location of a GLSL vertex shader (plaintext file with GLSL code)<br>
+<p>
+Here is an example (just a fragment shader):
+<p>
+<pre class="prettyprint">&lt;AssetShader id="shader_id" src="shader1.txt" /&gt;</pre>
+Here is another example (both custom fragment and vertex shaders):
+<p>
+<pre class="prettyprint">&lt;AssetShader id="shader_id" src="frag.txt" vertex_src="vert.txt" /&gt;</pre>
+<p>
+See the section on <b>Object</b>s for information on shading an Object using the AssetShader (essentially, you want to set an Object's <b>shader_id</b> to the AssetShader's id).  Here are some GLSL uniform and varying variables which Janus sets for the fragment shader:
+<pre class="prettyprint">uniform mat4 iModelMatrix;
+uniform mat4 iNormalMatrix;  //Note: this is transpose(inverse(iModelMatrix)) 
+uniform mat4 iViewMatrix;
+uniform mat4 iViewMatrixInverse;
+uniform int iLeftEye; //rendering left eye (0 - no, 1 - yes)?
+uniform float iGlobalTime; //number of seconds that passed since shader was compiled
+uniform int iUseTexture0; //use texture0 (0 - no, 1 - yes)?
+uniform int iUseTexture1; //use texture1 (0 - no, 1 - yes)?
+uniform int iUseTexture2; //use texture2 (0 - no, 1 - yes)?
+uniform int iUseTexture3; //use texture3 (0 - no, 1 - yes)?
+uniform sampler2D iTexture0; //samples from a texture defined on an object using the tex0 attribute
+uniform sampler2D iTexture1; //samples from a texture defined on an object using the tex1 attribute
+uniform sampler2D iTexture2; //samples from a texture defined on an object using the tex2 attribute
+uniform sampler2D iTexture3; //samples from a texture defined on an object using the tex3 attribute
+uniform int iIllum; //defines an intended per-material illumination model to use
+uniform int iUseClipPlane; //use clip plane (0 - no, 1 - yes)?  (i.e. is the room viewed through a portal)
+uniform vec4 iClipPlane; //equation of clip plane (xyz are normal, w is the offset, room is on side facing normal)
+uniform vec3 iPlayerPosition; //the player's position in the room
+
+varying vec3 iPosition; //interpolated vertex position (note: not multiplied with modelview matrix)
+varying vec3 iPositionWorld; //(iModelMatrix * gl_Vertex).xyz;  
+varying vec3 iPositionCamera; //(gl_ModelViewMatrix * gl_Vertex).xyz;   
+varying vec3 iNormal; //interpolated normal
+varying vec3 iNormalWorld; //(iNormalMatrix * vec4(gl_Normal, 0.0)).xyz;  
+varying vec3 iNormalCamera; //gl_NormalMatrix * gl_Normal;
+
+gl_TexCoord[0].st  //the UV texture coordinate on the geometry to be shaded
+
+//in your own AssetShader, add the following test at the start of main() to avoid portal-related artifacts (being able to see stuff behind the portal):
+if (iUseClipPlane == 1 && dot(iPositionWorld, iClipPlane.xyz) < iClipPlane.w) {
+    discard;	
+}
+</pre>
+</ul>
+<p>
+Here is a very simple example shader which uses one of these GLSL variables to shade the surface based on normal direction (looks cooler when the surface has a smoothly varying normal, e.g. a surface with some non-zero curvature such as a sphere):
+<p>
+<pre class="prettyprint">void main(void) {
+  vec3 normCol = (iNormal + vec3(1,1,1)) * 0.5;
+  gl_FragColor = vec4(normCol, 1.0);
+}
+</pre>
+<a id="assetghost"></a>
+<h4>3.6  AssetGhost</h4>
+<p>
+An AssetGhost defines a recording of a user.  This recording will contain the position and orientation of the avatar, as well as the orientation of their head (as measured from the Oculus Rift headset).  To create a recording within Janus, press Ctrl+G to start the recording, and once finished press Ctrl+G again.  A file "ghost.txt" will be written out to the workspace directory.  The location of this file should be set to the <b>src</b> attribute of the AssetGhost (but feel free to rename it to whatever you wish, it need not be named ghost.txt).
+<p>
+<b>id</b> - id of the AssetGhost<br>
+<b>src</b> - location of the ghost recording file (a plaintext file)<br>
+<p>
+Here is an example:
+<pre class="prettyprint">&lt;AssetGhost id="ghost_id" src="ghost.txt" /&gt;</pre>
+<p>
+<a id="assetwebsurface"></a>
+<h4>3.7  AssetWebSurface</h4>
+<p>
+An AssetWebSurface defines an interactive surface that provides a 2D web view.  Note that this surface can be placed on an Object <b>by specifying a websurface_id that matches the AssetWebSurface's id</b>.
+<p>
+<b>id</b> - id of the AssetWebSurface (note that the corresponding Object should have its "websurface_id" attribute set to this value)<br>
+<b>src</b> - website to use for the AssetWebsurface<br>
+<b>width</b> - texture width for rendering the AssetWebSurface<br>
+<b>height</b> - texture height for rendering the AssetWebSurface<br>
+<p>
+Here is an example:
+<pre class="prettyprint">&lt;AssetWebSurface id="google" src="https://www.google.com" width="1920" height="1080" /&gt;
+...
+&lt;Object id="plane" websurface_id="google" /&gt;</pre>
+<p>
+<a id="assetscript"></a>
+<h4>3.8  AssetScript</h4>
+<p>
+An AssetScript defines a file containing JavaScript (technically ECMAScript 3 compliant code) that you can run in the FireBoxRoom.  Functions can be set up for specific events such as mouse clicks or on frame updates.  Sounds can be played, Objects can be created, have their properties modified, and be destroyed.  For further details about this, see this page: <a href="js.html">js.html</a>.  Also check the "experiment" workspace included with JanusVR which serves as a JS example.  
+<p>
+<b>src</b> - path to a file containing JavaScript for the FireBoxRoom
+<p>
+Example usage (where the JS is contained in a file called "script.txt"):
+<pre class="prettyprint">&lt;AssetScript src="script.txt" /&gt;</pre>
+<p>
+(Note: As of the 35.0 release, multiple AssetScripts can be used within a single Room.)
+<p>
+(More notes: Cookies can also be saved/loaded via the JS (in addition to those cookies set through AssetWebSurfaces).  This can be used for inter-communication between the FireBoxRoom, the JS/AssetScripts, and AssetWebSurfaces in the room.)
+<p>
+<a id="room"></a>
+<h3>4.  Room</h3>
+<p>
+With our "collection" of assets defined, we are now ready to build our FireBoxRoom!  This process involves the placement of instances (or "copies") of the assets we defined in the previous section into our 3D environment.
+<p>
+All <b>Room</b> content is defined within the <b>Room</b> tag, which appears within the <b>FireBoxRoom</b> open and close tags, and below the <b>Assets</b> tag, like the following example:
+<pre class="prettyprint">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Example title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;FireBoxRoom&gt;
+&lt;Assets&gt;
+&lt;AssetImage id="woodplanks_img" src="WoodPlanks.jpg"&gt;&lt;/AssetImage&gt;
+&lt;AssetSound id="localmap_sound" src="localmap.mp3" /&gt;
+&lt;AssetObject id="pinetree" src="pinetree.obj" tex="pinetree.png" /&gt;
+&lt;/Assets&gt;
+&lt;Room&gt;
+&lt;/Room&gt;
+&lt;/FireBoxRoom&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+Presently, only one <b>Room</b> is supported within a <b>FireBoxRoom</b>.   <i>(Aside: This may change in the future -- potentially, a FireBoxRoom could contain one or more inter-connected <b>Room</b>s which share the same collection of assets.  Such an approach will not require the generation of multiple HTML pages, or having to re-download assets which are common between HTML pages.)</i>
+<p>
+Before delving into adding all the instances of the assets, we first detail the attributes of the <b>Room</b> itself. 
+<p>
+<a id="skybox"></a>
+<h4>4.1  Skybox</h4>
+<p>
+By default, a "sky" for the <b>Room</b> will be randomly selected amongst a small set which are packaged with FireBox.  Optionally, one can define a custom skybox for the <b>Room</b>.   The remainder of this subsection discusses how to do this.
+<p>
+In more detail, a "skybox" is a textured cube, used to represent anything in the environment appearing infinitely distant (think of a very large cube which surrounds the player, which appears not to move when the player does).  The textures (or images) for faces of this cube are defined by <b>AssetImage</b>s, which were presented in the previous section.  Here is an example:
+<pre class="prettyprint">&lt;AssetImage id="sky_left" src="Sky0_c.jpg" /&gt;
+&lt;AssetImage id="sky_right" src="Sky1_c.jpg" /&gt;
+&lt;AssetImage id="sky_front" src="Sky2_c.jpg" /&gt;
+&lt;AssetImage id="sky_back" src="Sky3_c.jpg" /&gt;
+&lt;AssetImage id="sky_up" src="Sky4_c.jpg" /&gt;
+&lt;AssetImage id="sky_down" src="Sky5_c.jpg" /&gt;
+</pre>
+You are not required to define all 6 images (e.g. you may choose to leave out the "down" image).  However, images should be oriented according to the following pattern so they line up correctly at the edges (look at the face labelled "FRONT" and picture the cube containing, and then unwrapping around you):
+<p>
+<table>
+<tr>
+<td></td><td><img src="testsky_up.jpg" width="100px" alt="up"></td><td></td><td></td>
+</tr>
+<tr>
+<td><img src="testsky_left.jpg" width="100px" alt="left"></td><td><img src="testsky_front.jpg" width="100px" alt="front"></td><td><img src="testsky_right.jpg" width="100px" alt="right"></td><td><img src="testsky_back.jpg" width="100px" alt="back"></td>
+</tr>
+<tr>
+<td></td><td><img src="testsky_down.jpg" width="100px" alt="down"></td><td></td><td></td>
+</tr>
+</table>
+<p>
+To use the defined <b>AssetImage</b>s to define the skybox for the <b>Room</b>, we define any or all of the following six attributes: <b>skybox_up_id</b>, <b>skybox_down_id</b>, <b>skybox_left_id</b>, <b>skybox_right_id</b>, <b>skybox_front_id</b>, <b>skybox_back_id</b>.  Here is an example:
+<pre class="prettyprint">&lt;Room skybox_left_id="sky_left" skybox_right_id="sky_right" skybox_front_id="sky_front" skybox_back_id="sky_back" skybox_up_id="sky_up" skybox_down_id="sky_down"&gt;
+&lt;/Room&gt;
+</pre>
+Note in particular that each attribute is set to the <b>id</b> of the corresponding <b>AssetImage</b>, <i>not the image filename</i>.  Also note that if none of the skybox attributes are set, then the <b>Room</b> will be created with a random skybox packaged with FireBox as mentioned previously.
+<p>
+<a id="roomtemplate"></a>
+<h4>4.2  Room Template</h4>
+<p>
+To allow new users to get started with creating a room quickly, FireBox comes packaged with a collection of room "templates", which are geometry that can be used to define the structure and boundary for a <b>Room</b>.  When viewing HTML content in FireBox which does not contain a <b>FireBoxRoom</b> tag, rooms are created using these templates.
+<p>
+There are two broad approaches to room creation:  (i) Use one of the templates available.  (ii) Do not use any room template, instead using <b>AssetObject</b>s to define the geometry and boundary for your room (discussed later).  In this subsection, we consider the first approach.
+<p>
+The following table shows the <b>id</b>'s and a visualization of each of the templates available with FireBox at present:
+<p>
+<a href="img/firebox_room_templates.html"><img src="firebox_room_templates.jpg" width=800px alt="templates"></a>
+<p>
+To use any of these room templates, set the <b>use_local_asset</b> attribute for the <b>Room</b> to the template's name.  For, example, to use room template with <b>id</b> "room1", do the following:
+<pre class="prettyprint">&lt;Room use_local_asset="room1"&gt;
+&lt;/Room&gt;
+</pre>
+Note that if the <b>use_local_asset</b> attribute is not set, the <b>Room</b> will be completely empty (and have no geometry or boundaries).  
+<p>
+The colour of the room template can be selected.  The colour is specified using 3 values which range between 0 and 1 for each of the red, green and blue components.  For example, the colour of a "very blue" room could be expressed as "0 0 1".  To set the room template colour for a room, set the <b>col</b> attribute for the <b>Room</b>, like the following example:
+<pre class="prettyprint">&lt;Room use_local_asset="room1" col="0 0 1"&gt;
+&lt;/Room&gt;
+</pre>
+<p>
+The room template can be made visible or invisible by setting the <b>visible</b> attribute, like the following:
+<pre class="prettyprint">&lt;Room use_local_asset="room_plane" visible="false"&gt;
+&lt;/Room&gt;
+</pre>
+This example uses the <i>room_plane</i> template, the geometry will be there for collision, and you will be able to use the cursor and menu on it, but it will not be visible.  The default value for <b>visible</b> is "true".
+<a id="entrance"></a>
+<h4>4.3  Entrance Portal</h4>
+<p>
+Positions and directions can be defined in a 3D space by specifying components for X Y and Z.  For instance, the position where X=2, Y=3, and Z=4 can be expressed concisely as "2 3 4".  Directions (vectors) can also be specified the same way.
+<p>
+By default, the entrance for the player into the environment will be at 3D position "0 0 0", and the player will be  facing direction "0 0 -1" (along the negative Z-axis).  These values can be overridden by setting the <b>pos</b> (position) and <b>fwd</b> (forward direction) attributes for the <b>Room</b>.  Here is an example:
+<pre class="prettyprint">&lt;Room use_local_asset="room1" col="0 0 1" pos="5 0 5" fwd="1 0 0"&gt;
+&lt;/Room&gt;
+</pre>
+In the above example, when the player walks through a portal to reach the <b>Room</b>, the entrance portal for the <b>Room</b> will be at position "5 0 5", and the portal will be facing "1 0 0" (along the positive X-axis).  To reiterate, if the <b>pos</b> or <b>fwd</b> attributes are unspecified, the defaults of "0 0 0" and "0 0 -1" are used, which are fine for the majority of the template rooms, such as "room1" used in the example above.
+<p>
+Note that since version 19 a non-vertical orientation for the room entrance portal can be specified by using the <b>xdir</b>, <b>ydir</b>, <b>zdir</b> attributes (defaults "1 0 0", "0 1 0", "0 0 -1") instead of the <b>fwd</b> attribute.
+<p>
+<a id="nearfarplane"></a>
+<h4>4.4  Near and Far Plane Distances</h4>
+<p>
+The default near and far plane distances for a Room are 0.0025 and 500.0 (this corresponds to 2.5mm and 500m in terms of physical units).  These default values can be overridden by setting the <b>near_dist</b> and <b>far_dist</b> attributes for a room, like the following example:
+<pre class="prettyprint">&lt;Room use_local_asset="room_plane" pos="0 0 0" fwd="0 0 -1" near_dist="0.01" far_dist="1000.0"&gt;
+...
+&lt;/Room&gt;
+</pre>
+Note that setting the near plane distance to an excessively large value may cause visual artifacts when passing through a portal (the surface the portal is drawn upon becomes "too close" -- clipped by the frustum's near plane).  Choosing inappropriate near and far plane distances may result in excessive/frequent Z-fighting of the Room's geometry.
+<p>
+<a id="defaultsounds"></a>
+<h4>4.5  Default Sounds</h4>
+<p>
+By default, Rooms have an ambient "wind noise" in the background, and you will hear a voice when doing many things.  All of these default sounds can be muted when in the Room by setting the <b>default_sounds</b> attribute of the Room to false (the default is "true").  This is useful e.g. for a theater room.  Here is an example:
+<pre class="prettyprint">&lt;Room use_local_asset="room_plane" pos="0 0 0" fwd="0 0 -1" default_sounds="false"&gt;
+...
+&lt;/Room&gt;
+</pre>
+<p>
+<a id="gravityjumpvelocity"></a>
+<h4>4.6  Gravity, Jump Velocity, Walk and Run Speeds</h4>
+<p>
+Rooms by default have <b>gravity</b> which is the same as Earth (an acceleration on all objects of 9.8 metres per second squared, downward).  
+<p>Additionally, a <b>jump_velocity</b> defines the speed at which the player starts moving upward when jumping (and ultimately defines, in combination with gravity, how high the player can jump).  The default jump_velocity is 5.0 metres per second upward.  These defaults can be changed, for instance to have moon-like gravity, or increase the maximum height when jumping.  
+<p>
+The <b>walk_speed</b> and <b>run_speed</b> attributes (defaults 1.8 and 5.4 metres per second) define the speed of the player as they navigate the room.  
+<p>
+Here is an example of how to change all of these attributes for the Room:
+<pre class="prettyprint">&lt;Room gravity="-3.0" jump_velocity="10.0" walk_speed="5.0" run_speed="10.0" use_local_asset="room_plane" pos="0 0 0" fwd="0 0 -1" default_sounds="false"&gt;
+...
+&lt;/Room&gt;
+</pre>
+
+<p>
+<a id="cursorvisible"></a>
+<h4>4.7  Cursor Visibility</h4>
+<p>
+Rooms by default allow one to see their 3D cursor while in the room.  This is controlled by a Room attribute called <b>cursor_visible</b> which is set to "true" by default.  One may wish to hide the 3D cursor for their room, to do so set the <b>cursor_visible</b> attribute of the room to "false".  Here is an example:
+<pre class="prettyprint">&lt;Room use_local_asset="room_plane" cursor_visible="false" pos="0 0 0" fwd="0 0 -1"&gt;
+...
+&lt;/Room&gt;
+</pre>
+<p>
+<a id="fog"></a>
+<h4>4.8  Fog</h4>
+<p>
+Fog can be used to enhance the feeling of depth or scale within a room.  There are numerous fog functions which can be used, which closely follow the OpenGL specification.  The following fog-related settings exist for a Room:
+<p>
+<b>fog</b> - (default "false") when "true", use the fog effect<br>
+<b>fog_mode</b> - (default "exp") defines the weight function to use, choices are: exp, exp2, linear<br>
+<b>fog_density</b> - (default "1.0") coefficient which applies to the "exp" and "exp2" fog_mode<br>
+<b>fog_start</b> - (default "0.0") coefficient which applies to the "linear" fog_mode (the distance at which "fog begins")<br>
+<b>fog_end</b> - (default "1.0") coefficient which applies to the "linear" fog_mode (the distance at which "fog ends/is maximal")<br>
+<b>fog_col</b> - (default "0 0 0") set the colour of the fog
+<p>
+Here is an example:
+<pre class="prettyprint">&lt;Room use_local_asset="room_home" fog="true" fog_mode="exp" fog_density="0.1" fog_color="0 0 0.2"&gt;
+...
+&lt;/Room&gt;
+</pre>
+<p>
+<a id="teleport"></a>
+<h4>4.9  Teleport Distance</h4>
+<p>
+Users can teleport in Janus by holding the left mouse button and releasing where they would like to go.  The maximum (and minimum distances) for the teleport functionality can be set for each room.  The two attributes to set are:
+<p>
+<b>teleport_min_dist</b> - (default "5.0") The minimum cursor distance needed to allow teleporting, units in metres<br>
+<b>teleport_max_dist</b> - (default "100.0") The maximum cursor distance needed to allow teleporting, units in metres<br>
+<p>
+Here is an example:
+<pre class="prettyprint">&lt;Room use_local_asset="room_home" teleport_min_dist="10.0" teleport_max_dist="1000.0" &gt;
+...
+&lt;/Room&gt;
+</pre>
+
+<p>
+<a id="globalshader"></a>
+<h4>4.10  Global Shader</h4>
+<p>
+An AssetShader (which encapsulates both a vertex and fragment shader) can be applied globally to all of the contents in a Room.  To do this, declare an AssetShader in the asset list, and then set the Room's <b>shader_id</b> attribute to the id attribute of the AssetShader.  Note that the shader applies not only to objects in the room, but to other player's avatars, and portals (whether existing in the Room or user-generated).  Also note that the global shader can be overridden on a per-Object basis by setting the shader_id attribute for each Object.
+<p>
+<b>shader_id</b> - (default "") Set to the id of an AssetShader
+<p>
+Here is an example:
+<pre class="prettyprint">...
+&lt;AssetShader id="room_shader" vertex_src="room_vertex.txt" src="room_frag.txt" /&gt;
+...
+&lt;Room shader_id="room_shader"&gt;
+...
+</pre>
+
+<p>
+<a id="multiserver"></a>
+<h4>4.11  Multiplayer Server</h4>
+<p>
+(Release 38.0+) Janus VR allows the use of custom multiplayer servers for any room.  The Janus VR client will create a new connection to the specified multiplayer server if a connection does not exist, and in addition subscribe to the URL on that server (to listen to and broadcast user events which happen in the room).  The custom multiplayer server is specified by adding <b>server</b> and <b>port</b> for the <b>Room</b>.  
+<p>
+<b>server</b> - (default "babylon.vrsites.com") Set to the domain name or IP of the custom multiplayer server for the room<br>
+<b>port</b> - (default "5566") Set to the port of the custom multiplayer server for the room
+<p>
+Here is an example which uses spyd.junkonet.org:5567 as the multiplayer server for the Room:
+<pre class="prettyprint">&lt;Room server="spyd.junkonet.org" port="5567" ... </pre>
+
+
+<p>
+<a id="roomcontents"></a>
+<h4>5.  Room Contents</h4>
+<p>
+We now specify how to use the assets defined previously to add contents to the room (the fun part).  There are presently 8 tags which add different types of content the room:
+</p>
+<ul>
+<li>Text</li>
+<li>Paragraph</li>
+<li>Link</li>
+<li>Image</li>
+<li>Image3D</li>
+<li>Sound</li>
+<li>Video</li>
+<li>Object</li>
+</ul>
+<p>
+In the following subsections, we cover each of these in greater detail.
+The first three, <b>Text</b>, <b>Paragraph</b> and <b>Link</b>, do not rely on any assets being defined.  The remainder all depend on a specific type of asset and thus require an <b>id</b> attribute to be defined.
+<p>
+Some further notes before continuing: 
+<p>
+The orientation for most contents can be set using either by a forward direction vector (the <b>fwd</b> attribute), or, as FireBox does internally, by a collection of 3 vectors which define a "coordinate frame" - these are directions for the content that specify horizontal (<b>xdir</b>), vertical (<b>ydir</b>) and forward (<b>zdir</b>, or depth) directions.  The 3 <b>xdir</b>, <b>ydir</b> and <b>zdir</b> vectors should be orthogonal, normalized, and define a left-handed coordinate frame.  Here is an example using either method:
+<pre class="prettyprint">&lt;Text pos="5 5 5" fwd="0 0 -1"&gt;example text&lt;/Text&gt;
+</pre>
+<pre class="prettyprint">&lt;Text pos="5 5 5" xdir="-1 0 0" ydir="0 1 0" zdir="0 0 -1"&gt;example text&lt;/Text&gt;
+</pre>
+The two above examples produce the same result.  When specifying the <b>fwd</b> attribute to define orientation, the vertical direction is always "up" (along the positive Y-axis).  Therefore, the <b>fwd</b> attribute should always be a vector with zero for the Y component (e.g., do not do "0 1 0").
+<p>
+In the following, attributes with a "default" value do not need to be set.  Those without a "default" value (such as <b>id</b>'s) must be set.
+<p>
+Also note that as of Release 34.0, tags which define room contents can be "nested" (or "grouped"), which should be intuitive to those who have experience with HTML or XML.  This is achieved by using nested tags as in the following example:
+<pre class="prettyprint">&lt;Object id="clock_body" pos="0 18 0" col="1 1 0" scale="2 2 2" rotate_axis="0 1 0" rotate_deg_per_sec="10"&gt;
+  &lt;Object id="clock_body" pos="5 0 0" scale=".5 .5 .5" col="1 0 0" rotate_axis="0 1 0" rotate_deg_per_sec="-20"&gt;
+    &lt;Object id="clock_body" pos="4 0 0" col="0 1 0" scale=".5 .5 .5" rotate_axis="0 1 0" rotate_deg_per_sec="80"&gt;
+      &lt;Object id="clock_body" pos="4 0 0" col="0 0 1" scale=".5 .5 .5" rotate_axis="0 1 0" rotate_deg_per_sec="-160" /&gt;
+    &lt;/Object&gt;
+  &lt;/Object&gt;
+  &lt;Object id="clock_body" pos="-5 0 0" scale=".5 .5 .5" col="1 0 0" rotate_axis="0 1 0" rotate_deg_per_sec="-20"&gt;
+    &lt;Object id="clock_body" pos="4 0 0" col="0 1 0" scale=".5 .5 .5" rotate_axis="0 1 0" rotate_deg_per_sec="80"&gt;
+      &lt;Object id="clock_body" pos="4 0 0" col="0 0 1" scale=".5 .5 .5" rotate_axis="0 1 0" rotate_deg_per_sec="-160" /&gt;
+    &lt;/Object&gt;
+  &lt;/Object&gt;
+&lt;/Object&gt;
+</pre>
+In the above example, Objects which are nested within a parent tag inherit the spatial transform of the parent, and then apply their own transformations.  This arrangement, which structures the room contents as a tree, defines the sequence of transformations for any given content.  This makes it possible, for instance, to have a Room containing an Object which rotates around a parent object, which rotates around a parent object, which is to the left of and rotates around a parent object, and so on.  
+<p>
+<a id="text"></a>
+<h4>5.1  Text</h4>
+<p>
+<img src="firebox_text.jpg" width="400px" alt="text">
+<p>
+The <b>Text</b> tag allows the addition of 3D text to the room.  The following attributes can be set for <b>Text</b>:
+<p>
+<b>pos</b> (default "0 0 0") - specify the position (anchor point is centered horizontally, and at the bottom vertically)<br>
+<b>fwd</b> (default "0 0 -1") - specify the orientation (or use <b>xdir</b>, <b>ydir</b>, <b>zdir</b>, defaults "1 0 0", "0 1 0", "0 0 1")<br>
+<b>col</b> (default "#ffffff") - specify the text colour (the attribute can be formatted as "R G B" where 0<=R,G,B<=1, #RRGGBB where RR,GG,BB are hexadecimal values between 0 and 255, and SVG colour names e.g. "purple", "forestgreen")<br>
+<b>scale</b> (default "1 1 1") - scale the object along each of its x (horizontal), y (vertical) and z (forward) axes <br>
+<b>locked</b> (default "false") - if "true", prevents modification of attributes<br>
+<b>lighting</b> (default "true") - if "true", uses the default shading which includes diffuse and specular components<br>
+<p>
+The text content itself is placed between the opening and closing <b>Text</b> tags.  Here is an 
+example which adds the text 'example text' coloured light green to the room at position "5 5 5" and facing direction "0 0 1":
+<pre class="prettyprint">&lt;Text pos="5 5 5" fwd="0 0 1" col="0.5 0.8 0.5" scale="2 2 2" locked="false"&gt;example text&lt;/Text&gt;
+</pre>
+<p>
+<a id="paragraph"></a>
+<h4>5.2  Paragraph</h4>
+<p>
+<img src="firebox_paragraph.jpg" width="400px" alt="text">
+<p>
+The <b>Paragraph</b> tag allows the addition a generated image which contains text, use this instead of "Text" when you want to display a large amount of text within the room (either this, or create your own image with text in it).  The following attributes can be set for <b>Paragraph</b>:
+<p>
+<b>pos</b> (default "0 0 0") - specify the position (anchor point is centered horizontally, and at the bottom vertically)<br>
+<b>fwd</b> (default "0 0 -1") - specify the orientation (or use <b>xdir</b>, <b>ydir</b>, <b>zdir</b>, defaults "1 0 0", "0 1 0", "0 0 1")<br>
+<b>col</b> (default "#ffffff") - specify the colour (the attribute can be formatted as "R G B" where 0<=R,G,B<=1, #RRGGBB where RR,GG,BB are hexadecimal values between 0 and 255, and SVG colour names e.g. "purple", "forestgreen")<br>
+<b>font_size</b> (default "16") - specify the font size for the text<br>
+<b>text_col</b> (default "#ffffff") - specify the text colour (the attribute can be formatted as "R G B" where 0<=R,G,B<=1, #RRGGBB where RR,GG,BB are hexadecimal values between 0 and 255, and SVG colour names e.g. "purple", "forestgreen")<br>
+<b>back_col</b> (default "#ffffff") - specify the background colour (the attribute can be formatted as "R G B" where 0<=R,G,B<=1, #RRGGBB where RR,GG,BB are hexadecimal values between 0 and 255, and SVG colour names e.g. "purple", "forestgreen")<br>
+<b>back_alpha</b> (default "1") - specify the opacity (non-transparency) of the background<br>
+<b>scale</b> (default "1 1 1") - scale the object along each of its x (horizontal), y (vertical) and z (forward) axes <br>
+<b>locked</b> (default "false") - if "true", prevents modification of attributes<br>
+<b>lighting</b> (default "true") - if "true", uses the default shading which includes diffuse and specular components<br>
+<p>
+Like with the text tag, the paragraph's text content is placed between the opening and closing <b>Paragraph</b> tags.  Here is an 
+example which adds a Paragraph to the room at position "5 5 5" and facing direction "0 0 1":
+<pre class="prettyprint">&lt;Paragraph pos="5 5 5" fwd="0 0 1" col="0.5 0.8 0.5" scale="2 2 2" locked="false"&gt;example paragraph's text&lt;/Paragraph&gt;
+</pre>
+<p>
+<a id="link"></a>
+<h4>5.3  Link</h4>
+<p>
+<img src="firebox_link.jpg" width="400px" alt="link">
+<p>
+A <b>Link</b> creates a portal which can be used to connect to another <b>FireBoxRoom</b>, or any other webpage specified with a URL.
+<p>
+<b>url</b> (default "") - specify the URL to link to<br>
+<b>title</b> (default "") - a title for the page the URL links to (shown until it is loaded)<br>
+<b>pos</b> (default "0 0 0") - specify the position (anchor point is centered horizontally, and at the bottom vertically)<br>
+<b>fwd</b> (default "0 0 -1") - specify the orientation (or use <b>xdir</b>, <b>ydir</b>, <b>zdir</b>, defaults "1 0 0", "0 1 0", "0 0 1")<br>
+<b>col</b> (default "#ffffff") - specify the colour (the attribute can be formatted as "R G B" where 0<=R,G,B<=1, #RRGGBB where RR,GG,BB are hexadecimal values between 0 and 255, and SVG colour names e.g. "purple", "forestgreen")<br>
+<b>scale</b> (default "1.8 2.5 1") - scale the portal, but note that scaling is only possible along x (horizontal, minimum scale 1.8), and y (vertical, minimum scale 2.5) directions <br>
+<b>draw_glow</b> (default "true") - whether to show the portal glow along the boundary<br>
+<b>draw_text</b> (default "true") - whether to show the text at the top of the portal for URL and page title<br>
+<b>auto_load</b> (default "false") - if true, the room that the portal links to will be loaded immediately; if false, the portal must first be clicked before it will load the room <br>
+<b>thumb_id</b> (default "") - if set to the id of an AssetImage, a "thumbnail image" will be displayed for the portal, useful for indicating what lies through it before it's loaded.  The AssetImage content is expected to be square (width and height equal), and the portal will crop the image according to its dimensions to preserve the aspect ratio.
+<p>
+Here is an example <b>Link</b>:
+<pre class="prettyprint">&lt;Link pos="66.7 -5 -9" fwd="0 0 -1" url="inn.html" col="0.6 1 0.6" scale="1.8 3.2 1" title="the drunken surfer" /&gt;
+</pre>
+<a id="image"></a>
+<h4>5.4  Image</h4>
+<p>
+<img src="firebox_image.jpg" width="400px" alt="image">
+<p>
+An <b>Image</b> is represented in 3D as a rectangular shape with thickness 1/10 of the maximum width or height.  The appearance is much like art done on canvas wrapped around a wooden frame.  The dimensions are such that the aspect ratio of the image is preserved.  Transparent images are supported and can be used to interesting effect.
+<p>
+<b>id</b> - set to the id of an <b>AssetImage</b><br>
+<b>pos</b> (default "0 0 0") - specify the position (anchor point is centered horizontally and vertically)<br>
+<b>fwd</b> (default "0 0 -1") - specify the orientation (or use <b>xdir</b>, <b>ydir</b>, <b>zdir</b>, defaults "1 0 0", "0 1 0", "0 0 1")<br>
+<b>col</b> (default "#ffffff") - specify the colour (the attribute can be formatted as "R G B" where 0<=R,G,B<=1, #RRGGBB where RR,GG,BB are hexadecimal values between 0 and 255, and SVG colour names e.g. "purple", "forestgreen")<br>
+<b>scale</b> (default "1 1 1") - scale the object along each of its x (horizontal), y (vertical) and z (forward) axes <br>
+<b>locked</b> (default "false") - if "true", prevents modification of attributes<br>
+<b>lighting</b> (default "true") - if "true", uses the default shading which includes diffuse and specular components<br>
+<p>
+Here is an example <b>Image</b>:
+<pre class="prettyprint">&lt;Image id="caffeine_img" pos="-10 2 -5" fwd="1 0 0" scale="1.75 1.75 1"/&gt;
+</pre>
+<p>
+<a id="image3d"></a>
+<h4>5.5  Image3D</h4>
+<p>
+<img src="horse_left.jpg" width="200px" alt="horse_left"><img src="horse_right.jpg" width="200px" alt="horse_right">
+<p>
+An <b>Image3D</b> is geometrically the same as an <b>Image</b>, but its texture uses two different images, where each is shown to either the left or right eye.  When FireBox is used with the Oculus Rift, this can produce a 3D effect.  On a traditional display, only the "left eye" image will be shown.
+<p>
+<b>left_id</b> - set to the id of the "left eye" <b>AssetImage</b><br>
+<b>right_id</b> - set to the id of the "right eye" <b>AssetImage</b><br>
+<b>pos</b> (default "0 0 0") - specify the position (anchor point is centered horizontally and vertically)<br>
+<b>fwd</b> (default "0 0 -1") - specify the orientation (or use <b>xdir</b>, <b>ydir</b>, <b>zdir</b>, defaults "1 0 0", "0 1 0", "0 0 1")<br>
+<b>col</b> (default "#ffffff") - specify the colour (the attribute can be formatted as "R G B" where 0<=R,G,B<=1, #RRGGBB where RR,GG,BB are hexadecimal values between 0 and 255, and SVG colour names e.g. "purple", "forestgreen")<br>
+<b>scale</b> (default "1 1 1") - scale the object along each of its x (horizontal), y (vertical) and z (forward) axes <br>
+<b>locked</b> (default "false") - if "true", prevents modification of attributes<br>
+<b>stereo_split</b> (default "horiz_left_right") - takes one of four values: <b>horiz_left_right</b> (default), <b>horiz_right_left</b>, <b>vert_top_bottom</b>, <b>vert_bottom_top</b>.  With this naming convention, the first image region specified is for the left eye, and the second for the right eye, e.g. "vert_bottom_top" would be bottom half of the image for the left eye, top half of the image for the right eye. <br>
+<b>lighting</b> (default "true") - if "true", uses the default shading which includes diffuse and specular components<br>
+<p>
+Here is an example <b>Image3D</b>:
+<pre class="prettyprint">&lt;Image3D left_id="horse_left_img" right_id="horse_right_img" pos="-10 2 -5" fwd="1 0 0" scale="1.75 1.75 1"/&gt;
+</pre>
+<p>
+Image3D also supports side-by-side ("SBS") or top-bottom formatted images, where the image for both eyes are contained in a single file.  To use this, set the <b>left_id</b> and <b>right_id</b> to the same AssetImage id.  By default, the image will be assumed to be split horizontally left and right for left and right eyes.  This default behaviour can be changed by specifying the <b>stereo_split</b> attribute, which takes one of four values: <b>horiz_left_right</b> (default), <b>horiz_right_left</b>, <b>vert_top_bottom</b>, <b>vert_bottom_top</b>.  Examples:<br>
+<pre class="prettyprint">&lt;AssetImage id="img_lr" src="lr.jpg" /&gt;
+&lt;AssetImage id="img_tb" src="tb.jpg" /&gt;
+...
+&lt;Image3D pos="-5 1 -5" left_id="img_lr" right_id="img_lr" /&gt;
+&lt;Image3D pos="5 1 -5" left_id="img_tb" right_id="img_tb" stereo_split="vert_top_bottom" /&gt;</pre>
+<a id="sound"></a>
+<h4>5.6  Sound</h4>
+<p>
+A <b>Sound</b> plays a specific AssetSound when the player enters a rectangle defined on the XZ plane, which is used to "trigger" the sound.  One can also specify whether the sound should loop once triggered, or only play back once.  To get ambient sound or music to play for the room upon entry, use a very large rectangle to trigger the sound (or at least contains the room's entrance portal), and set the sound to loop.
+<p>
+<b>id</b> - set to the id of an <b>AssetSound</b><br>
+<b>rect</b> (default "0 0 0 0") - presently, defines two opposite 2D corners of a rectangle which triggers the sound to play, the format is "X1 Z1 X2 Z2" (note that since the rectangle is 2D, the player's Y-position does not matter for triggering the sound, note also pressing "C" will toggle showing coordinates for your position and direction which is useful to determine the rectangle's bounds)<br>
+<b>loop</b> (default "false") - normally the sound plays only one time, but when this attribute is set to true, the sound will play indefinitely until the player leaves the room<br>
+<b>play_once</b> (default "false") - when set to true, the given Sound will only play one time for the duration of the visit.  If set to "false" (the default), the sound will play once each time the player enters the room.
+<p>
+Here is an example <b>Sound</b>, which plays "music_sound" on loop when the player's X position is between -100 and 100, and Z position is between -50 and 50:
+<pre class="prettyprint">&lt;Sound id="music_sound" rect="-100 -50 100 50" loop="true" /&gt;
+</pre>
+<a id="video"></a>
+<h4>5.7  Video</h4>
+<p>
+<img src="firebox_video.jpg" width="400px" alt="image">
+<p>
+A <b>Video</b> plays a specific AssetVideo.  The video can be controlled by left clicking on it (stop and play).  You can specify whether the video should loop once playing, and whether the video should start playing automatically when the room is entered.  Multiple Video's can be associated with one AssetVideo without any extra performance penalty (useful if you want the same video to appear at multiple locations in the room).  The video will appear in the room as a rectangle, and the ratio of the height and width dimensions will match that of the video itself, preserving aspect ratio.  All videos in a room are stopped automatically when the user leaves the room.
+<p>
+<b>id</b> - set to the id of an <b>AssetVideo</b><br>
+<b>thumb_id</b> (default "") - set to the id of an <b>AssetImage</b>, to show an image/thumbnail for this video while it is not playing (the AssetImage can even animate)<br>
+<b>pos</b> (default "0 0 0") - specify the position (anchor point is centered horizontally and vertically)<br>
+<b>fwd</b> (default "0 0 -1") - specify the orientation (or use <b>xdir</b>, <b>ydir</b>, <b>zdir</b>, defaults "1 0 0", "0 1 0", "0 0 1")<br>
+<b>col</b> (default "#ffffff") - specify the colour (the attribute can be formatted as "R G B" where 0<=R,G,B<=1, #RRGGBB where RR,GG,BB are hexadecimal values between 0 and 255, and SVG colour names e.g. "purple", "forestgreen")<br>
+<b>scale</b> (default "1 1 1") - scale the video along each of its x (horizontal), y (vertical) and z (forward) axes <br>
+<b>locked</b> (default "false") - if "true", prevents modification of attributes<br>
+<b>lighting</b> (default "true") - if "true", uses the default shading which includes diffuse and specular components<br>
+<p>
+Here is an example <b>Video</b>, which plays "vid_id" within a rectangle positioned at "0 2 -5" and facing "0 0 1":
+<pre class="prettyprint">&lt;Video id="vid_id" pos="0 2 -5" fwd="0 0 1" /&gt;</pre>
+<a id="object"></a>
+<h4>5.8  Object</h4>
+<p>
+<img src="firebox_object.jpg" width="400px" alt="object">
+<p>
+An <b>Object</b> refers to an instance of 3D geometry placed in the room.  <b>Object</b>s can be used to define both the geometry of the room, as well as the boundary for the room, by using the <b>collision_id</b> attribute, detailed below.
+<p>
+<b>id</b> - set to the id of an <b>AssetObject</b><br>
+<b>pos</b> (default "0 0 0") - specify the position (anchor point is centered horizontally, and at the bottom vertically)<br>
+<b>fwd</b> (default "0 0 -1") - specify the orientation (or use <b>xdir</b>, <b>ydir</b>, <b>zdir</b>, defaults "1 0 0", "0 1 0", "0 0 1")<br>
+<b>col</b> (default "#ffffff") - specify the colour (the attribute can be formatted as "R G B" where 0<=R,G,B<=1, #RRGGBB where RR,GG,BB are hexadecimal values between 0 and 255, and SVG colour names e.g. "purple", "forestgreen")<br>
+<b>scale</b> (default "1 1 1") - scale the object along each of its x (horizontal), y (vertical) and z (forward) axes <br>
+<b>locked</b> (default "false") - if "true", prevents modification of attributes<br>
+<b>cull_face</b> (default "back") - options are "back", "front", "none" which specify what polygons are culled when the Object is rendered<br>
+<b>collision_id</b> (default "") - when set to the id of an <b>AssetObject</b>, collision testing is performed with that AssetObject.  This makes it possible to define the boundary for the room using one's own custom geometry.  (Note that the <b>id</b> and <b>collision_id</b> attributes can be set differently - the collision_id may refer to an <b>AssetObject</b> which is a low-polygon count version of a more detailed model, such as a bounding cube or sphere.  Note also that collision tests are not performed if the player is not within the bounding volume of the AssetObject.)<br>
+<b>collision_radius</b> (default "0") - when set to a value greater than zero, an invisible cylinder at the specified radius prevents the player from passing through this <b>Object</b> (note that presently, this ignores the vertical or Y-position of the player, the cylinder extends in both directions along the Y-axis infinitely)<br>
+<b>rotate_axis</b> (default "0 1 0") - defines an axis of rotation<br>
+<b>rotate_deg_per_sec</b> (default "0") - specifies the number of degrees to rotate per second about the axis defined by <b>rotate_axis</b> (note use of this feature is discouraged, as presently it breaks other interactions with FireBox - use at your own risk)<br>
+<b>video_id</b> (default "") - set to the id of an <b>AssetVideo</b> to shade the Object using frames of the video as a texture (see the section on <b>AssetVideo</b>s for more information on defining an AssetVideo).  Also note that the Object if clicked will serve as a control to start/stop the AssetVideo.<br>
+<b>image_id</b> (default "") - set to the id of an <b>AssetImage</b> to shade the Object using the image as a texture (see the section on <b>AssetImage</b>s for more information).  Note that the AssetImage will work even if SBS/UO formatted, or has animation. <br>
+<b>shader_id</b> (default "") - set to the id of an <b>AssetShader</b> to shade the Object with a GLSL fragment shader (see the section on <b>AssetShader</b>s for more information on defining an AssetShader)<br>
+<b>websurface_id</b> (default "") - set to the id of an <b>AssetWebSurface</b> to texture the Object with a 2D web view (see the section on <b>AssetWebSurface</b>s for more information on defining an AssetWebSurface)<br>
+<b>lighting</b> (default "true") - if "true", uses the default shading which includes diffuse and specular components<br>
+<b>blend_src</b> (default "src_alpha") - sets what do with the source colour of the blending function.  Can be any of the following: src_alpha, zero, one, src_color, one_minus_src_color, dst_color, one_minus_dst_color, one_minus_src_alpha, dst_alpha, one_minus_dst_alpha, constant_color, one_minus_constant_color, constant_alpha. <br>
+<b>blend_dest</b> (default "one_minus_src_alpha") - sets what do with the source colour of the blending function.  Can be any of the following: src_alpha, zero, one, src_color, one_minus_src_color, dst_color, one_minus_dst_color, one_minus_src_alpha, dst_alpha, one_minus_dst_alpha, constant_color, one_minus_constant_color, constant_alpha.
+<p>
+Here is an example <b>Object</b>, which is an instance of an AssetObject with id "room_adventure", which is also used as a collision model.  It is locked, at position "0 0 0", faces direction "0 0 1", and will be coloured dark green:
+<pre class="prettyprint">&lt;Object id="room_adventure" collision_id="room_adventure" locked="true" pos="0 0 0" xdir="1 0 0" ydir="0 1 0" zdir="0 0 1" scale="1 1 1" col="0.2 0.3 0.2" /&gt;
+</pre>
+<p>
+<a id="ghost"></a>
+<h4>5.9  Ghost</h4>
+<p>
+<img src="firebox_ghost.jpg" height="250px" alt="object"><img src="firebox_ghost2.jpg" height="250px" alt="object">
+<p>
+A <b>Ghost</b> refers to an instance of a recorded avatar within the room.  Properties for the ghost invariant to the recording, such as scale, colour, and custom geometry used to represent the ghost can all be specified.  When no geometry is specified for the "head" and "body" parts of the ghost, a default boxy appearance is used.  Since a Ghost is a recording, there are options to set the recording to <b>loop</b> and to <b>auto_play</b> on room entry.
+<p>
+<b>id</b> - set to the id of an <b>AssetGhost</b><br>
+<b>cull_face</b> (default "back") - options are "back", "front", "none" which specify what polygons are culled when the Object is rendered (may be useful when using custom geometry for ghost's body and head)<br>
+<b>col</b> (default "#ffffff") - specify the colour (the attribute can be formatted as "R G B" where 0<=R,G,B<=1, #RRGGBB where RR,GG,BB are hexadecimal values between 0 and 255, and SVG colour names e.g. "purple", "forestgreen")<br>
+<b>scale</b> (default "1 1 1") - scale the ghost along each of its x (horizontal), y (vertical) and z (forward) axes <br>
+<b>locked</b> (default "false") - if "true", prevents modification of attributes<br>
+<b>head_id</b> (default "") - the id of an AssetObject which will be used to define the geometry for the head of the ghost<br>
+<b>head_pos</b> (default "0 1 0") - specify the relative position of the head in the model (the point of articulation for the head relative to the body, where the centre point between the feet should be at "0 0 0")<br>
+<b>eye_pos</b> (default "0 1.6 0") - specify relative to the avatar model, where the central eye position should be<br>
+<b>eye_ipd</b> (default "0") - specify the virtual IPD (the spacing between the eyes of the virtual character, units are in metres)<br>
+<b>body_id</b> (default "") - the id of an AssetObject which will be used to define the geometry for the body of the ghost<br>
+<b>shader_id</b> (default "") - set to the id of an <b>AssetShader</b> to shade the Ghost with a GLSL fragment shader (see the section on <b>AssetShader</b>s for more information on defining an AssetShader)<br>
+<b>loop</b> (default "false") - normally the ghost recording plays only one time, but when this attribute is set to true, the ghost recording will play indefinitely until the player leaves the room<br>
+<b>auto_play</b> (default "false") - when set to true, the ghost recording will start playing immediately when the user enters the Room.  When false, the user clicks the ghost to play the recording.<br>
+<b>lighting</b> (default "true") - if "true", uses the default shading which includes diffuse and specular components<br>
+<b>userid_pos</b> (default "0 0 0") - an offset to relocate the userid of the Ghost (useful if the geometry of the avatar blocks it)<br>
+
+<p>
+Here is a simple example:
+<p>
+<pre class="prettyprint">&lt;Ghost id="ghost" auto_play="true" /&gt;</pre>
+<p>
+Here is a more complicated and complete example, where AssetObjects are used to define the geometry for the head and body of the ghost:
+<p>
+<pre class="prettyprint">&lt;AssetObject id="rikku_head" src="rikku_ghost/rikku_head.obj" mtl="rikku_ghost/rikku_head.mtl" /&gt;
+&lt;AssetObject id="rikku_body" src="rikku_ghost/rikku_body.obj" mtl="rikku_ghost/rikku_body.mtl" /&gt;
+&lt;AssetShader id="rikku_shader" src="rikku_ghost/rikku_shader.txt" /&gt;
+&lt;AssetGhost id="ghost1" src="ghost1.txt" /&gt;
+...
+&lt;Ghost id="ghost1" shader_id="rikku_shader" head_id="rikku_head" head_pos="0 1 0" body_id="rikku_body" scale="1.5 1.5 1.5" cull_face="none" loop="true" auto_play="true" /&gt;</pre>
+<p>
+<hr>
+<p>
+Thanks for reading!
+</p>
+</div>
+</body>
+
+<!-- Mirrored from vrsites.com/hub1/janus_notes/ by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 04 Aug 2015 00:42:00 GMT -->
+</html>

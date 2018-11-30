@@ -1,0 +1,434 @@
+<html>
+
+<!-- Mirrored from vrsites.com/hub1/janus_script/ by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 04 Aug 2015 00:41:58 GMT -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>JavaScript API(Janus)</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="../bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="../bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="../jquery.min.js"></script>
+<script src="../bootstrap.min.js"></script>
+<script src="../run_prettify.js"></script>
+</head>
+<body>
+<div class="container">
+<div style="height:70px;"></div>
+<p>
+<a style="float:right" class="btn btn-primary btn-sm" href="../Guide/index.html">Janus VR Guide</a>
+<a style="float:right;" class="btn btn-primary btn-sm" href="../Notes/index.html">Janus VR Markup language</a>
+<a style="float:right" class="btn btn-primary btn-sm" href="../FAQ/index.html">Janus VR FAQs</a>
+<a style="float:right;" class="btn btn-success btn-sm" href="index.html">JavaScript API(Janus)</a>
+</p>
+<h1>JavaScript API(Janus)</h1>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Release_Notes"><span class="tocnumber">1</span> <span class="toctext">Release Notes</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Script_Documentation"><span class="tocnumber">2</span> <span class="toctext">Script Documentation</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Built-in_Objects"><span class="tocnumber">3</span> <span class="toctext">Built-in Objects</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#The_Room_Object"><span class="tocnumber">3.1</span> <span class="toctext">The Room Object</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#Description"><span class="tocnumber">3.1.1</span> <span class="toctext">Description</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Properties"><span class="tocnumber">3.1.2</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-4 tocsection-7"><a href="#room.url"><span class="tocnumber">3.1.2.1</span> <span class="toctext">room.url</span></a></li>
+<li class="toclevel-4 tocsection-8"><a href="#room.objects"><span class="tocnumber">3.1.2.2</span> <span class="toctext">room.objects</span></a></li>
+<li class="toclevel-4 tocsection-9"><a href="#room.cookies"><span class="tocnumber">3.1.2.3</span> <span class="toctext">room.cookies</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-10"><a href="#Methods"><span class="tocnumber">3.1.3</span> <span class="toctext">Methods</span></a>
+<ul>
+<li class="toclevel-4 tocsection-11"><a href="#room.createObject.28tag.2C_.5Battributes.5D.29"><span class="tocnumber">3.1.3.1</span> <span class="toctext">room.createObject(tag, [attributes])</span></a></li>
+<li class="toclevel-4 tocsection-12"><a href="#room.removeObject.28js_id_or_object.29"><span class="tocnumber">3.1.3.2</span> <span class="toctext">room.removeObject(js_id or object)</span></a></li>
+<li class="toclevel-4 tocsection-13"><a href="#room.addCookie.28name.2C_value.29"><span class="tocnumber">3.1.3.3</span> <span class="toctext">room.addCookie(name, value)</span></a></li>
+<li class="toclevel-4 tocsection-14"><a href="#room.playSound.28id.29"><span class="tocnumber">3.1.3.4</span> <span class="toctext">room.playSound(id)</span></a></li>
+<li class="toclevel-4 tocsection-15"><a href="#room.walk_speed"><span class="tocnumber">3.1.3.5</span> <span class="toctext">room.walk_speed</span></a></li>
+<li class="toclevel-4 tocsection-16"><a href="#room.run_speed"><span class="tocnumber">3.1.3.6</span> <span class="toctext">room.run_speed</span></a></li>
+<li class="toclevel-4 tocsection-17"><a href="#room.jump_velocity"><span class="tocnumber">3.1.3.7</span> <span class="toctext">room.jump_velocity</span></a></li>
+<li class="toclevel-4 tocsection-18"><a href="#room.gravity"><span class="tocnumber">3.1.3.8</span> <span class="toctext">room.gravity</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-19"><a href="#Callbacks"><span class="tocnumber">3.1.4</span> <span class="toctext">Callbacks</span></a>
+<ul>
+<li class="toclevel-4 tocsection-20"><a href="#room.onLoad.28.29"><span class="tocnumber">3.1.4.1</span> <span class="toctext">room.onLoad()</span></a></li>
+<li class="toclevel-4 tocsection-21"><a href="#room.update.28.5Bdt.5D.29"><span class="tocnumber">3.1.4.2</span> <span class="toctext">room.update([dt])</span></a></li>
+<li class="toclevel-4 tocsection-22"><a href="#room.onCollision.28object.2C_other.29"><span class="tocnumber">3.1.4.3</span> <span class="toctext">room.onCollision(object, other)</span></a></li>
+<li class="toclevel-4 tocsection-23"><a href="#room.onClick.28.29.2Froom.onMouseUp.28.29"><span class="tocnumber">3.1.4.4</span> <span class="toctext">room.onClick()/room.onMouseUp()</span></a></li>
+<li class="toclevel-4 tocsection-24"><a href="#room.onMouseDown.28.29"><span class="tocnumber">3.1.4.5</span> <span class="toctext">room.onMouseDown()</span></a></li>
+<li class="toclevel-4 tocsection-25"><a href="#room.onKeyDown.28event.29"><span class="tocnumber">3.1.4.6</span> <span class="toctext">room.onKeyDown(event)</span></a></li>
+<li class="toclevel-4 tocsection-26"><a href="#room.onKeyUp.28event.29"><span class="tocnumber">3.1.4.7</span> <span class="toctext">room.onKeyUp(event)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-27"><a href="#Script_Objects"><span class="tocnumber">3.2</span> <span class="toctext">Script Objects</span></a>
+<ul>
+<li class="toclevel-3 tocsection-28"><a href="#Description_2"><span class="tocnumber">3.2.1</span> <span class="toctext">Description</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="#Supported_attributes"><span class="tocnumber">3.2.2</span> <span class="toctext">Supported attributes</span></a>
+<ul>
+<li class="toclevel-4 tocsection-30"><a href="#String_Attributes"><span class="tocnumber">3.2.2.1</span> <span class="toctext">String Attributes</span></a></li>
+<li class="toclevel-4 tocsection-31"><a href="#Vector_Attributes"><span class="tocnumber">3.2.2.2</span> <span class="toctext">Vector Attributes</span></a></li>
+<li class="toclevel-4 tocsection-32"><a href="#Float_Attributes"><span class="tocnumber">3.2.2.3</span> <span class="toctext">Float Attributes</span></a></li>
+<li class="toclevel-4 tocsection-33"><a href="#Integer_Attributes"><span class="tocnumber">3.2.2.4</span> <span class="toctext">Integer Attributes</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-34"><a href="#The_Player_Object"><span class="tocnumber">3.3</span> <span class="toctext">The Player Object</span></a>
+<ul>
+<li class="toclevel-3 tocsection-35"><a href="#Description_3"><span class="tocnumber">3.3.1</span> <span class="toctext">Description</span></a></li>
+<li class="toclevel-3 tocsection-36"><a href="#Properties_2"><span class="tocnumber">3.3.2</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-4 tocsection-37"><a href="#player.pos"><span class="tocnumber">3.3.2.1</span> <span class="toctext">player.pos</span></a></li>
+<li class="toclevel-4 tocsection-38"><a href="#player.eye_pos"><span class="tocnumber">3.3.2.2</span> <span class="toctext">player.eye_pos</span></a></li>
+<li class="toclevel-4 tocsection-39"><a href="#player.cursor_pos"><span class="tocnumber">3.3.2.3</span> <span class="toctext">player.cursor_pos</span></a></li>
+<li class="toclevel-4 tocsection-40"><a href="#player.cursor_xdir"><span class="tocnumber">3.3.2.4</span> <span class="toctext">player.cursor_xdir</span></a></li>
+<li class="toclevel-4 tocsection-41"><a href="#player.cursor_ydir"><span class="tocnumber">3.3.2.5</span> <span class="toctext">player.cursor_ydir</span></a></li>
+<li class="toclevel-4 tocsection-42"><a href="#player.cursor_zdir"><span class="tocnumber">3.3.2.6</span> <span class="toctext">player.cursor_zdir</span></a></li>
+<li class="toclevel-4 tocsection-43"><a href="#player.head_pos"><span class="tocnumber">3.3.2.7</span> <span class="toctext">player.head_pos</span></a></li>
+<li class="toclevel-4 tocsection-44"><a href="#player.view_dir"><span class="tocnumber">3.3.2.8</span> <span class="toctext">player.view_dir</span></a></li>
+<li class="toclevel-4 tocsection-45"><a href="#player.dir"><span class="tocnumber">3.3.2.9</span> <span class="toctext">player.dir</span></a></li>
+<li class="toclevel-4 tocsection-46"><a href="#player.userid"><span class="tocnumber">3.3.2.10</span> <span class="toctext">player.userid</span></a></li>
+<li class="toclevel-4 tocsection-47"><a href="#player.url"><span class="tocnumber">3.3.2.11</span> <span class="toctext">player.url</span></a></li>
+<li class="toclevel-4 tocsection-48"><a href="#player.hmd_enabled"><span class="tocnumber">3.3.2.12</span> <span class="toctext">player.hmd_enabled</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-49"><a href="#Leap_Motion_attributes"><span class="tocnumber">3.4</span> <span class="toctext">Leap Motion attributes</span></a>
+<ul>
+<li class="toclevel-3 tocsection-50"><a href="#player.handX_.2A"><span class="tocnumber">3.4.1</span> <span class="toctext">player.handX_*</span></a>
+<ul>
+<li class="toclevel-4 tocsection-51"><a href="#player.handX_active"><span class="tocnumber">3.4.1.1</span> <span class="toctext">player.handX_active</span></a></li>
+<li class="toclevel-4 tocsection-52"><a href="#player.handX_xdir"><span class="tocnumber">3.4.1.2</span> <span class="toctext">player.handX_xdir</span></a></li>
+<li class="toclevel-4 tocsection-53"><a href="#player.handX_ydir"><span class="tocnumber">3.4.1.3</span> <span class="toctext">player.handX_ydir</span></a></li>
+<li class="toclevel-4 tocsection-54"><a href="#player.handX_zdir"><span class="tocnumber">3.4.1.4</span> <span class="toctext">player.handX_zdir</span></a></li>
+<li class="toclevel-4 tocsection-55"><a href="#player.handX_pos"><span class="tocnumber">3.4.1.5</span> <span class="toctext">player.handX_pos</span></a></li>
+<li class="toclevel-4 tocsection-56"><a href="#player.handX_p0"><span class="tocnumber">3.4.1.6</span> <span class="toctext">player.handX_p0</span></a></li>
+<li class="toclevel-4 tocsection-57"><a href="#player.handX_p1"><span class="tocnumber">3.4.1.7</span> <span class="toctext">player.handX_p1</span></a></li>
+<li class="toclevel-4 tocsection-58"><a href="#player.handX_p2"><span class="tocnumber">3.4.1.8</span> <span class="toctext">player.handX_p2</span></a></li>
+<li class="toclevel-4 tocsection-59"><a href="#player.handX_p3"><span class="tocnumber">3.4.1.9</span> <span class="toctext">player.handX_p3</span></a></li>
+<li class="toclevel-4 tocsection-60"><a href="#player.handX_p4"><span class="tocnumber">3.4.1.10</span> <span class="toctext">player.handX_p4</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-61"><a href="#Built-in_functions"><span class="tocnumber">4</span> <span class="toctext">Built-in functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-62"><a href="#Vector_Functions"><span class="tocnumber">4.1</span> <span class="toctext">Vector Functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-63"><a href="#Vector.28x.2C_y.2C_z.29"><span class="tocnumber">4.1.1</span> <span class="toctext">Vector(x, y, z)</span></a></li>
+<li class="toclevel-3 tocsection-64"><a href="#translate.28v1.2C_v2.29"><span class="tocnumber">4.1.2</span> <span class="toctext">translate(v1, v2)</span></a></li>
+<li class="toclevel-3 tocsection-65"><a href="#scalarMultiply.28v1.2C_n_or_v2.29"><span class="tocnumber">4.1.3</span> <span class="toctext">scalarMultiply(v1, n or v2)</span></a></li>
+<li class="toclevel-3 tocsection-66"><a href="#cross.28v1.2C_v2.29"><span class="tocnumber">4.1.4</span> <span class="toctext">cross(v1, v2)</span></a></li>
+<li class="toclevel-3 tocsection-67"><a href="#normalized.28v.29"><span class="tocnumber">4.1.5</span> <span class="toctext">normalized(v)</span></a></li>
+<li class="toclevel-3 tocsection-68"><a href="#distance.28p1.2C_p2.29"><span class="tocnumber">4.1.6</span> <span class="toctext">distance(p1, p2)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-69"><a href="#Miscellaneous_Functions"><span class="tocnumber">4.2</span> <span class="toctext">Miscellaneous Functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-70"><a href="#removeKey.28dictionary.2C_key.29"><span class="tocnumber">4.2.1</span> <span class="toctext">removeKey(dictionary, key)</span></a></li>
+<li class="toclevel-3 tocsection-71"><a href="#print.28value.29"><span class="tocnumber">4.2.2</span> <span class="toctext">print(value)</span></a></li>
+<li class="toclevel-3 tocsection-72"><a href="#debug.28value.29"><span class="tocnumber">4.2.3</span> <span class="toctext">debug(value)</span></a></li>
+<li class="toclevel-3 tocsection-73"><a href="#uniqueId.28.29"><span class="tocnumber">4.2.4</span> <span class="toctext">uniqueId()</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-74"><a href="#Known_Bugs.2FCaveats"><span class="tocnumber">5</span> <span class="toctext">Known Bugs/Caveats</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Release_Notes">Release Notes</span></h2>
+<p>New Attribute: js_id. Used to uniquely identify and retrieve an object in the
+script file. Defaults to a unique number. Must be unique.
+</p><p>New Attribute: onclick. Specifies code or the name of a function to run when
+the object is clicked. If it's the name of a function the function can take arguments but requires nested quotes ex"example( " 'var' ")".
+</p><p>New Attribute: oncollision. Specifies code or the name of a function to run when
+this object collides with the player, it requires a collision radius to be set.
+</p><p>New Asset: AssetScript. Usage:  See the script
+documentation for more details on what features are supported in a script file.
+</p>
+<h2><span class="mw-headline" id="Script_Documentation">Script Documentation</span></h2>
+<p>-- Multiple script files are supported, however, not with oncollision or onclick events.
+</p><p>-- Script language is qtScript, basically equivalent to Javascript (ECMAScript 3
+standard-compliant, see <a rel="nofollow" class="external free" href="http://qt-project.org/doc/qt-5/ecmascript.html">http://qt-project.org/doc/qt-5/ecmascript.html</a> for a
+reference on what's built-in)
+</p><p>-- Script is run when the asset finishes loading.
+</p>
+<h2><span class="mw-headline" id="Built-in_Objects">Built-in Objects</span></h2>
+<h3><span class="mw-headline" id="The_Room_Object">The Room Object</span></h3>
+<hr />
+<h4><span class="mw-headline" id="Description">Description</span></h4>
+<p>The room an its elements are accessible through the global object "room".
+</p>
+<h4><span class="mw-headline" id="Properties">Properties</span></h4>
+<h5><span class="mw-headline" id="room.url">room.url</span></h5>
+<p>Read-only. Contains the url of the room.
+</p>
+<h5><span class="mw-headline" id="room.objects">room.objects</span></h5>
+<p>The objects in the room.  A dictionary that maps the js_id attribute of each object to a script object that has that object's attributes. Modifying the attributes of this object will modify the attributes of the object in the room.
+</p><p>Example:
+</p><p><code>
+room.object['myObjectJSId'].pos.y = 5;
+</code>
+</p>
+<h5><span class="mw-headline" id="room.cookies">room.cookies</span></h5>
+<p>A dictionary that stores state that should persist between user sessions. To add a new cookie, use the "addCookie" function.
+</p><p>Example:
+</p>
+<pre class="prettyprint">
+  // Code to keep track of how many times a user has visited a room.
+  if (typeof room.cookies['visits'] == 'undefined')
+    room.addCookie('visits', 0);
+  
+  room.cookies['visits'] +=1;
+</pre>
+<h4><span class="mw-headline" id="Methods">Methods</span></h4>
+<h5><span class="mw-headline" id="room.createObject.28tag.2C_.5Battributes.5D.29">room.createObject(tag, [attributes])</span></h5>
+<p>Creates and returns a new object in the room. "tag" should be one of the supported object tags(see notes on room contents). If "tag" is unsuppported, the object's type will default to "Object". "attributes" is a dictionary specifying the initial attributes of the object, e.g. {pos: Vector(1, 0, -1), text: "Hello World"}. The object will also be added into the "objects" dictionary. If the js_id of the object is specified in attributes, it will be used as the key, otherwise the key will be a new unique number converted to a string.
+</p>
+<h5><span class="mw-headline" id="room.removeObject.28js_id_or_object.29">room.removeObject(js_id or object)</span></h5>
+<p>Removes an object from the room. Can be provided either the js_id of the object or the object itself.
+</p>
+<h5><span class="mw-headline" id="room.addCookie.28name.2C_value.29">room.addCookie(name, value)</span></h5>
+<p>Adds a cookie with the given name and value. The value will be converted into a string.
+</p>
+<h5><span class="mw-headline" id="room.playSound.28id.29">room.playSound(id)</span></h5>
+<p>Plays the sound with the given asset id.
+</p>
+<h5><span class="mw-headline" id="room.walk_speed">room.walk_speed</span></h5>
+<p>Set room walk speed.
+Default value: 1.8 (m/s)
+</p>
+<h5><span class="mw-headline" id="room.run_speed">room.run_speed</span></h5>
+<p>Set room run speed.
+Default value: 5.4 (m/s)
+</p>
+<h5><span class="mw-headline" id="room.jump_velocity">room.jump_velocity</span></h5>
+<p>Set room jump velocity.
+Default value: 5.0 (m/s)
+</p>
+<h5><span class="mw-headline" id="room.gravity">room.gravity</span></h5>
+<p>Set room gravity.
+Default value: -9.8 (m/s)<br />
+Example:
+</p>
+<pre class="prettyprint">
+room.update = function(delta_time) {	
+    globalTime += delta_time;
+    room.gravity = -(Math.sin(globalTime/1000.0)+1.0)*4.9;
+}
+</pre>
+<h4><span class="mw-headline" id="Callbacks">Callbacks</span></h4>
+<p>There are also several "callback" functions that you can define on the room, to be run when certain events happen:
+</p>
+<h5><span class="mw-headline" id="room.onLoad.28.29">room.onLoad()</span></h5>
+<p>Invoked before the first update of the room. Note that this is not when the room is loaded, but when the user first steps into the room.
+</p>
+<h5><span class="mw-headline" id="room.update.28.5Bdt.5D.29">room.update([dt])</span></h5>
+<p>Invoked on each frame before the world is drawn. dt, an optional parameter, is the amount of time that elapsed between this update and the previous update, useful for ensuring objects move at the same speed regardless of framerate.
+</p>
+<h5><span class="mw-headline" id="room.onCollision.28object.2C_other.29">room.onCollision(object, other)</span></h5>
+<p>Invoked twice when two objects in the room collide with each other: once with the first object as the first argument and the second object as the second agument, and once with the second object as the first argument and the first object as the second argument. Note that both elements need to have a collision radius in order to collide.
+</p>
+<h5><span class="mw-headline" id="room.onClick.28.29.2Froom.onMouseUp.28.29">room.onClick()/room.onMouseUp()</span></h5>
+<p>Invoked when the user releases their mouse 1 button.
+</p>
+<h5><span class="mw-headline" id="room.onMouseDown.28.29">room.onMouseDown()</span></h5>
+<p>Invoked when the user press down the mouse 1 button.
+</p>
+<h5><span class="mw-headline" id="room.onKeyDown.28event.29">room.onKeyDown(event)</span></h5>
+<p>Invoked when the user presses a key. "event" is an object with a property "keyCode" that indicates the key that was pressed (e.g. "W", "A"), and a function "preventDefault()" that when invoked prevents the default behavior for the key press from taking place. Certain buttons don't cause an event to occur (CTRL, SHIFT, TAB). Additionally using charCodeAt(0) can be useful for keys such as ENTER &amp; BACKSPACE
+</p>
+<pre class="prettyprint">
+room.onKeyDown = function(event)
+{
+    print(event.keyCode.charCode(0));
+    if(event.keyCode.charCodeAt(0)== 4)
+    {
+    //do something
+    }
+}
+</pre>
+<h5><span class="mw-headline" id="room.onKeyUp.28event.29">room.onKeyUp(event)</span></h5>
+<p>The same as onKeyDown, but invoked when the user lets go of a key.
+</p>
+<h3><span class="mw-headline" id="Script_Objects">Script Objects</span></h3>
+<hr />
+<h4><span class="mw-headline" id="Description_2">Description</span></h4>
+<p>Script objects, created via <a href="#room.createObject.28tag.2C_.5Battributes.5D.29">room.createObject(tag, [attributes])</a>, represent the objects that make up a room. They can be anything from images, text, sounds, links, models, etc.
+</p>
+<h4><span class="mw-headline" id="Supported_attributes">Supported attributes</span></h4>
+<p>Changing the attributes of a script object changes the attributes of the corresponding object in the room. Currently script objects do not support all of the attributes of regular elements. The supported attributes are:
+</p>
+<h5><span class="mw-headline" id="String_Attributes">String Attributes</span></h5>
+<p>"id", "js_id", "text", "image_id", "onclick", "oncollision".
+</p>
+<h5><span class="mw-headline" id="Vector_Attributes">Vector Attributes</span></h5>
+<p>"pos", "vel", "fwd", "xdir", "ydir", "zdir", "col", "scale". Each vector object has "x", "y", and "z" properties.
+</p>
+<h5><span class="mw-headline" id="Float_Attributes">Float Attributes</span></h5>
+<p>"collision_radius"
+</p>
+<h5><span class="mw-headline" id="Integer_Attributes">Integer Attributes</span></h5>
+<p>"font_size"
+</p>
+<h3><span class="mw-headline" id="The_Player_Object">The Player Object</span></h3>
+<hr />
+<h4><span class="mw-headline" id="Description_3">Description</span></h4>
+<p>"player" is another global object that is instantiated before onLoad is invoked.<br />
+Similar to the objects in "room.objects", it is an object that has the player's  attributes and allows you to modify them.<br />
+Note that since this is not created before the onLoad callback, this is not usable in the global scope.
+</p>
+<h4><span class="mw-headline" id="Properties_2">Properties</span></h4>
+<h5><span class="mw-headline" id="player.pos">player.pos</span></h5>
+<p>Read &amp; Write: Contains the vector of the player's current position.
+</p>
+<h5><span class="mw-headline" id="player.eye_pos">player.eye_pos</span></h5>
+<p>Contains the vector of the player's eye position, relative to the player position.
+</p>
+<h5><span class="mw-headline" id="player.cursor_pos">player.cursor_pos</span></h5>
+<p>Contains the vector of the player's cursor position.
+</p>
+<h5><span class="mw-headline" id="player.cursor_xdir">player.cursor_xdir</span></h5>
+<p>Contains the vector of the player's x direction.
+</p>
+<h5><span class="mw-headline" id="player.cursor_ydir">player.cursor_ydir</span></h5>
+<p>Contains the vector of the player's y direction.
+</p>
+<h5><span class="mw-headline" id="player.cursor_zdir">player.cursor_zdir</span></h5>
+<p>Contains the vector of the player's z direction.
+</p>
+<h5><span class="mw-headline" id="player.head_pos">player.head_pos</span></h5>
+<p>Contains the vector of the player's head position, relative to the eye position.
+</p>
+<h5><span class="mw-headline" id="player.view_dir">player.view_dir</span></h5>
+<p>Contains the forward vector in which the player is currently looking. Useful if the player is using an HMD.
+</p>
+<h5><span class="mw-headline" id="player.dir">player.dir</span></h5>
+<p>Read-only.Contains the forward vector in which the player's body is currently facing, as well as head tilt.
+</p>
+<h5><span class="mw-headline" id="player.userid">player.userid</span></h5>
+<p>Read-only. Contains the userid of the player.
+</p>
+<h5><span class="mw-headline" id="player.url">player.url</span></h5>
+<p>Read-only. Contains the url of the room the player is in.
+</p>
+<h5><span class="mw-headline" id="player.hmd_enabled">player.hmd_enabled</span></h5>
+<p>Read-only. Boolean. True if user is using an HMD, otherwise false.
+</p>
+<h3><span class="mw-headline" id="Leap_Motion_attributes">Leap Motion attributes</span></h3>
+<hr />
+<p><b>The following player properties can be read (note that all points are in *worldspace*):</b><br />
+</p>
+<h4><span class="mw-headline" id="player.handX_.2A">player.handX_*</span></h4>
+<p>Can be hand0 or 1.<br />
+Example:
+</p>
+<pre class="prettyprint">
+if (hand0_active) {
+    print(&quot;Hand 0 is Up!&quot;);
+}
+
+else if (hand1_active) {
+    print(&quot;Hand 1 is Up!&quot;);
+}
+</pre>
+<h5><span class="mw-headline" id="player.handX_active">player.handX_active</span></h5>
+<p>Is the hand being tracked? (boolean, left hand)
+</p>
+<h5><span class="mw-headline" id="player.handX_xdir">player.handX_xdir</span></h5>
+<p>read only hand 0 x orientation
+</p>
+<h5><span class="mw-headline" id="player.handX_ydir">player.handX_ydir</span></h5>
+<p>read only hand 0 y orientation
+</p>
+<h5><span class="mw-headline" id="player.handX_zdir">player.handX_zdir</span></h5>
+<p>read only hand 0 z orientation
+</p>
+<h5><span class="mw-headline" id="player.handX_pos">player.handX_pos</span></h5>
+<p>central palm position (Vector3, left hand)
+</p>
+<h5><span class="mw-headline" id="player.handX_p0">player.handX_p0</span></h5>
+<p>thumb endpoint position (Vector3, left hand)
+</p>
+<h5><span class="mw-headline" id="player.handX_p1">player.handX_p1</span></h5>
+<p>index endpoint position (Vector3, left hand)
+</p>
+<h5><span class="mw-headline" id="player.handX_p2">player.handX_p2</span></h5>
+<p>middle endpoint position (Vector3, left hand)
+</p>
+<h5><span class="mw-headline" id="player.handX_p3">player.handX_p3</span></h5>
+<p>fourth endpoint position (Vector3, left hand)
+</p>
+<h5><span class="mw-headline" id="player.handX_p4">player.handX_p4</span></h5>
+<p>pinky endpoint position (Vector3, left hand)
+</p>
+<hr />
+<p>These attributes can be used e.g. to grab objects and have them oriented properly in the hand by setting the Object's xdir,ydir,zdir to the appropriate hand's xdir,ydir,zdir.<br />
+Some quick code that repeatedly shows the direction of the left hand's xdir,ydir,zdir when active:
+</p>
+<pre class="prettyprint">room.update = function(delta_time) {
+    if (hand0_active) {
+        print('hand0_xdir: ' + player.hand0_xdir.x + ' ' + player.hand0_xdir.y + ' ' + player.hand0_xdir.z);
+        print('hand0_ydir: ' + player.hand0_ydir.x + ' ' + player.hand0_ydir.y + ' ' + player.hand0_ydir.z);
+        print('hand0_zdir: ' + player.hand0_zdir.x + ' ' + player.hand0_zdir.y + ' ' + player.hand0_zdir.z);
+    }
+}</pre>
+<h2><span class="mw-headline" id="Built-in_functions">Built-in functions</span></h2>
+<p>Scripts have access to several built-in functions for
+operating on the room's elements and their attributes. The functions are:
+</p>
+<h3><span class="mw-headline" id="Vector_Functions">Vector Functions</span></h3>
+<h4><span class="mw-headline" id="Vector.28x.2C_y.2C_z.29">Vector(x, y, z)</span></h4>
+<p>Beware: Setting a vector will cause a memory leak.Can be used as a regular function("Vector(1, 2, 3)") or as a constructor("new Vector(1, 2, 3)"). If no arguments are supplied, creates the zero vector. If a single number is provided, creates a vector with all of its components initialized to that number. If a single object is provided, creates a vector from the "x", "y", and "z" properties of that object, allowing you to clone an existing vector. Can use "V" instead of "Vector" as a shortform for convenience.
+</p>
+<h4><span class="mw-headline" id="translate.28v1.2C_v2.29">translate(v1, v2)</span></h4>
+<p>Beware: Translate function causes a memory leak. returns a new vector that is the result of adding the v1 and v2 vectors together.
+</p>
+<h4><span class="mw-headline" id="scalarMultiply.28v1.2C_n_or_v2.29">scalarMultiply(v1, n or v2)</span></h4>
+<p>Beware: Translate function causes a memory leak. returns a new vector that is the result of scalar multiplying v1 with the second argument. If the second argument is a number n, then the result is a vector with components (x1 * n, y1 * n, z1 * n). If the second argument is a vector with components (x2, y2, z2), then the result is a vector with components (x1 * x2, y1 * y2, z1 * z2).
+</p>
+<h4><span class="mw-headline" id="cross.28v1.2C_v2.29">cross(v1, v2)</span></h4>
+<p>Beware: cross function causes a memory leak. returns the cross product of v1 and v2.
+</p>
+<h4><span class="mw-headline" id="normalized.28v.29">normalized(v)</span></h4>
+<p>Beware: normalized function causes a memory leak.returns a normalized version of the given vector.
+</p>
+<h4><span class="mw-headline" id="distance.28p1.2C_p2.29">distance(p1, p2)</span></h4>
+<p>Distance does not cause a memory leak. returns the distance between the two given points(vectors).
+</p>
+<h3><span class="mw-headline" id="Miscellaneous_Functions">Miscellaneous Functions</span></h3>
+<h4><span class="mw-headline" id="removeKey.28dictionary.2C_key.29">removeKey(dictionary, key)</span></h4>
+<p>Removes a key-value pair from the given dictionary by key.
+</p>
+<h4><span class="mw-headline" id="print.28value.29">print(value)</span></h4>
+<p>Logs the given value in the debugger output.
+</p>
+<h4><span class="mw-headline" id="debug.28value.29">debug(value)</span></h4>
+<p>Logs the given value in the debugger output and returns it. Useful for examinining results of expressions without having to abstract them into a variable and print them.
+</p>
+<h4><span class="mw-headline" id="uniqueId.28.29">uniqueId()</span></h4>
+<p>returns a unique number that you can use, say in specifying the js_id of a new object.
+</p>
+<h2><span class="mw-headline" id="Known_Bugs.2FCaveats">Known Bugs/Caveats</span></h2>
+<p>- Activating debugger immediately after removing an object referenced
+outside the objects hash can cause a crash.
+</p><p>- Attempting to use the unary minus operator on a vector causes a crash.
+</p><p>- Comparing vectors is done by reference, not by value.
+</p><p><br />
+</p>
+
+</div>
+</body>
+
+<!-- Mirrored from vrsites.com/hub1/janus_script/ by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 04 Aug 2015 00:41:58 GMT -->
+</html>
