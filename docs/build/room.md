@@ -305,7 +305,7 @@ Here is an example Object, which is an instance of an AssetObject with id "room_
 
 ***
 
-# Text
+## Text
 
 The Text tag allows the addition of 3D text to the room.
 
@@ -348,7 +348,7 @@ The following example shows a user placing text in the world.
 
 ***
 
-# Paragraph
+## Paragraph
 
 The Paragraph tag allows the addition a generated image which contains text, use this instead of "Text" when you want to display a large amount of text within the room (either this, or create your own image with text in it).
 
@@ -394,7 +394,7 @@ Like with the text tag, the paragraph's text content is placed between the openi
 
 ***
 
-# Link
+## Link
 
 A Link creates a portal which can be used to connect to another FireBoxRoom, or any other webpage specified with a URL.
 
@@ -410,4 +410,326 @@ Here is an example Link.
 </Room>
 ```
 
+**url** (default "") - specify the URL to link to
+
+**title** (default "") - a title for the page the URL links to (shown until it is loaded)
+
+**pos** (default "0 0 0") - specify the position (anchor point is centered horizontally, and at the bottom vertically)
+
+**fwd** (default "0 0 1") - specify the orientation (or use xdir, ydir, zdir, defaults "1 0 0", "0 1 0", "0 0 1")
+
+**rotation** - (default "0 0 0") Specifies an Eulerian rotation in degrees.
+
+**rotation_order** - (default "xyz") A string which defines the order of each of the x, y and z axes associated with the "rotation" attribute. Possible settings may be any combination of the letters "xyz".
+
+**col** (default "#ffffff") - Allows the user to change the colour of the associated element.
+
+**scale** (default "1 1 1") - scale the object along each of its x (horizontal), y (vertical) and z (forward) axes
+
+**draw_glow** (default "true") - whether to show the portal glow along the boundary
+
+**draw_text** (default "true") - whether to show the text at the top of the portal for URL and page title
+
+**auto_load** (default "false") - if true, the room that the portal links to will be loaded immediately; if false, the portal must first be clicked before it will load the room
+
+**thumb_id** (default "") - if set to the id of an AssetImage, a "thumbnail image" will be displayed for the portal, useful for indicating what lies through it before it's loaded. The AssetImage content is expected to be square (width and height equal), and the portal will crop the image according to its dimensions to preserve the aspect ratio.
+
+**draw_layer** (default 0) - Allows the user to manually sort the depth order of an object. For instance, an object of depth 0 will draw above an object of depth 1. Priority may be negative. Each priority group is also sorted based on distance.
+
+**mirror** (default "false") - Boolean that determines whether or not the portal will be a mirror. To mirror the room's contents, the url of the link must be that of the containing room.
+
+***
+
+## Image
+
+An Image is represented in 3D as a rectangular shape with thickness 1/10 of the maximum width or height. The appearance is much like art done on canvas wrapped around a wooden frame. The dimensions are such that the aspect ratio of the image is preserved. Transparent images are supported and can be used to interesting effect.
+
+![Images inside JanusVR](http://janusvr.com/docs/build/roomtag/img/image.jpg)
+
+Example:
+
+Here is an example Image.
+
+```
+<Room>
+ <Image id="caffeine_img" pos="-10 2 -5" fwd="1 0 0" scale="1.75 1.75 1" ></Image>
+</Room>
+```
+
+#### Attributes
+
+**id** (default "") - set to the id of an AssetImage
+
+**pos** (default "0 0 0") - specify the position (anchor point is centered horizontally, and at the bottom vertically)
+
+**fwd** (default "0 0 1") - specify the orientation (or use xdir, ydir, zdir, defaults "1 0 0", "0 1 0", "0 0 1")
+
+**rotation** - (default "0 0 0") Specifies an Eulerian rotation in degrees.
+
+**rotation_order** - (default "xyz") A string which defines the order of each of the x, y and z axes associated with the "rotation" attribute. Possible settings may be any combination of the letters "xyz".
+
+**col** (default "#ffffff") - Allows the user to change the colour of the associated element.
+
+**scale** (default "1 1 1") - scale the object along each of its x (horizontal), y (vertical) and z (forward) axes
+
+**locked** (default "false") - if "true", prevents modification of attributes
+
+**lighting** (default "true") - if "true", uses the default shading which includes diffuse and specular components
+
+**draw_layer** (default 0) - Allows the user to manually sort the depth order of an object. For instance, an object of depth 0 will draw above an object of depth 1. Priority may be negative. Each priority group is also sorted based on distance.
+
+***
+
+## Sound
+
+A Sound plays a specific AssetSound when the player enters a rectangle defined on the XZ plane, which is used to "trigger" the sound. One can also specify whether the sound should loop once triggered, or only play back once. To get ambient sound or music to play for the room upon entry, use a very large rectangle to trigger the sound (or at least contains the room's entrance portal), and set the sound to loop.
+
+Example:
+
+Here is an example Sound, which plays "music_sound" on loop when the player's X position is between -100 and 100, and Z position is between -50 and 50.
+
+```
+<Room>
+  <Sound id="music_sound" rect="-100 -50 100 50" loop="true" ></Sound>
+</Room>
+```
+
+**id** - set to the id of an AssetSound
+
+**rect** (default "0 0 0 0") - presently, defines two opposite 2D corners of a rectangle which triggers the sound to play, the format is "X1 Z1 X2 Z2" (note that since the rectangle is 2D, the player's Y-position does not matter for triggering the sound, note also pressing "C" will toggle showing coordinates for your position and direction which is useful to determine the rectangle's bounds)
+
+**loop** (default "false") - normally the sound plays only one time, but when this attribute is set to true, the sound will play indefinitely until the player leaves the room
+
+**play_once** (default "false") - when set to true, the given Sound will only play one time for the duration of the visit. If set to "false" (the default), the sound will play once each time the player enters the room.
+
+**pos** (default "0 0 0") - when set to any other value than the default, the Sound is 3D spatialized (requires version 45+)
+
+**dist** (default "1.0") - distance attenuation setting for 3D spatialized sound (requires version 45+)
+
+**gain** (default "1.0") - gain setting for 3D spatialized sound (requires version 45+)
+
+**pitch** (default "1.0") - pitch setting for 3D spatialized sound (requires version 45+)
+
+***
+
+## Video
+
+A Video plays a specific AssetVideo. The video can be controlled by left clicking on it (stop and play). You can specify whether the video should loop once playing, and whether the video should start playing automatically when the room is entered. Multiple Video's can be associated with one AssetVideo without any extra performance penalty (useful if you want the same video to appear at multiple locations in the room). The video will appear in the room as a rectangle, and the ratio of the height and width dimensions will match that of the video itself, preserving aspect ratio. All videos in a room are stopped automatically when the user leaves the room.
+
+![AssetVideo](http://janusvr.com/docs/build/roomtag/img/video.jpg)
+
+Example:
+
+Here is an example Video, which plays "vid_id" within a rectangle positioned at "0 2 -5" and facing "0 0 1".
+
+```
+<Room>
+  <Video id="vid_id" pos="0 2 -5" fwd="0 0 1" ></Video>
+</Room>
+```
+
+#### Attributes
+
+**id** - set to the id of an AssetVideo
+
+**thumb_id** (default "") - set to the id of an AssetImage, to show an image/thumbnail for this video while it is not playing (the AssetImage can even animate)
+
+**pos** (default "0 0 0") - specify the position (anchor point is centered horizontally and vertically)
+
+**fwd** (default "0 0 1") - specify the orientation (or use xdir, ydir, zdir, defaults "1 0 0", "0 1 0", "0 0 1")
+
+**rotation** - (default "0 0 0") Specifies an Eulerian rotation in degrees.
+
+**rotation_order** - (default "xyz") A string which defines the order of each of the x, y and z axes associated with the "rotation" attribute. Possible settings may be any combination of the letters "xyz".
+
+**col** (default "#ffffff") - Allows the user to change the colour of the associated element.
+
+**scale** (default "1 1 1") - scale the video along each of its x (horizontal), y (vertical) and z (forward) axes
+
+**locked** (default "false") - if "true", prevents modification of attributes
+
+**lighting** (default "true") - if "true", uses the default shading which includes diffuse and specular components
+
+**draw_layer** (default 0) - Allows the user to manually sort the depth order of an object. For instance, an object of depth 0 will draw above an object of depth 1. Priority may be negative. Each priority group is also sorted based on distance.
+
+**gain** (default "1.0") - gain setting for audio emitted by video.
+
+***
+
+## Ghost
+
+A Ghost refers to an instance of a recorded avatar within the room. Properties for the ghost invariant to the recording, such as scale, colour, and custom geometry used to represent the ghost can all be specified. When no geometry is specified for the "head" and "body" parts of the ghost, a default boxy appearance is used. Since a Ghost is a recording, there are options to set the recording to loop and to auto_play on room entry.
+
+![AssetGhost](http://janusvr.com/docs/build/roomtag/img/ghost.jpg)
+
+Example:
+
+Here is a simple example of a Ghost.
+
+```
+<FireBoxRoom>
+ <Assets>
+  <AssetGhost id="ghost" src="ghost.txt" ></AssetGhost>
+ </Assets>
+ <Room>
+  <Ghost id="ghost" auto_play="true" ></Ghost>
+ </Room>
+</FireBoxRoom>
+```
+
+Here is a more complicated and complete example, where AssetObjects are used to define the geometry for the head and body of the ghost.
+
+```
+<FireBoxRoom>
+ <Assets>
+  <AssetObject id="rikku_head" src="rikku_ghost/rikku_head.obj" mtl="rikku_ghost/rikku_head.mtl" ></AssetObject>
+  <AssetObject id="rikku_body" src="rikku_ghost/rikku_body.obj" mtl="rikku_ghost/rikku_body.mtl" ></AssetObject>
+  <AssetShader id="rikku_shader" src="rikku_ghost/rikku_shader.txt" ></AssetShader>
+  <AssetGhost id="ghost1" src="ghost1.txt" ></AssetGhost>
+ </Assets>
+ <Room>
+  <Ghost id="ghost1" shader_id="rikku_shader" head_id="rikku_head" head_pos="0 1 0" body_id="rikku_body" scale="1.5 1.5 1.5" cull_face="none" loop="true" auto_play="true" ></Ghost>
+ </Room>
+</FireBoxRoom>
+```
+
+#### Attributes
+
+**id** - set to the id of an AssetGhost
+
+**cull_face** (default "back") - options are "back", "front", "none" which specify what polygons are culled when the Object is rendered (may be useful when using custom geometry for ghost's body and head)
+
+**col** (default "#ffffff") - Allows the user to change the colour of the associated element.
+
+**scale** (default "1 1 1") - scale the ghost along each of its x (horizontal), y (vertical) and z (forward) axes
+
+**locked** (default "false") - if "true", prevents modification of attributes
+
+**head_id** (default "") - the id of an AssetObject which will be used to define the geometry for the head of the ghost
+
+**head_pos** (default "0 1 0") - specify the relative position of the head in the model (the point of articulation for the head relative to the body, where the centre point between the feet should be at "0 0 0")
+
+**eye_pos** (default "0 1.6 0") - specify relative to the avatar model, where the central eye position should be
+
+**eye_ipd** (default "0") - specify the virtual IPD (the spacing between the eyes of the virtual character, units are in metres)
+
+**body_id** (default "") - the id of an AssetObject which will be used to define the geometry for the body of the ghost
+
+**shader_id** (default "") - set to the id of an AssetShader to shade the Ghost with a GLSL fragment shader (see the section on AssetShaders for more information on defining an AssetShader)
+
+**loop** (default "false") - normally the ghost recording plays only one time, but when this attribute is set to true, the ghost recording will play indefinitely until the player leaves the room
+
+**auto_play** (default "false") - when set to true, the ghost recording will start playing immediately when the user enters the Room. When false, the user clicks the ghost to play the recording.
+
+**lighting** (default "true") - if "true", uses the default shading which includes diffuse and specular components
+
+**userid_pos** (default "0 0 0") - an offset to relocate the userid of the Ghost (useful if the geometry of the avatar blocks it)
+
+**draw_layer** (default 0) - Allows the user to manually sort the depth order of an object. For instance, an object of depth 0 will draw above an object of depth 1. Priority may be negative. Each priority group is also sorted based on distance.
+
+***
+
+## Particle
+
+Particle creates a particle system, where each particle is most often a quad rotated to face the user, but each particle can be any kind of geometry defined by specifying an AssetObject. To set the texture for the quad, set the image_id attribute. To specify geometry other than a quad to use for each particle, specify the id attribute which matches an AssetObject. For each particle, it's initial position, velocity, acceleration, colour and scale can be specified, as well as an additional random attribute which will be added, covered below.
+
+![Particles](http://janusvr.com/docs/build/roomtag/img/particle.jpg)
+
+Example:
+
+Here is an example which creates a "waterfall" effect.
+
+```
+<FireBoxRoom>
+ <Assets>
+  <AssetImage id="water_particle" src="water.png" ></AssetImage>
+ </Assets>
+ <Room>
+  <Particle pos="-0.85 4 -0.25" scale="0.1 0.1 0.1" vel="-1 0 0" accel="0 -9.8 0" rate="100" count="200" lighting="false" image_id="water_particle" duration="1.5" loop="true" rand_pos="0 0.1 0.5" rand_vel="-0.5 0 0" rand_accel="0 0.5 0" col="0.5 0.5 0.5" rand_col="0 0 0.3" ></Particle>
+ </Room>
+</FireBoxRoom>
+```
+
+**image_id** (default "") - set to the id of an AssetImage to use as the texture for each particle
+
+**id** (default "") - set to the id of an AssetObject to use custom geometry instead of a textured quad (Note: specifying an AssetObject to use for each particle is optional, a textured quad is generally used)
+
+**rate** (default "1") - how many particles to generate per second
+
+**count** (default "0") - the total number of particles allowed by this system at any time
+
+**duration** (default "1.0") - the lifetime in seconds of a particle
+
+**fade_in** (default "1.0") - the number of seconds as particle is created that the alpha value should linearly fade from 0 to 1
+
+**fade_out** (default "1.0") - the number of seconds prior to particle removal that the alpha value should linearly fade from 1 to 0
+
+**pos** (default "0 0 0") - initial position for generated particles
+
+**vel** (default "0 0 0") - initial velocity for generated particles
+
+**accel** (default "0 0 0") - initial acceleration for generated particles
+
+**col** (default "#ffffff") - Allows the user to change the colour of the associated element.
+
+**scale** (default "1 1 1") - initial scale for generated particles
+
+**rand_pos** (default "0 0 0") - an initial random position that is added to the pos value, where the contribution is random (that is, for each component x,y,z, a random factor between 0 and 1 is generated and multipled before adding rand_pos to pos)
+
+**rand_vel** (default "0 0 0") - an initial random position that is added to the vel value, where the contribution is random (that is, for each component x,y,z, a random factor between 0 and 1 is generated and multipled before adding rand_vel to vel)
+
+**rand_accel** (default "0 0 0") - an initial random position that is added to the accel value, where the contribution is random (that is, for each component x,y,z, a random factor between 0 and 1 is generated and multipled before adding rand_accel to accel)
+
+**rand_col** (default "0 0 0") - an initial random position that is added to the col value, where the contribution is random (that is, for each component x,y,z, a random factor between 0 and 1 is generated and multipled before adding rand_col to col)
+
+**rand_scale** (default "0 0 0") - an initial random position that is added to the scale value, where the contribution is random (that is, for each component x,y,z, a random factor between 0 and 1 is generated and multipled before adding rand_scale to scale)
+
+**lighting** (default "true") - if "true", uses the default shading which includes diffuse and specular components
+
+**loop** (default "false") - if set to "false", only count particles will be generated and no more, but if set to "true", particles will continue to be generated forever
+
+**draw_layer** (default 0) - Allows the user to manually sort the depth order of an object. For instance, an object of depth 0 will draw above an object of depth 1. Priority may be negative. Each priority group is also sorted based on distance.
+
+**emit_local** (default "false") - if true, emitted particles emit and move relative to the transform of the Particle emitter. If false, particles emit in the global coordinate system and are not affected by any subsequent transform changes in the Particle emitter.
+
+**emitter_id** - the id of an AssetObject whose mesh vertices are used at random to define initial emitted particle positions. 
+
+***
+
+## Light
+
+Light creates a lighting element which casts on to any geometry with the lighting attribute set to true. This in turn can be used to create dynamic lighting effects like sirens, lamps, spotlights and the like.
+
+Example:
+
+The following creates a spotlight.
+
+```
+<FireBoxRoom>
+ <Assets>
+
+ </Assets>
+ <Room>
+  <Light js_id="14" pos="0 7.5 6.7" xdir="0 0 0" ydir="0 0 0" zdir="0 -1 0" col="#ffe5bf" light_intensity="100" light_cone_angle="0.8" light_cone_exponent="40" light_range="12" ></Light>
+ </Room>
+</FireBoxRoom>
+```
+
+**pos** (default "0 0 0") - specify the position (anchor point is centered horizontally, and at the bottom vertically)
+
+**fwd** (default "0 0 1") - specify the orientation (or use xdir, ydir, zdir, defaults "1 0 0", "0 1 0", "0 0 1")
+
+**rotation** - (default "0 0 0") Specifies an Eulerian rotation in degrees.
+
+**rotation_order** - (default "xyz") A string which defines the order of each of the x, y and z axes associated with the "rotation" attribute. Possible settings may be any combination of the letters "xyz".
+
+**col** (default "#ffffff") - Allows the user to change the colour of the associated element.
+
+**light_intensity** (default "1.0") - Brightness at the source of the light, with distance-squared falloff.
+
+**light_cone_angle** (default "0") - Defines the shape of the light. Setting to -1 disables the light. Setting to 0 specifies a point light (default). Between 0 and 1, specifies the cosine of the cone/spotlight angle (closer to 0 is wider, closer to 1 is more narrow). Lastly, setting to 1 specifies a direction light, which lights the entire environment (ignores the light_range setting).
+
+**light_cone_exponent** (default "1.0") - Modifies intensity falloff from center to cone's boundary.
+
+**light_range** (default "0.5") - The maximum distance of the influence of the light, in meters (use as small a value as possible to optimize GPU performance, as smaller values reduce the number of fragments that do lighting calculations).
 
