@@ -17,7 +17,7 @@ The following example defines an AssetImage named "tree" and then places a copy 
 </FireBoxRoom>
 ```
 
-### Attributes
+#### Attributes
 
 **Skybox** - By default, a "sky" for the Room will be randomly selected amongst a small set which are packaged with JanusVR. Optionally, one can define a custom skybox for the Room. 
 
@@ -213,6 +213,201 @@ Below is an example of a custom radiance and irradiance map being defined.
 </Room> 
 ```
 
+***
 
+# Object
+
+An Object refers to an instance of 3D geometry placed in the room. Objects can be used to define both the geometry of the room, as well as the boundary for the room, by using the collision_id attribute, detailed below.
+
+![tree](http://janusvr.com/docs/build/roomtag/img/object.jpg)
+
+Example:
+
+Here is an example Object, which is an instance of an AssetObject with id "room_adventure", which is also used as a collision model. It is locked, at position "0 0 0", faces direction "0 0 1", and will be coloured dark green.
+
+```
+<Room>
+ <Object id="room_adventure" collision_id="room_adventure" locked="true" pos="0 0 0" xdir="1 0 0" ydir="0 1 0" zdir="0 0 1" scale="1 1 1" col="0.2 0.3 0.2" ></Object>
+</Room>
+```
+
+#### Attributes
+
+**id** - set to the id of an AssetObject. This attribute also accepts the following primitive values: "capsule", "cone", "cube", "cylinder", "pipe", "plane", "pyramid", "sphere", "torus".
+
+**pos** (default "0 0 0") - specify the position (anchor point is centered horizontally, and at the bottom vertically)
+
+**fwd** (default "0 0 1") - specify the orientation (or use xdir, ydir, zdir, defaults "1 0 0", "0 1 0", "0 0 1")
+
+**vel** (default "0") - Specifies the velocity of the object.
+
+**rotation** - (default "0 0 0") Specifies an Eulerian rotation in degrees.
+
+**rotation_order** - (default "xyz") A string which defines the order of each of the x, y and z axes associated with the "rotation" attribute. Possible settings may be any combination of the letters "xyz".
+
+**col** (default "#ffffff") - Allows the user to change the colour of the associated element.
+
+**scale** (default "1 1 1") - scale the object along each of its x (horizontal), y (vertical) and z (forward) axes
+
+**locked** (default "false") - if "true", prevents modification of attributes
+
+**cull_face** (default "back") - options are "back", "front", "none" which specify what polygons are culled when the Object is rendered
+
+**rotate_axis** (default "0 1 0") - defines an axis of rotation
+
+**rotate_deg_per_sec** (default "0") - specifies the number of degrees to rotate per second about the axis defined by rotate_axis.
+
+**video_id** (default "") - set to the id of an AssetVideo to shade the Object using frames of the video as a texture (see the section on AssetVideos for more information on defining an AssetVideo). Also note that the Object if clicked will serve as a control to start/stop the AssetVideo.
+
+**image_id** (default "") - set to the id of an AssetImage to shade the Object using the image as a texture (see the section on AssetImages for more information). Note that the AssetImage will work even if SBS/UO formatted, or has animation.
+
+**shader_id** (default "") - set to the id of an AssetShader to shade the Object with a GLSL fragment shader (see the section on AssetShaders for more information on defining an AssetShader)
+
+**websurface_id** (default "") - set to the id of an AssetWebSurface to texture the Object with a 2D web view (see the section on AssetWebSurfaces for more information on defining an AssetWebSurface)
+
+**thumb_id** (default "") - set to the id of an AssetImage, to show an image/thumbnail when an attached websurface is not selected (the AssetImage can animate)
+
+**lighting** (default "true") - if "true", uses the default shading which includes diffuse and specular components
+
+**anim_id** (default "") - set to the id of an AssetObject containing an animation
+
+**anim_speed** (default "1.0") - changes the rate of playback of the animation defined by anim_id
+
+**loop** (default "false") - if set to true, an animation will repeat from the start once completed
+
+**visible** (default "true") - if set to false, the geometry for the Object is not visible/rendered
+
+**collision_ccdmotionthreshold** (default 1.0) - Defines a minimum threshold for object velocity (defined in metres/sec) where continuous collision detection is used. (Objects with a velocity below this threshold use discrete instead)
+
+**collision_ccdsweptsphereradius** (default 0.0) - When continuous collision detection is used, this values defines the radius of a swept sphere volume used to efficiently calculate collision with other objects in the scene.
+
+**collision_id** (default "") - when set to the id of an AssetObject, collision testing is performed with that AssetObject. This makes it possible to define the boundary for the room using one's own custom geometry. (Note that the id and collision_id attributes can be set differently - the collision_id may refer to an AssetObject which is a low-polygon count version of a more detailed model, such as a bounding cube or sphere. Note also that collision tests are not performed if the player is not within the bounding volume of the AssetObject.)
+
+**collision_trigger** (default "false") - When set to true, registers the object into the physics system so that it can be tested for collisions, but allows other objects to pass through it as if it were not a solid object.
+
+**collision_radius** (default "0") - when set to a value greater than zero, an invisible cylinder at the specified radius prevents the player from passing through this Object (note that presently, this ignores the vertical or Y-position of the player, the cylinder extends in both directions along the Y-axis infinitely)
+
+**collision_pos** (default "0 0 0") - Defines the collision mesh's x y and z offset from the parent object
+
+**collision_scale** (default "1 1 1") - Scales the collision mesh along each of its x (horizontal), y (vertical) and z (forward) axes
+
+**collision_static** (boolean, default "true") - Whether this Object is motionless/immovable (e.g. set to "true" for a wall or obstacle like the floor, set to "false" for a projectile).
+
+**teleport_id** (default "") - if set to an AssetObject's id, will constrain teleportation in the HTC Vive to the defined mesh.
+
+**draw_layer** (default 0) - Allows the user to manually sort the depth order of an object. For instance, an object of depth 0 will draw above an object of depth 1. Priority may be negative. Each priority group is also sorted based on distance.
+
+**onclick** (default "") - Allows you to execute Javascript once the object is clicked upon by the user.
+
+**cubemap_radiance_id** (default "") - Set to the id of an AssetImage to use it as the cubemap radiance for this object. Must be a .dds file. Look into the Room Tag: Global Environmental Probe section of the documentation for more info on this.
+
+**cubemap_irradiance_id** (default "") - Set to the id of an AssetImage to use it as the cubemap irradiance for this object. Must be a .dds file. Look into the Room Tag: Global Environmental Probe section of the documentation for more info on this.
+
+***
+
+# Text
+
+The Text tag allows the addition of 3D text to the room.
+
+![Drunken Surfer](http://janusvr.com/docs/build/roomtag/img/text.jpg)
+
+Example:
+
+The following example shows a user placing text in the world.
+
+```
+<FireBoxRoom>
+ <Assets>
+
+ </Assets>
+ <Room>
+  <Text pos="5 5 5" fwd="0 0 1" col="0.5 0.8 0.5" scale="2 2 2" locked="false">example text</Text>
+ </Room>
+</FireBoxRoom>
+```
+
+#### Attributes
+
+**pos** (default "0 0 0") - specify the position (anchor point is centered horizontally, and at the bottom vertically)
+
+**fwd** (default "0 0 1") - specify the orientation (or use xdir, ydir, zdir, defaults "1 0 0", "0 1 0", "0 0 1")
+
+**rotation** - (default "0 0 0") Specifies an Eulerian rotation in degrees.
+
+**rotation_order** - (default "xyz") A string which defines the order of each of the x, y and z axes associated with the "rotation" attribute. Possible settings may be any combination of the letters "xyz".
+
+**col** (default "#ffffff") - Allows the user to change the colour of the associated element.
+
+**scale** (default "1 1 1") - scale the object along each of its x (horizontal), y (vertical) and z (forward) axes
+
+**locked** (default "false") - if "true", prevents modification of attributes
+
+**lighting** (default "true") - if "true", uses the default shading which includes diffuse and specular components
+
+**draw_layer** (default 0) - Allows the user to manually sort the depth order of an object. For instance, an object of depth 0 will draw above an object of depth 1. Priority may be negative. Each priority group is also sorted based on distance.
+
+***
+
+# Paragraph
+
+The Paragraph tag allows the addition a generated image which contains text, use this instead of "Text" when you want to display a large amount of text within the room (either this, or create your own image with text in it).
+
+![Paragraph](http://janusvr.com/docs/build/roomtag/img/paragraph.jpg)
+
+Example:
+
+Like with the text tag, the paragraph's text content is placed between the opening and closing Paragraph tags. Here is an example which adds a Paragraph to the room at position "5 5 5" and facing direction "0 0 1".
+
+```
+<Room>
+ <Paragraph pos="5 5 5" fwd="0 0 1" col="0.5 0.8 0.5" scale="2 2 2" locked="false">example paragraph's text</Paragraph>
+</Room>
+```
+
+#### Attributes
+
+**pos** (default "0 0 0") - specify the position (anchor point is centered horizontally, and at the bottom vertically)
+
+**fwd** (default "0 0 1") - specify the orientation (or use xdir, ydir, zdir, defaults "1 0 0", "0 1 0", "0 0 1")
+
+**rotation** - (default "0 0 0") Specifies an Eulerian rotation in degrees.
+
+**rotation_order** - (default "xyz") A string which defines the order of each of the x, y and z axes associated with the "rotation" attribute. Possible settings may be any combination of the letters "xyz".
+
+**col** (default "#ffffff") - Allows the user to change the colour of the associated element.
+
+**scale** (default "1 1 1") - scale the object along each of its x (horizontal), y (vertical) and z (forward) axes
+
+**locked** (default "false") - if "true", prevents modification of attributes
+
+**lighting** (default "true") - if "true", uses the default shading which includes diffuse and specular components
+
+**draw_layer** (default 0) - Allows the user to manually sort the depth order of an object. For instance, an object of depth 0 will draw above an object of depth 1. Priority may be negative. Each priority group is also sorted based on distance.
+
+**font_size** (default "16") - specify the font size for the text
+
+**text_col** (default "#000000") - Specifies the color of the paragraph's text. Uses the same formatting as any col attribute.
+
+**back_col** (default "#ffffff") - Specifies the color of the paragraph's background. Uses the same formatting as any col attribute.
+
+**back_alpha** (default "1") - specify the opacity (non-transparency) of the background
+
+***
+
+# Link
+
+A Link creates a portal which can be used to connect to another FireBoxRoom, or any other webpage specified with a URL.
+
+![Portal links](http://janusvr.com/docs/build/roomtag/img/link.jpg)
+
+Example:
+
+Here is an example Link.
+
+```
+<Room>
+ <Link pos="66.7 -5 -9" url="horses.html" col="0.6 1 0.6" scale="1.8 3.2 1" title="A Strange Room Full of Horse Pictures" ></Link>
+</Room>
+```
 
 
