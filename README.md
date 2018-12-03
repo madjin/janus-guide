@@ -31,6 +31,8 @@ Useful links:
 - [Interactive Tutorials](https://github.com/jbaicoianu/janusvr-tutorials)
 - [Vesta Templates](https://vesta.janusvr.com/search/template/1)
 
+***
+
 To do:
 
 - update all the pictures
