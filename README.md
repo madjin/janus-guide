@@ -1,7 +1,7 @@
 # janus-guide
 Collection of new and old documentation for JanusVR.
 
-Work in progress to convert HTML docs to markdown so the community can help improve it.
+Work in progress to convert HTML docs to markdown so the community can help maintain and improve it.
 
 Table of Contents:
 
@@ -29,3 +29,13 @@ Useful links:
 - [Janus Cheat sheet](https://janusguide.glitch.me/)
 - [Janus Examples](https://github.com/janusvr/janusvr-examples)
 - [Interactive Tutorials](https://github.com/jbaicoianu/janusvr-tutorials)
+- [Vesta Templates](https://vesta.janusvr.com/search/template/1)
+
+To do:
+
+- update all the pictures
+- cover missing features
+- add more information about light / shadow in a blog
+- add links to examples for people to experiment
+- spicy tutorials with links to the 'ingredients' in recipe
+- test frameworks to autogen beautiful themed documentation sites
