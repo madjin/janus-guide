@@ -11,6 +11,7 @@ Build
 - [Javascript](https://github.com/madjin/janus-guide/blob/master/docs/build/javascript.md)
 - [Rooms](https://github.com/madjin/janus-guide/blob/master/docs/build/room.md)
 - [Server](https://github.com/madjin/janus-guide/blob/master/docs/build/server.md)
+- [Guide](https://github.com/madjin/janus-guide/blob/master/guide/cheatsheet.md)
 
 Blog
 
