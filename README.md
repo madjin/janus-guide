@@ -11,7 +11,6 @@ Build
 - [Javascript](https://github.com/madjin/janus-guide/blob/master/docs/build/javascript.md)
 - [Rooms](https://github.com/madjin/janus-guide/blob/master/docs/build/room.md)
 - [Server](https://github.com/madjin/janus-guide/blob/master/docs/build/server.md)
-- [Guide](https://github.com/madjin/janus-guide/blob/master/guide/cheatsheet.md)
 
 Blog
 
@@ -27,7 +26,7 @@ Useful links:
 
 - [JanusVR Documentation](http://janusvr.com/docs/build/introtojml/index.html)
 - [JanusWeb Documentation](https://github.com/jbaicoianu/janusweb/wiki)
-- [Janus Cheat sheet](https://janusguide.glitch.me/)
+- [Janus Cheat sheet](https://github.com/madjin/janus-guide/blob/master/guide/cheatsheet.md)
 - [Janus Examples](https://github.com/janusvr/janusvr-examples)
 - [Interactive Tutorials](https://github.com/jbaicoianu/janusvr-tutorials)
 - [Vesta Templates](https://vesta.janusvr.com/search/template/1)
