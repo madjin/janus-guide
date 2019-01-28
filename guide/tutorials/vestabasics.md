@@ -37,9 +37,11 @@ Good folder management will go a long way to expanding your collection of ready 
 
 #### Step 4: Launch site with Janus
 
-The janus native browser is currently the best editor for building the webvr site so we're going to open it and go over basic commands. The quick way to launch janus from Vesta is to click the small icon on the top left of the Vesta widget underneath popout.
+The janus native browser is currently the best editor for building the webvr site so we're going to open it and go over basic commands. Quick tip: if you have janusvr installed from steam, a quick way to launch the site in native from Vesta is to click the small icon on the top left of the Vesta widget underneath popout. 
 
 ![Click the janus icon on the top left](https://i.imgur.com/jp1kwwn.jpg)
+
+The other way is to open the site is to simply open janusvr, and drag the url into the window or copy paste it into the address bar.
 
 Then make sure you've enabled edit-mode in settings: <http://janusvr.com/docs/learn/application/index.html#settings>
 
@@ -60,6 +62,7 @@ You can drag and drop a file from any external window into Janus, try dragging t
 
 Now lets go over some basic keycommands for editing [rmb/lmb + wasdqe + tab + 1234]: <http://janusvr.com/docs/build/interactiveediting/index.html>
 
+![Keyboard map for interactive editing](https://i.imgur.com/ktHmFnL.jpg)
 
 To manipulate an object, right click to select (sometimes it's easier to hold down right click and let go when its over the object you want to select) then try pressing the keys QWEASD to move it around. The mouse can also be used to move things around but is usually less accurate.
 
