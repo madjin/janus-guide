@@ -42,4 +42,6 @@ If you have a paid membership on Vesta you are given early access to the DCL con
 
 #### Step 4: Preview in DCL
 
+This step is straight forward if you already have the SDK installed. Move the game.ts you downloaded from Vesta into the src folder in your working directory (can overwrite the current file if there is one) then hit `dcl start -b`. For more info see here: <https://docs.decentraland.org/getting-started/preview-scene/>
+
 ![Decentraland preview](https://i.imgur.com/pwcBPk7.jpg)
