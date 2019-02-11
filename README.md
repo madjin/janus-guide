@@ -25,7 +25,7 @@ JanusWeb
 Useful links:
 
 - [JanusVR Documentation](http://janusvr.com/docs/build/introtojml/index.html)
-- [JanusWeb Documentation](https://github.com/jbaicoianu/janusweb/wiki)
+- [JanusWeb Wiki](https://github.com/jbaicoianu/janusweb/wiki)
 - [Janus Cheat sheet](https://github.com/madjin/janus-guide/blob/master/guide/cheatsheet.md)
 - [Janus Examples](https://github.com/janusvr/janusvr-examples)
 - [Interactive Tutorials](https://github.com/jbaicoianu/janusvr-tutorials)
