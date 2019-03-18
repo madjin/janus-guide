@@ -12,9 +12,11 @@ Build
 - [Rooms](https://github.com/madjin/janus-guide/blob/master/docs/build/room.md)
 - [Server](https://github.com/madjin/janus-guide/blob/master/docs/build/server.md)
 
-Blog
+Guides
 
 - [Unity to JanusVR](https://github.com/madjin/janus-guide/blob/master/docs/blog/unity.md)
+- [Vesta Basics](https://github.com/madjin/janus-guide/blob/master/guide/tutorials/vestabasics.md)
+- [Collision Meshes](https://github.com/madjin/janus-guide/blob/master/guide/tutorials/Collision-Meshes.md)
 
 JanusWeb
 
@@ -24,8 +26,8 @@ JanusWeb
 
 Useful links:
 
-- [JanusVR Documentation](http://janusvr.com/docs/build/introtojml/index.html)
-- [Janus Cheat sheet](https://github.com/madjin/janus-guide/blob/master/guide/cheatsheet.md)
+- [JML Documentation](http://janusvr.com/docs/build/introtojml/index.html)
+- [JML Cheat sheet](https://github.com/madjin/janus-guide/blob/master/guide/cheatsheet.md)
 - [Janus Examples](https://github.com/janusvr/janusvr-examples)
 - [Interactive Tutorials](https://github.com/jbaicoianu/janusvr-tutorials)
 - [Vesta Templates](https://vesta.janusvr.com/search/template/1)
