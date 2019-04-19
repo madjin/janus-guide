@@ -5,26 +5,26 @@ Work in progress to convert HTML docs to markdown so the community can help main
 
 Table of Contents:
 
-Build
+:wrench: **Build**
 
 - [Assets](https://github.com/madjin/janus-guide/blob/master/docs/build/assets.md) - List of assets that can be used throughout a web space
 - [Javascript](https://github.com/madjin/janus-guide/blob/master/docs/build/javascript.md) - Overview of the scripting compatible with janus native
 - [Rooms](https://github.com/madjin/janus-guide/blob/master/docs/build/room.md) - Section of JML that declares how assets appear in the web space
 - [Server](https://github.com/madjin/janus-guide/blob/master/docs/build/server.md) - Server API for the networking layer (WIP)
 
-Guides
+:notebook: **Guides**
 
 - [Unity to JanusVR](https://github.com/madjin/janus-guide/blob/master/docs/blog/unity.md) - Guide on exporting unity scenes to webvr compatible JML
 - [Vesta Basics](https://github.com/madjin/janus-guide/blob/master/guide/tutorials/vestabasics.md) - Tutorial on how to use Vesta with native client editor
 - [Collision Meshes](https://github.com/madjin/janus-guide/blob/master/guide/tutorials/Collision-Meshes.md) - How to create your own collision mesh for use in janusweb
 
-JanusWeb
+:mount_fuji: **JanusWeb**
 
 - [Wiki](https://github.com/jbaicoianu/janusweb/wiki) - The janusweb wiki located on Github
 - [Custom Components](https://github.com/madjin/janus-custom-components) - The current collection of ready to use janusweb custom components
 
 
-Useful links:
+:pushpin: **Useful links**
 
 - [JML Documentation](http://janusvr.com/docs/build/introtojml/index.html) - **Official** documentation site for JML
 - [JML Cheat sheet](https://github.com/madjin/janus-guide/blob/master/guide/cheatsheet.md) - Cheatsheet for mastering JML with code snippets
@@ -34,7 +34,7 @@ Useful links:
 
 ***
 
-To do:
+:pencil2: **To do**
 
 - update all the pictures
 - cover missing features
