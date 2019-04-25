@@ -740,3 +740,4 @@ The following creates a spotlight.
 
 **light_range** (default "0.5") - The maximum distance of the influence of the light, in meters (use as small a value as possible to optimize GPU performance, as smaller values reduce the number of fragments that do lighting calculations).
 
+

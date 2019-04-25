@@ -1,10 +1,3 @@
-- [**Assets**](https://github.com/madjin/janus-guide/blob/master/docs/build/assets.md)
-- [Javascript](https://github.com/madjin/janus-guide/blob/master/docs/build/javascript.md)
-- [Rooms](https://github.com/madjin/janus-guide/blob/master/docs/build/room.md)
-- [Server](https://github.com/madjin/janus-guide/blob/master/docs/build/server.md)
-
-***
-
 # Assets
 
 - [AssetImage](https://github.com/madjin/janus-guide/blob/master/docs/build/assets.md#assetimage)
@@ -327,4 +320,3 @@ Below is an example of defining a recording via a recording file generated throu
 **loop** - (default false) Whether or not to loop the recording after it has finished.
 
 **sample_rate** - (default 44100) Sets the playback sample rate for any VOIP audio contained in the recording. (Note that older versions of Janus used a value of 22050, which needs to be specified for playback of older AssetRecordings to sound correct).
-

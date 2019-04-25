@@ -46,3 +46,4 @@ There are currently no parameters for this API. Check back in the future.
 - **roomId** - A hashed version of the broadcaster's current url.
 - **url** - The broadcaster's current url.
 - **name** - The broadcaster's current location's title. 
+

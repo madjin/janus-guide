@@ -424,3 +424,4 @@ function parseLastViewed(ev) {
 - **print(value)** - Prints the value to the chat log and debugger output.
 - **debug(value)** - Logs the given value in the debugger output and returns it. Useful for examinining results of expressions without having to abstract them into a variable and print them.
 - **uniqueId()** - returns a unique number that you can use, say in specifying the js_id of a new object.
+
