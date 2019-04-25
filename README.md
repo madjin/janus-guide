@@ -14,7 +14,7 @@ Table of Contents:
 
 :notebook: **Guides**
 
-- [Unity to JanusVR](https://github.com/madjin/janus-guide/blob/master/docs/blog/unity.md) - Guide on exporting unity scenes to webvr compatible JML
+- [Unity to JanusVR](https://github.com/madjin/janus-guide/blob/master/docs/guide/unity.md) - Guide on exporting unity scenes to webvr compatible JML
 - [Vesta Basics](https://github.com/madjin/janus-guide/blob/master/guide/tutorials/vestabasics.md) - Tutorial on how to use Vesta with native client editor
 - [Collision Meshes](https://github.com/madjin/janus-guide/blob/master/guide/tutorials/Collision-Meshes.md) - How to create your own collision mesh for use in janusweb
 
