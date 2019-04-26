@@ -1,4 +1,5 @@
-# janus-guide
+# :books: JanusVR Unofficial Guidebook: <https://madjin.github.io/janus-guide/>
+
 Collection of new and old documentation for JanusVR.
 
 Work in progress to convert HTML docs to markdown so the community can help maintain and improve it.
