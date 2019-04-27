@@ -19,7 +19,7 @@ Table of Contents:
 - [Vesta Basics](https://github.com/madjin/janus-guide/blob/master/guide/tutorials/vestabasics.md) - Tutorial on how to use Vesta with native client editor
 - [Collision Meshes](https://github.com/madjin/janus-guide/blob/master/guide/tutorials/Collision-Meshes.md) - How to create your own collision mesh for use in janusweb
 
-:mount_fuji: **JanusWeb**: Web framework for building interconnected 3D experiences
+:mount_fuji: **[JanusWeb](https://github.com/jbaicoianu/janusweb)**: Web framework for building interconnected 3D experiences
 
 - [Demo](https://web.janusvr.com/) - Walk through the Vesta frontpage in a procedural 3D world 
 - [Vesta](https://vesta.janusvr.com/) - Social network for people to build and share WebVR content 
