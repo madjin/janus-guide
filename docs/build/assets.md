@@ -1,3 +1,10 @@
+- [**Assets**](https://github.com/madjin/janus-guide/blob/master/docs/build/assets.md)
+- [Javascript](https://github.com/madjin/janus-guide/blob/master/docs/build/javascript.md)
+- [Rooms](https://github.com/madjin/janus-guide/blob/master/docs/build/room.md)
+- [Server](https://github.com/madjin/janus-guide/blob/master/docs/build/server.md)
+
+***
+
 # Assets
 
 - [AssetImage](https://github.com/madjin/janus-guide/blob/master/docs/build/assets.md#assetimage)
