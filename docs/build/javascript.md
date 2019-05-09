@@ -1,10 +1,3 @@
-- [Assets](https://github.com/madjin/janus-guide/blob/master/docs/build/assets.md)
-- [**Javascript**](https://github.com/madjin/janus-guide/blob/master/docs/build/javascript.md)
-- [Rooms](https://github.com/madjin/janus-guide/blob/master/docs/build/room.md)
-- [Server](https://github.com/madjin/janus-guide/blob/master/docs/build/server.md)
-
-***
-
 # Javascript Intro
 
 JanusVR's Javascript engine allows developers to add a layer of depth and creativity to their websites. Users have created experiences ranging from games and demonstrations to educational experiences and collaborative experiences. This guide will help you get up to date with Janus' current capabilities.

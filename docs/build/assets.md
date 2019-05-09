@@ -1,10 +1,3 @@
-- [**Assets**](https://github.com/madjin/janus-guide/blob/master/docs/build/assets.md)
-- [Javascript](https://github.com/madjin/janus-guide/blob/master/docs/build/javascript.md)
-- [Rooms](https://github.com/madjin/janus-guide/blob/master/docs/build/room.md)
-- [Server](https://github.com/madjin/janus-guide/blob/master/docs/build/server.md)
-
-***
-
 # Assets
 
 - [AssetImage](https://github.com/madjin/janus-guide/blob/master/docs/build/assets.md#assetimage)
@@ -17,7 +10,7 @@
 - [AssetScript](https://github.com/madjin/janus-guide/blob/master/docs/build/assets.md#assetscript)
 - [AssetRecording](https://github.com/madjin/janus-guide/blob/master/docs/build/assets.md#assetrecording)
 
-The <assets></assets> section of any webspace contains a list of assets that will be used throughout the room. As with developing for the ordinary, two dimensional internet, files may be stored and loaded from any external website and even your own computer.
+The `</assets>` section of JML contains a list of assets that will be used throughout the room. As with developing for the ordinary, two dimensional internet, files may be stored and loaded from any external website and even your own computer.
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/assets)
 

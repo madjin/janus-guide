@@ -1,13 +1,6 @@
-- [Assets](https://github.com/madjin/janus-guide/blob/master/docs/build/assets.md)
-- [Javascript](https://github.com/madjin/janus-guide/blob/master/docs/build/javascript.md)
-- [**Rooms**](https://github.com/madjin/janus-guide/blob/master/docs/build/room.md)
-- [Server](https://github.com/madjin/janus-guide/blob/master/docs/build/server.md)
-
-***
-
 # Room
 
-Having defined a list of assets via the [Assets Tag](http://janusvr.com/docs/build/assetstag/index.html), we are now ready to place them within the webspace. The <room></room> section of any webspace contains a list of assets that will appear within the webspace when viewed through JanusVR.
+Having defined a list of assets via the [Assets Tag](http://janusvr.com/docs/build/assetstag/index.html), we are now ready to place them within the webspace. The `</room>` section declares global attributes such as `run_speed` and `gravity` and also how `</assets>` are represented in the webspace.
 
 Example:
 
