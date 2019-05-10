@@ -5,15 +5,15 @@ A collection of various Janus custom components for developers to experiment wit
 Check the [Reference](https://github.com/jbaicoianu/janusweb/wiki/Scripting-Support-2.0) for more info.
 
 
-## [Media](components_media.md)
+## [Media](examples/components_media.md)
 
-<a href="https://github.com/madjin/janus-custom-components/blob/master/media/index.md#audiosystem">
+<a href="examples/components_media.md#audiosystem">
   <img alt="audiosystem" target="_blank" src="https://i.imgur.com/hRG420Y.jpg" height="190" width="24%">
 </a>
-<a href="https://github.com/madjin/janus-custom-components/blob/master/media/index.md#msf">
+<a href="examples/components_media.md#msf">
   <img alt="msf" target="_blank" src="https://i.imgur.com/MLTw2cc.jpg" height="190" width="24%">
 </a>
-<a href="https://github.com/madjin/janus-custom-components/blob/master/media/index.md#presentation">
+<a href="examples/components_media.md#presentation">
   <img alt="presentation" target="_blank" src="https://i.imgur.com/YwRPjE7.jpg" height="190" width="24%">
 </a>
 <a href="https://github.com/madjin/janus-custom-components/blob/master/media/index.md#projector">
@@ -34,72 +34,71 @@ Check the [Reference](https://github.com/jbaicoianu/janusweb/wiki/Scripting-Supp
 
 ---
 
-## [Scenery](components_scenery.md)
+## [Scenery](examples/components_scenery.md)
 
-
-<a href="components_scenery.md#fireworks">
-  <img alcomponents_scenery.md0" width="24%">
+<a href="examples/components_fireworks.md#fireworks">
+  <img alt="fireworks" target="_blank" src="https://i.imgur.com/u2CfwkY.gif" height="190" width="24%">
 </a>
-<a href="components_scenery.md#forest">
-  <img alcomponents_scenery.mdwidth="24%">
+<a href="examples/components_forest.md#forest">
+  <img alt="forest" target="_blank" src="https://i.imgur.com/AsXKahc.jpg" height="190" width="24%">
 </a>
-<a href="components_scenery.md#tree">
-  <img alcomponents_scenery.mddth="24%">
+<a href="examples/components_scenery.md#tree">
+  <img alt="tree" target="_blank" src="https://i.imgur.com/039TxZW.jpg" height="190" width="24%">
 </a>
-<a href="components_scenery.md#water">
+<a href="examples/components_scenery.md#water">
   <img alt="water" target="_blank" src="https://i.imgur.com/iBCZi4q.jpg" height="190" width="24%">
 </a>
 
 
 ---
 
-## [Space](components_space.md)
+## [Space](examples/components_space.md)
 
 
-<a href="https://github.com/madjin/janus-custom-components/blob/master/space/index.md#space">
+<a href="examples/components_space.md#space">
   <img alt="Space" target="_blank" src="https://i.imgur.com/dNwpMt6.jpg" height="400" width="100%">
 </a>
 
 ---
 
-## [Tools](components_tools.md)
+## [Tools](examples/components_tools.md)
 
-<a href="https://github.com/madjin/janus-custom-components/blob/master/tools/index.md#changemachine">
+<a href="examples/components_tools.md#changemachine">
   <img alt="changemachine" target="_blank" src="https://i.imgur.com/Iq2gYXb.jpg" height="190" width="24%">
 </a>
-<a href="https://github.com/madjin/janus-custom-components/blob/master/tools/index.md#streetlight">
+<a href="examples/components_tools.md#streetlight">
   <img alt="streetlight" target="_blank" src="https://i.imgur.com/m0ZRWvI.jpg" height="190" width="24%">
 </a>
-<a href="https://github.com/madjin/janus-custom-components/blob/master/tools/index.md#torch">
+<a href="examples/components_tools.md#torch">
   <img alt="torch" target="_blank" src="https://i.imgur.com/jPwMkei.jpg" height="190" width="24%">
 </a>
-<a href="https://github.com/madjin/janus-custom-components/blob/master/tools/index.md#vendingmachine">
+<a href="examples/components_tools.md#vendingmachine">
   <img alt="vendingmachine" target="_blank" src="https://i.imgur.com/XtkRRes.jpg" height="190" width="24%">
 </a>
 
 ---
 
-## [Utils](components_utils.md)
+## [Utils](examples/components_utils.md)
 
-<a href="https://github.com/madjin/janus-custom-components/blob/master/utils/index.md#instancedobject">
+<a href="examples/components_utils.md#instancedobject">
   <img alt="instancedobject" target="_blank" src="https://i.imgur.com/KPt5TYH.jpg" height="190" width="24%">
 </a>
-<a href="https://github.com/madjin/janus-custom-components/blob/master/utils/index.md#layout">
+<a href="examples/components_utils.md#layout">
   <img alt="layout" target="_blank" src="https://i.imgur.com/e7Wm1A6.jpg" height="190" width="24%">
 </a>
-<a href="https://github.com/madjin/janus-custom-components/blob/master/utils/index.md#pushbutton">
+<a href="examples/components_utils.md#pushbutton">
   <img alt="pushbutton" target="_blank" src="https://i.imgur.com/BuRhkkX.gif" height="190" width="24%">
 </a>
-<a href="https://github.com/madjin/janus-custom-components/blob/master/utils/index.md#showcase">
+<a href="examples/components_utils.md#showcase">
   <img alt="showcase" target="_blank" src="https://i.imgur.com/bolzZyW.jpg" height="190" width="24%">
 </a>
-<a href="https://github.com/madjin/janus-custom-components/blob/master/utils/index.md#slider">
+<a href="examples/components_utils.md#slider">
   <img alt="slider" target="_blank" src="https://i.imgur.com/kA6eBS7.gif" height="190" width="24%">
 </a>
-<a href="https://github.com/madjin/janus-custom-components/blob/master/utils/index.md#speechtext">
+<a href="examples/components_utils.md#speechtext">
   <img alt="speechtext" target="_blank" src="https://i.imgur.com/37acD67.jpg" height="190" width="24%">
 </a>
-<a href="https://github.com/madjin/janus-custom-components/blob/master/utils/index.md#teleporter">
+<a href="examples/components_utils.md#teleporter">
   <img alt="teleporter" target="_blank" src="https://i.imgur.com/xcRoKvQ.gif" height="190" width="24%">
 </a>
 
