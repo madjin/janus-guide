@@ -1,5 +1,4 @@
 # JanusWeb UI
-The upcoming (Jan 2018) JanusWeb release includes a brand new UI system which can be customized to your needs.
 
 **NOTE** - this article is a WORK IN PROGRESS, and currently serves only as a dump of information on how the system is developed
 

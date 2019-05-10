@@ -47,4 +47,4 @@ Table of Contents:
 - add more information about light / shadow in a blog
 - add links to examples for people to experiment
 - spicy tutorials with links to the 'ingredients' in recipe
-- test frameworks to autogen beautiful themed documentation sites
+- refactor new and old documentation
