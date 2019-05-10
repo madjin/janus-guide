@@ -2,7 +2,7 @@
 
 <http://demos.janusvr.com/JavaScript/index.html>
 
-### [AppendChild]()
+### [AppendChild](examples/scripts/AppendChildJS.js)
 
 ```html
 <FireBoxRoom>
