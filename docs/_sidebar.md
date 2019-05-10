@@ -18,7 +18,7 @@
  * [Janus Markup](examples/markup.md)
  * [Janus Scripts](examples/scripts.md)
  * [Janus Components](examples/components.md)
-   * [Media](examples/components_media.md)
+   * [Media](examples/components.md#media)
    * [Scenery](examples/components_scenery.md)
    * [Space](examples/components_space.md)
    * [Tools](examples/components_tools.md)
