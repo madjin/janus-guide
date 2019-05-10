@@ -2,11 +2,11 @@
 
 # Janus Guide
 
-> Build networked worlds in your browser.
+> Build the Immersive Web
 
-- Built on top of open standards
+- VR/AR made with open standards
 - Powerful features out of the box
-- Lightweight and extensible
+- Lightweight and extensible framework
 
 [GitHub](https://github.com/madjin/janus-guide/)
 [Get Started](build/README.md#build-introduction)
