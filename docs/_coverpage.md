@@ -1,7 +1,5 @@
 <!-- _coverpage.md -->
 
-![logo](_media/icon.png)
-
 # Janus Guide
 
 [GitHub](https://github.com/madjin/janus-guide/)
