@@ -15,28 +15,6 @@
 </div>
 
 
-## Examples
-
-<a href="https://github.com/janusvr/janusvr-examples/tree/master/360/3">
-  <img alt="Crystalball" target="_blank" src="https://i.imgur.com/mw0Um3C.gif" height="190" width="32%">
-</a>
-<a href="https://www.augmentedperception.com/">
-  <img alt="Augmented Perception" target="_blank" src="https://i.imgur.com/V6fqjVG.gif" height="190" width="32%">
-</a>
-<a href="https://vesta.janusvr.com/bai/movie-theater-dynamic-lighting">
-  <img alt="Cinema" target="_blank" src="https://i.imgur.com/i1nIXI8.gif" height="190" width="32%">
-</a>
-<a href="https://imgur.com/FX3skXb.gif">
-  <img alt="Drag n' Drop" target="_blank" src="https://i.imgur.com/FX3skXb.gif" height="190" width="32%">
-</a>
-<a href="http://www.metacade.com">
-  <img alt="Metacade" target="_blank" src="https://i.imgur.com/9CqBKV5.gif" height="190" width="32%">
-</a>
-<a href="https://vesta.janusvr.com/bepis/mansion">
-  <img alt="Mansion" target="_blank" src="https://imgur.com/pQAQ4yt.gif" height="190" width="32%">
-</a>
-
-
 ## Features
 
 - Build immersive 3D environments for desktop, mobile, and VR devices using HTML and JS
