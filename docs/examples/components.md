@@ -7,28 +7,28 @@ Check the [Reference](https://github.com/jbaicoianu/janusweb/wiki/Scripting-Supp
 
 ## [Media](examples/components_media.md)
 
-<a href="examples/components_media.md#audiosystem">
+<a href="examples/components_media#audiosystem">
   <img alt="audiosystem" target="_blank" src="https://i.imgur.com/hRG420Y.jpg" height="190" width="24%">
 </a>
-<a href="examples/components_media.md#msf">
+<a href="examples/components_media#msf">
   <img alt="msf" target="_blank" src="https://i.imgur.com/MLTw2cc.jpg" height="190" width="24%">
 </a>
-<a href="examples/components_media.md#presentation">
+<a href="examples/components_media#presentation">
   <img alt="presentation" target="_blank" src="https://i.imgur.com/YwRPjE7.jpg" height="190" width="24%">
 </a>
-<a href="examples/components_media.md#projector">
+<a href="examples/components_media#projector">
   <img alt="projector" target="_blank" src="https://i.imgur.com/LWTge35.jpg" height="190" width="24%">
 </a>
-<a href="examples/components_media.md#recordplayer">
+<a href="examples/components_media#recordplayer">
   <img alt="recordplayer" target="_blank" src="https://i.imgur.com/gp57p35.jpg" height="190" width="24%">
 </a>
-<a href="examples/components_media.md#search">
+<a href="examples/components_media#search">
   <img alt="search" target="_blank" src="https://i.imgur.com/aX9JBBB.jpg" height="190" width="24%">
 </a>
-<a href="examples/components_media.md#stereosystem">
+<a href="examples/components_media#stereosystem">
   <img alt="stereosystem" target="_blank" src="https://i.imgur.com/e5myvoa.jpg" height="190" width="24%">
 </a>
-<a href="examples/components_media.md#videoscreen">
+<a href="examples/components_media#videoscreen">
   <img alt="videoscreen" target="_blank" src="https://i.imgur.com/t5x8rxN.jpg" height="190" width="24%">
 </a>
 
