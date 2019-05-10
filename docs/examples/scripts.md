@@ -2,7 +2,7 @@
 
 <http://demos.janusvr.com/JavaScript/index.html>
 
-### [AppendChild](docs/examples/scripts/AppendChildJS.js)
+### [AppendChild](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/AppendChildJS.js)
 
 ```html
 <FireBoxRoom>
@@ -17,6 +17,8 @@
 ```
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/appendchild)
+
+---
 
 ### [Snow](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/snow.js)
 
@@ -34,7 +36,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/snow)
 
-### [Audio/Video Functions]()
+---
+
+### [Audio/Video Functions](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/audioJS.js)
 
 ```html
 <FireBoxRoom>
@@ -51,7 +55,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/av-functions)
 
-### [Bounding Box]()
+---
+
+### [Bounding Box](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/BoundingBox.js)
 
 ```html
 <FireBoxRoom>
@@ -63,7 +69,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/boundingbox)
 
-[Clickball]()
+---
+
+[Clickball](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/ball_withpos_reset.js)
 
 ```html
 <FireBoxRoom>
@@ -75,8 +83,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/clickball1)
 
+---
 
-### [Collider]()
+### [Collider](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/ColliderJS.js)
 
 ```html
 <FireBoxRoom>
@@ -88,7 +97,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/collider1)
 
-### [Create Destroy objects]()
+---
+
+### [Create Destroy objects](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/Create_Destory_objects.js)
 
 ```html
 <FireBoxRoom>
@@ -99,7 +110,9 @@
 ```
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/create-destroy)
 
-### [Door]()
+---
+
+### [Door](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/TACOS_Vnazrin.1.0.js)
 
 ```html
 <FireBoxRoom>
@@ -114,7 +127,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/door1)
 
-### [FBX Animations]()
+---
+
+### [FBX Animations](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/fbxtrigger.js)
 
 ```html
 <FireBoxRoom>
@@ -130,7 +145,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/fbx-animations)
 
-### [Flashlight]()
+---
+
+### [Flashlight](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/torch.js)
 
 ```html
 <FireBoxRoom>
@@ -146,7 +163,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/flashlight)
 
-### [Gaze Detection]()
+---
+
+### [Gaze Detection](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/gaze_test.js)
 
 ```html
 <FireBoxRoom>
@@ -161,7 +180,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/gaze-detection)
 
-### [Gaze Teleport]()
+---
+
+### [Gaze Teleport](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/GazeTeleport.js)
 
 ```html
 <FireBoxRoom>
@@ -176,7 +197,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/gaze-teleport)
 
-### [Hover Over]()
+---
+
+### [Hover Over](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/Hoverover_popupJS.js)
 
 ```html
 <FireBoxRoom>
@@ -189,7 +212,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/hoverover)
 
-### [Jedi Force]()
+---
+
+### [Jedi Force](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/JediForce.js)
 
 ```html
 <FireBoxRoom>
@@ -205,7 +230,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/jediforce)
 
-### [JS Debugger]()
+---
+
+### [JS Debugger](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/TextDebuggerJS.js)
 
 ```html
 <FireBoxRoom>
@@ -220,7 +247,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/js-debugger)
 
-### [JS Function Performance Timer]()
+---
+
+### [JS Function Performance Timer](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/JSperformanceTimer.js)
 
 ```html
 <FireBoxRoom>
@@ -232,7 +261,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/js-performance-timer)
 
-### [JS Keymapping]()
+---
+
+### [JS Keymapping](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/3dControllerKeytest.js)
 
 ```html
 <FireBoxRoom>
@@ -244,7 +275,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/js-keymapping)
 
-### [Lamp]()
+---
+
+### [Lamp](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/LightSwitch.js)
 
 ```html
 <FireBoxRoom>
@@ -261,17 +294,17 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/lamp)
 
-***
+---
 
-### [Master JS Attribute Stress Test]()
+### [Master JS Attribute Stress Test](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/MasterJS.js)
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/masterjs1)
 
-### [Master JS One-of-Everything]()
+### Master JS One-of-Everything
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/masterjs2)
 
-### [Master Weapons Script]()
+### [Master Weapons Script](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/MasterWeapons.js)
 
 ```html
 <FireBoxRoom>
@@ -283,13 +316,15 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/master-weapons-script)
 
-***
+---
 
-### [Morph Targets]()
+### [Morph Targets](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/blendjs.js)
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/morph-targets)
+
+---
  
-### [Move Object]()
+### [Move Object](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/MovingSomething.js)
 
 ```html
 <FireBoxRoom>
@@ -301,7 +336,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/move-object)
 
-### [Object List]()
+---
+
+### [Object List](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/ObjectListJS.js)
 
 ```html
 <FireBoxRoom>
@@ -313,7 +350,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/object-list)
 
-### [Paragraph HTML]()
+---
+
+### [Paragraph HTML](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/Paragraph_HTML_tester.js)
 
 ```html
 <FireBoxRoom>
@@ -325,7 +364,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/paragraph-html)
 
-### [Player Hand Functions]()
+---
+
+### [Player Hand Functions](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/Trackedrotationscrpt.js)
 
 ```html
 <FireBoxRoom>
@@ -344,7 +385,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/player-hand-functions)
 
-### [Programmatic Mesh]()
+---
+
+### [Programmatic Mesh](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/ProgramaticalMesh.js)
 
 ```html
 <FireBoxRoom>
@@ -356,7 +399,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/programmatic-mesh)
 
-[Quadcopter]()
+---
+
+[Quadcopter](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/quadcopter.js)
 
 ```html
 <FireBoxRoom>
@@ -373,7 +418,11 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/quadcopter)
 
-### [Realtime Lights]()
+---
+
+### [Realtime Lights](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/JS_Light.js) 
+
+Note: Review [EditJS](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/EditJS.txt) 
 
 ```html
 <FireBoxRoom>
@@ -389,7 +438,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/realtime-lights)
 
-### [Rotation Matrix to Euler]()
+---
+
+### [Rotation Matrix to Euler](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/MatrixToEulerAndBack.txt)
 
 ```html
 <FireBoxRoom>
@@ -405,7 +456,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/rotation-to-euler)
 
-### [Shotgun]()
+---
+
+### [Shotgun](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/shotgun.js)
 
 ```html
 <FireBoxRoom>
@@ -433,7 +486,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/shotgun)
 
-### [Timer]()
+---
+
+### [Timer](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/TimerExample.js)
 
 ```html
 <FireBoxRoom>
@@ -445,11 +500,15 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/timer)
 
-### [TrackpadGrid]()
+---
+
+### [TrackpadGrid](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/GridCSVScript.js)
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/trackpadgrid)
 
-### [VideoSeek]()
+---
+
+### [VideoSeek](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/seektest.js)
 
 ```html
 <FireBoxRoom>
@@ -461,7 +520,9 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/videoseek)
 
-### [SyncedSeek]()
+---
+
+### [SyncedSeek](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/SyncedSeek.js)
 
 ```html
 <FireBoxRoom>
@@ -476,6 +537,8 @@
 ```
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/syncedseek)
+
+---
 
 ### Env maps
 Right now we only do envmaps if you set pbr="true" on the room - then we'll use the skybox by default, or you can set it per-object by setting envmap_id="..." to reference an AssetImage which points to an equirect image
