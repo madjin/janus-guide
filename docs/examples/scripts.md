@@ -2,7 +2,7 @@
 
 <http://demos.janusvr.com/JavaScript/index.html>
 
-### [AppendChild](examples/scripts/AppendChildJS.js)
+### [AppendChild](docs/examples/scripts/AppendChildJS.js)
 
 ```html
 <FireBoxRoom>
@@ -18,7 +18,7 @@
 
 [![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/appendchild)
 
-### [Snow]()
+### [Snow](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/snow.js)
 
 ```html
 <FireBoxRoom>
