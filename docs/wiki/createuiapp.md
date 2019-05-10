@@ -1,3 +1,5 @@
+# Create a UI app
+
 UI Apps are packages which users can add to their client to extend its functionality.  These allow you to add more advanced capabilities to the client, in a way which allows the user to bring these tools with them to other worlds.  Apps can be used to provide improved editing functionality, bring in data from external sources, display information about the world or the player, or layer additional functionality such as VOIP, screen capture, streaming, etc.
 
 JanusWeb comes with a default set of apps, which provide the basic functionality of the client.  These include apps like navigation, which provides a smart URL bar with a loading progress indicator and built-in autosuggest; chat, which provides text chat functionality; or inventory, which lets users access 3D models from Google Poly, or other data sources.

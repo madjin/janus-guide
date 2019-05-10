@@ -1,3 +1,5 @@
+# Extend the UI
+
 As part of our efforts to improve the JanusWeb UI, now would be a good time to explain how the underlying UI system works.  JanusWeb is built on top of the Elation library, which provides a powerful component-based UI library which can be extended to build interactive elements.  
 
 ## Components

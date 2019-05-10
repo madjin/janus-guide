@@ -1,3 +1,5 @@
+# Controls
+
 JanusWeb is built on top of Elation Engine, and uses its control mapping system.  We provide a layer which translates a multitude of different controllers - tracked VR controllers, 3dof remotes, gamepads, joysticks, steering wheels, etc. into a set of standard actions, which can then be bound by the application in a way which, as much as possible, is agnostic to the type of controller being used.  The application or its users can specify a control mapping which maps the buttons, axes, positions, and other functionality of these controllers directly to game actions.
 
 ## Controller Types

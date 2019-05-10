@@ -1,14 +1,14 @@
 # Assets
 
-- [AssetImage](https://github.com/madjin/janus-guide/blob/master/docs/build/assets.md#assetimage)
-- [AssetSound](https://github.com/madjin/janus-guide/blob/master/docs/build/assets.md#assetsound)
-- [AssetVideo](https://github.com/madjin/janus-guide/blob/master/docs/build/assets.md#assetvideo)
-- [AssetObject](https://github.com/madjin/janus-guide/blob/master/docs/build/assets.md#assetobject)
-- [AssetShader](https://github.com/madjin/janus-guide/blob/master/docs/build/assets.md#assetshader)
-- [AssetGhost](https://github.com/madjin/janus-guide/blob/master/docs/build/assets.md#assetghost)
-- [AssetWebsurface](https://github.com/madjin/janus-guide/blob/master/docs/build/assets.md#assetwebsurface)
-- [AssetScript](https://github.com/madjin/janus-guide/blob/master/docs/build/assets.md#assetscript)
-- [AssetRecording](https://github.com/madjin/janus-guide/blob/master/docs/build/assets.md#assetrecording)
+- [AssetImage](build/assets.md#assetimage)
+- [AssetSound](build/assets.md#assetsound)
+- [AssetVideo](build/assets.md#assetvideo)
+- [AssetObject](build/assets.md#assetobject)
+- [AssetShader](build/assets.md#assetshader)
+- [AssetGhost](build/assets.md#assetghost)
+- [AssetWebsurface](build/assets.md#assetwebsurface)
+- [AssetScript](build/assets.md#assetscript)
+- [AssetRecording](build/assets.md#assetrecording)
 
 The `</assets>` section of JML contains a list of assets that will be used throughout the room. As with developing for the ordinary, two dimensional internet, files may be stored and loaded from any external website and even your own computer.
 

@@ -1,9 +1,14 @@
+# Custom Elements
+
+---
+
 As of JanusWeb 1.1, we're experimenting with a new syntax for defining custom elements in Janus room scripts.  This allows developers to extend built-in functionality or create all-new functionality from scratch, opening the community up to build, share, and use libraries of custom-defined object types.
 
 This scripting engine also adds more object-oriented functionality to our scripting API, as well as some convenience 
 functions for translating between object-relative and world-relative coordinates.
 
-# Custom Elements
+---
+
 A key part of being able to build reusable components for VR and the web is to be able to encapsulate code into reusable, extendable, and shareable chunks.  We've built our implementation based on the HTML5 Custom Elements spec, and we now expose an API to room scripts which makes it easy for room developers to define the objects they need to add interactivity and other advanced functionality to their sites.  We've also started a few side projects to build up some libraries of components we see as being useful to the creation of VR experiences as a whole:
 
  - [[janus-script-ui|https://github.com/jbaicoianu/janus-script-ui/]]: a collection of 3D/VR UI controls - buttons, toggles, sliders, etc
