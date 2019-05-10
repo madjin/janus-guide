@@ -1,0 +1,265 @@
+ 
+//Euler angle to matrix function
+
+function rotateXYZ(xrot, yrot, zrot, rot){
+var A = Math.cos(xrot * (Math.PI / 180));
+var B = Math.sin(xrot * (Math.PI / 180));
+var C = Math.cos(yrot * (Math.PI / 180));
+var D = Math.sin(yrot * (Math.PI / 180));
+var E = Math.cos(zrot * (Math.PI / 180));
+var F = Math.sin(zrot * (Math.PI / 180));
+
+var AD = A * D;
+var BD = B * D;
+
+var mat = [
+(C*E),
+(-C*F),
+(-D),
+(0),
+(-BD*E+A*F),
+(D * F + A * E),
+(-B * C),
+(0),
+(AD * E + B * F),
+(-AD * F + B * E),
+( A * C),
+(0),
+(0),
+(0),
+(0),
+(1)
+];
+
+room.objects[rot].xdir = Vector(mat[0], mat[1], mat[2]);
+room.objects[rot].ydir = Vector(mat[4], mat[5], mat[6]);
+room.objects[rot].zdir = Vector(mat[8], mat[9], mat[10]);
+}
+
+//End of Euler angle to matrix function
+
+
+
+
+
+
+function alignAxes(jsstuff) {
+    
+if (jsstuff != "") {   
+    //axes appear on currently selected object
+    
+    room.objects["debug-3dtracker_ydir"].scale.x = 1;
+    room.objects["debug-3dtracker_ydir"].scale.y = 1;
+    room.objects["debug-3dtracker_ydir"].scale.z = 1;
+
+    room.objects["debug-3dtracker_xdir"].scale.x = 1;
+    room.objects["debug-3dtracker_xdir"].scale.y = 1;
+    room.objects["debug-3dtracker_xdir"].scale.z =  1;
+    
+     room.objects["debug-3dtracker_zdir"].scale.x = 1;
+    room.objects["debug-3dtracker_zdir"].scale.y =  1;
+    room.objects["debug-3dtracker_zdir"].scale.z = 1;
+    
+     room.objects["debug-3dtracker_s1"].scale.x = 1;
+    room.objects["debug-3dtracker_s1"].scale.y =  1;
+    room.objects["debug-3dtracker_s1"].scale.z = 1;    
+    
+       room.objects["debug-3dtracker_s2"].scale.x = 1;
+    room.objects["debug-3dtracker_s2"].scale.y =  1;
+    room.objects["debug-3dtracker_s2"].scale.z = 1;    
+      
+    room.objects["debug-3dtracker_ydir"].pos.x = room.objects[jsstuff].pos.x;
+    room.objects["debug-3dtracker_ydir"].pos.y = room.objects[jsstuff].pos.y;
+    room.objects["debug-3dtracker_ydir"].pos.z = room.objects[jsstuff].pos.z;
+
+    room.objects["debug-3dtracker_xdir"].pos.x = room.objects[jsstuff].pos.x;
+    room.objects["debug-3dtracker_xdir"].pos.y = room.objects[jsstuff].pos.y;
+    room.objects["debug-3dtracker_xdir"].pos.z = room.objects[jsstuff].pos.z;
+    
+     room.objects["debug-3dtracker_zdir"].pos.x = room.objects[jsstuff].pos.x;
+    room.objects["debug-3dtracker_zdir"].pos.y = room.objects[jsstuff].pos.y;
+    room.objects["debug-3dtracker_zdir"].pos.z = room.objects[jsstuff].pos.z;
+    
+room.objects["debug-3dtracker_s1"].fwd = player.view_dir;
+room.objects["debug-3dtracker_s1"].pos.x = room.objects[jsstuff].pos.x;
+room.objects["debug-3dtracker_s1"].pos.y = room.objects[jsstuff].pos.y;
+room.objects["debug-3dtracker_s1"].pos.z = room.objects[jsstuff].pos.z;
+
+room.objects["debug-3dtracker_s2"].fwd = player.view_dir;
+room.objects["debug-3dtracker_s2"].pos.x = room.objects[jsstuff].pos.x;
+room.objects["debug-3dtracker_s2"].pos.y = room.objects[jsstuff].pos.y;
+room.objects["debug-3dtracker_s2"].pos.z = room.objects[jsstuff].pos.z;
+
+
+    }
+   
+   
+if (jsstuff == "" || carrying == true)    
+    {
+    //axes appear nowhere
+    room.objects["debug-3dtracker_ydir"].scale.x = 0;
+    room.objects["debug-3dtracker_ydir"].scale.y = 0;
+    room.objects["debug-3dtracker_ydir"].scale.z = 0;
+
+    room.objects["debug-3dtracker_xdir"].scale.x = 0;
+    room.objects["debug-3dtracker_xdir"].scale.y = 0;
+    room.objects["debug-3dtracker_xdir"].scale.z =  0;
+    
+     room.objects["debug-3dtracker_zdir"].scale.x = 0;
+    room.objects["debug-3dtracker_zdir"].scale.y =  0;
+    room.objects["debug-3dtracker_zdir"].scale.z = 0;
+    
+     room.objects["debug-3dtracker_s1"].scale.x = 0;
+    room.objects["debug-3dtracker_s1"].scale.y =  0;
+    room.objects["debug-3dtracker_s1"].scale.z = 0;    
+    
+         room.objects["debug-3dtracker_s2"].scale.x = 0;
+    room.objects["debug-3dtracker_s2"].scale.y =  0;
+    room.objects["debug-3dtracker_s2"].scale.z = 0;    
+    
+    }
+    
+    
+ }
+
+
+function gravitygunaxis(jsstuff,ax){
+    
+if (jsstuff != "") {    
+
+if (ax=="x")
+{
+room.objects[jsstuff].pos.x = player.cursor_pos.x;
+}
+if (ax=="y")
+{
+room.objects[jsstuff].pos.y = (player.cursor_pos.y + 1.6);
+}
+if (ax=="z")
+{
+room.objects[jsstuff].pos.z = player.cursor_pos.z;
+
+}
+
+room.objects[jsstuff].sync = true;
+}
+
+}
+
+
+function gravitygun(jsstuff){
+    
+if (jsstuff != "") {    
+room.objects[jsstuff].fwd = player.view_dir;
+room.objects[jsstuff].pos.x = (player.view_dir.x * 2) + player.pos.x;
+room.objects[jsstuff].pos.y = (player.view_dir.y * 2) + (player.pos.y + 1.6);
+room.objects[jsstuff].pos.z = (player.view_dir.z * 2) + player.pos.z;
+room.objects[jsstuff].sync = true;
+
+}
+
+}
+
+
+
+
+var selected="";
+var carrying=false;
+var carryx=false;
+var carryy=false;
+var carryz=false;
+
+function checkAx(ax) {
+    
+    //if checking the center
+    if (ax == "center")
+    {
+      if (player.cursor_object == "debug-3dtracker_s1" || player.cursor_object == "debug-3dtracker_s2" )   
+      {
+       carrying=true;
+      }
+    }
+   
+    //if checking the x
+    if (ax == "x")
+    {
+      if (player.cursor_object == "debug-3dtracker_xdir")   
+      {
+       carryx=true;
+      }
+    }   
+    //if checking the y
+    if (ax == "y")
+    {
+      if (player.cursor_object == "debug-3dtracker_ydir")   
+      {
+       carryy=true;
+      }
+    }
+      //if checking the z
+    if (ax == "z")
+    {
+      if (player.cursor_object == "debug-3dtracker_zdir")   
+      {
+       carryz=true;
+      }
+    }    
+          
+}
+
+
+
+
+room.onMouseDown = function() {
+    
+    
+if ( player.cursor_object.substring(0, 6) != "debug-" )
+{  
+selected = player.cursor_object;    
+}
+
+checkAx("x");
+checkAx("y");
+checkAx("z");
+checkAx("center");
+}
+
+room.onMouseUp = function() {
+    carrying = false;
+    carryx = false;
+    carryy = false;
+    carryz = false;
+    }
+
+
+
+
+//BEGIN MAIN UPDATE LOOP
+room.update = function(delta_time) {
+
+//rotateXYZ(x, y, z, JS_id);
+
+if (carrying == true){
+    gravitygun(selected);
+    }
+    
+if (carryx == true){
+    gravitygunaxis(selected,"x");
+    } 
+
+if (carryy == true){
+    gravitygunaxis(selected,"y");
+    } 
+    
+ if (carryz == true){
+    gravitygunaxis(selected,"z");
+    }    
+
+alignAxes(selected);
+
+
+
+
+}
+//END MAIN UPDATE LOOP
+

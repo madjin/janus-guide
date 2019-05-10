@@ -1,0 +1,167 @@
+/* Made with help from this http://www.flipcode.com/documents/matrfaq.html#Q36 */
+
+//Text Debug creator
+
+room.onLoad = function() {
+
+for (var i = 0; i<9; ++i) {
+
+    var textid = "new_text"+i;
+
+    room.createObject("Text", {js_id:textid});
+
+    room.objects[textid].pos = Vector(5+i,1+i,0);
+        room.objects[textid].fwd = Vector(-1,0,0);
+        room.objects[textid].text = "This is new text with js_id: " + room.objects[textid].js_id;
+        room.objects[textid].scale = Vector(5,5,5);
+        room.objects[textid].col = Vector(.5,1,.5);
+        }
+
+
+}
+
+//end of Text Debug creator
+
+//How the matrix is setup weh used in the math
+
+
+
+//         |  0     1     2    3   |
+//    M' = | 4      5     6    7   |
+//         |  8     9      10   11 |
+
+
+//        |  CE        -CF    -D   0 |
+//   M  = | -BDE+AF   BDF+AE  -BC  0 |
+//        |  ADE+BF  -ADF+BE   AC  0 |
+//        |  0          0      0   1 |
+
+//        |  room.objects["rot"].xdir.x    room.objects["rot"].xdir.y   room.objects["rot"].xdir.z  0 |
+//   M  = |  room.objects["rot"].ydir.x    room.objects["rot"].ydir.y   room.objects["rot"].ydir.z  0 |
+//        |  room.objects["rot"].zdir.x    room.objects["rot"].zdir.y   room.objects["rot"].zdir.z  0 |
+//        |             0                               0                             0             1 |
+
+
+
+
+//Euler angle to matrix function
+
+function rotateXYZ(xrot, yrot, zrot, rot){
+var A = Math.cos(xrot * (Math.PI / 180));
+var B = Math.sin(xrot * (Math.PI / 180));
+var C = Math.cos(yrot * (Math.PI / 180));
+var D = Math.sin(yrot * (Math.PI / 180));
+var E = Math.cos(zrot * (Math.PI / 180));
+var F = Math.sin(zrot * (Math.PI / 180));
+
+var AD = A * D;
+var BD = B * D;
+
+var mat = [
+(C*E),
+(-C*F),
+(-D),
+(0),
+(-BD*E+A*F),
+(BD * F + A * E),
+(-B * C),
+(0),
+(AD * E + B * F),
+(-AD * F + B * E),
+( A * C),
+(0),
+(0),
+(0),
+(0),
+(1)
+];
+
+room.objects[rot].xdir = Vector(mat[0], mat[4], mat[8]);
+room.objects[rot].ydir = Vector(mat[1], mat[5], mat[9]);
+room.objects[rot].zdir = Vector(mat[2], mat[6], mat[10]);	
+}
+
+//End of Euler angle to matrix function
+
+
+room.update = function(delta_time) {
+
+
+//Start of Matrix to euler Angle
+
+    var mat = [
+        (room.objects["rot"].xdir.x),
+        (room.objects["rot"].xdir.y),
+        (room.objects["rot"].xdir.z),
+        (0),
+        (room.objects["rot"].ydir.x),
+        (room.objects["rot"].ydir.y),
+        (room.objects["rot"].ydir.z),
+        (0),
+        (room.objects["rot"].zdir.x),
+        (room.objects["rot"].zdir.y),
+        (room.objects["rot"].zdir.z),
+        (0)
+        ];
+
+var C;
+
+var angle_x = 0;
+var angle_y = 0;
+var angle_z = 0;
+
+var RADIANS = (Math.PI/180);
+
+angle_y = -Math.asin(mat[2]);    //angle y is in radians
+C           =  Math.cos( angle_y )/RADIANS;
+angle_y   = angle_y/RADIANS;      //angle_y is now in degrees
+
+if ( Math.abs( C ) > 0.005 ) // Gimball lock?
+{
+
+    var tmpX = mat[10] / C; 
+    var tmpY = -mat[6] / C;
+    angle_x = Math.atan2(tmpY, tmpX) / RADIANS; //angle x is in degrees
+
+    tmpX = mat[0] / C;
+    tmpY = -mat[1] / C;
+    angle_z = Math.atan2(tmpY, tmpX) / RADIANS; //angle z is in degrees
+
+}else{   //Gimball lock
+
+    angle_x = 0;
+
+    tmpX = mat[5];
+    tmpY = mat[4];
+
+    angle_z = Math.atan2(tmpY, tmpX) / RADIANS;  //angle z is in degrees
+}
+
+  angle_x =  angle_x%360;  /* Clamp all angles to range */
+  angle_y =  angle_y%360;
+  angle_z =  angle_z%360; //TODO: check if angles are ever negative
+  
+  
+  //End of Matrix to euler Angle
+  
+  
+//Useing euler angle output of rot to control the rotation of rot2 via the Euler angle to matrix function at the top
+//youll notice the effects of gimble lock at certain orentations
+  rotateXYZ( (angle_x+360)%360*-1, (angle_y+360)%360*-1, (angle_z+360)%360*-1, "rot2");
+
+//Debugging output to text
+room.objects["new_text0"].text = "xdir = " + room.objects["rot"].xdir;
+room.objects["new_text1"].text = "ydir = " + room.objects["rot"].ydir;
+room.objects["new_text2"].text = "zdir = " + room.objects["rot"].zdir;
+
+room.objects["new_text3"].text = "X Euler = " + Math.round(angle_x);
+room.objects["new_text4"].text = "Y Euler= " + Math.round(angle_y);
+room.objects["new_text5"].text = "Z Euler = " + Math.round(angle_z);
+
+room.objects["new_text6"].text = "xdir = " + room.objects["rot2"].xdir;
+room.objects["new_text7"].text = "ydir = " + room.objects["rot2"].ydir;
+room.objects["new_text8"].text = "zdir = " + room.objects["rot2"].zdir;
+
+
+}
+

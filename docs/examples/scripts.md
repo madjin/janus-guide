@@ -59,8 +59,13 @@
 <AssetScript src="https://vesta.janusvr.com/files/guide/javascript/boundingbox/BoundingBox.js" />
 </Assets>
 </FireBoxRoom>
+```
 
-[Clickball](https://vesta.janusvr.com/guide/clickball1)
+[![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/boundingbox)
+
+[Clickball]()
+
+```html
 <FireBoxRoom>
 <Assets>
 <AssetScript src="https://vesta.janusvr.com/files/guide/javascript/clickball/ball_withpos_reset.js" />
@@ -68,7 +73,8 @@
 </FireBoxRoom>
 ```
 
-[![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/boundingbox)
+[![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/clickball1)
+
 
 ### [Collider]()
 
