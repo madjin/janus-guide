@@ -12,9 +12,7 @@
 
 The `</assets>` section of JML contains a list of assets that will be used throughout the room. As with developing for the ordinary, two dimensional internet, files may be stored and loaded from any external website and even your own computer.
 
-[![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/assets)
-
-The below is an example of a properly formatted webspace, with its Assets section in the proper area.
+The code below is an example of a properly formatted webspace, with its Assets section in the proper area.
 
 ```
 <FireBoxRoom>
@@ -27,6 +25,8 @@ The below is an example of a properly formatted webspace, with its Assets sectio
 </FireBoxRoom>
 ```
 
+[![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/assets)
+
 Most assets must have an id assigned to it. This id is their unique "identifier", which will be used later on when placing the asset in the room.
 
 
@@ -34,9 +34,8 @@ Most assets must have an id assigned to it. This id is their unique "identifier"
 
 AssetImage is used to define any standalone image file that will be used in the webspace. PNG, JPG, GIF and most other common formats are acceptable. Images with a transparency layer (such as with the PNG format) are also supported.
 
-[![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/assetimage)
 
-The below example is of someone loading a picture of a wood plank into a webspace through the Assets section and giving it the id: woodplanks_img
+The example below is of someone loading a picture of a wood plank into a webspace through the Assets section and giving it the id: woodplanks_img
 
 ```
 <FireBoxRoom>
@@ -48,6 +47,8 @@ The below example is of someone loading a picture of a wood plank into a webspac
  </Room>
 </FireBoxRoom>
 ```
+
+[![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/assetimage)
 
 ### Attributes
 
@@ -78,7 +79,6 @@ The below example is of someone loading a picture of a wood plank into a webspac
 
 These are sounds which can be used within the webspace. Supported formats are dependent upon the multimedia capabilities of the underlying platform (e.g. DirectShow on Windows, gstreamer on Linux). Uncompressed WAV will work universally, but is not bandwidth friendly. MP2 or MP3 are compressed formats which seem to work universally and offer great compression.
 
-[![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/assetsound)
 
 Here is an example of how to use the AssetSound tag to add the sound "localmap.mp3" to the collection of assets, assigning it id "localmap_sound".
 
@@ -93,6 +93,8 @@ Here is an example of how to use the AssetSound tag to add the sound "localmap.m
 </FireBoxRoom>
 ```
 
+[![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/assetsound)
+
 ### Attributes
 
 **id** - The unique identifier assigned to this asset.
@@ -104,7 +106,6 @@ Here is an example of how to use the AssetSound tag to add the sound "localmap.m
 
 These are videos which can be used within the webspace. Supported formats are dependent upon the multimedia capabilities of the underlying platform (e.g. DirectShow on Windows, gstreamer on Linux). (On Windows, we use the [K-Lite Codec Pack Basic](http://www.codecguide.com/download_k-lite_codec_pack_basic.htm) to make a much wider variety of video formats available.)
 
-[![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/assetvideo)
 
 Here is an example of how to use the AssetVideo tag to add the video "las_firebox_clip.mp4" to the collection of assets, assigning it id "vid_id".
 
@@ -118,6 +119,8 @@ Here is an example of how to use the AssetVideo tag to add the video "las_firebo
  </Room>
 </FireBoxRoom>
 ```
+
+[![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/assetvideo)
 
 ### Attributes
 
@@ -142,7 +145,6 @@ Here is an example of how to use the AssetVideo tag to add the video "las_firebo
 
 These are the 3D geometric objects which can be used within the FireBoxRoom. Supported formats are OBJ, DAE, 3DS and FBX.
 
-[![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/assetobject)
 
 The URL to the file is specified by the src attribute. You can also specify materials for the file using either a single texture file (specified with the tex attribute), or more traditionally by specifying the location of the material file (specified with the mtl attribute). Here is an example of the first method (specifying a single image as a texture).
 
@@ -151,6 +153,8 @@ The URL to the file is specified by the src attribute. You can also specify mate
 Here is how to specify a material file (which may reference many textures):
 
 `<AssetObject id="pinetree" src="pinetree.obj" mtl="pinetree.mtl" ></AssetObject>`
+
+[![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/assetobject)
 
 *Details for the more technical reader: If per-vertex normals are not specified in the file (specified by "vn" lines in the file), normals which are per-face will be generated by FireBox and assigned to each vertex. If textures are to be used, texture coordinates should be exported (these are "vt" lines in the file). Finally, meshes with 4 or more vertices used to define a polygonal face are supported - however FireBox's treatment is to divide these polygons into triangles using a naive triangle fan method, therefore only convex polygonal faces are properly supported and will render correctly.*
 
@@ -183,7 +187,6 @@ Here is how to specify a material file (which may reference many textures):
 
 An AssetShader allows you to use either a GLSL fragment shader to shade geometry (set src), or a GLSL vertex shader to deform geometry (set vertex_src), or both.
 
-[![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/assetshader)
 
 Here is an example of defining a fragment shader.
 
@@ -192,6 +195,8 @@ Here is an example of defining a fragment shader.
 Here is another example (both custom fragment and vertex shaders).
 
 `<AssetShader id="shader_id" src="frag.txt" vertex_src="vert.txt" ></AssetShader>`
+
+[![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/assetshader)
 
 *See the section on Objects for information on shading an Object using the AssetShader (essentially, you want to set an Object's shader_id to the AssetShader's id).*
 
@@ -234,7 +239,6 @@ Below is an example of defining a ghost via a ghost file generated through Janus
 
 An AssetWebsurface defines an interactive surface that provides a 2D web view. Note that this surface can be placed on an Object by specifying a websurface_id that matches the AssetWebsurface's id.
 
-[![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/assetwebsurface)
 
 Below is someone defining a 1920x1080 resolution AssetWebSurface and pointing it to the JanusVR website.
 
@@ -248,6 +252,8 @@ Below is someone defining a 1920x1080 resolution AssetWebSurface and pointing it
  </Room>
 </FireBoxRoom>
 ```
+
+[![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/assetwebsurface)
 
 ### Attributes
 
@@ -266,7 +272,6 @@ Below is someone defining a 1920x1080 resolution AssetWebSurface and pointing it
 
 An AssetScript defines a file containing JavaScript (technically ECMAScript 3 compliant code) that you can run in the FireBoxRoom. Functions can be set up for specific events such as mouse clicks or on frame updates. Sounds can be played, Objects can be created, have their properties modified, and be destroyed. For further details about this, see this page: [Javascript - Room Object](http://janusvr.com/docs/build/roomobject/index.html). Also check the "experiment" workspace included with JanusVR which serves as a JS example.
 
-[![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/assetscript)
 
 Below is an example of someone defining a JS file called "script.txt", which will be automatically executed when the webspace begins.
 
@@ -280,6 +285,8 @@ Below is an example of someone defining a JS file called "script.txt", which wil
  </Room>
 </FireBoxRoom>
 ```
+
+[![View Example](https://i.imgur.com/hPC9Ati.jpg)](https://vesta.janusvr.com/guide/assetscript)
 
 *(More notes: Cookies can also be saved/loaded via the JS (in addition to those cookies set through AssetWebSurfaces). This can be used for inter-communication between the FireBoxRoom, the JS/AssetScripts, and AssetWebSurfaces in the room.)*
 
