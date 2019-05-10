@@ -1,16 +1,214 @@
-To check out your own copy of JanusWeb, perform the following steps:
+<p align="center"><a href="https://imgur.com/ejvyphR.jpg" target="_blank"><img width="480" alt="JanusWeb" src="https://imgur.com/ejvyphR.jpg"></a></p>
 
-```sh
-git clone https://github.com/jbaicoianu/janusweb.git
-cd janusweb
-npm install
+<p align="center"><b>A web framework for building social virtual reality experiences.</b></p>
+
+<div align="center">
+  <a href="https://github.com/jbaicoianu/janusweb">Github</a>
+  &mdash;
+  <a href="https://vesta.janusvr.com">Vesta</a>
+  &mdash;
+  <a href="https://github.com/janusvr/janusvr-examples">Examples</a>
+  &mdash;
+  <a href="https://web.janusvr.com">Demo</a>
+  &mdash;
+  <a href="https://madjin.github.io/janus-guide/#/">Docs</a>
+</div>
+
+
+## Examples
+
+<a href="https://github.com/janusvr/janusvr-examples/tree/master/360/3">
+  <img alt="Crystalball" target="_blank" src="https://i.imgur.com/mw0Um3C.gif" height="190" width="32%">
+</a>
+<a href="https://www.augmentedperception.com/">
+  <img alt="Augmented Perception" target="_blank" src="https://i.imgur.com/V6fqjVG.gif" height="190" width="32%">
+</a>
+<a href="https://vesta.janusvr.com/bai/movie-theater-dynamic-lighting">
+  <img alt="Cinema" target="_blank" src="https://i.imgur.com/i1nIXI8.gif" height="190" width="32%">
+</a>
+<a href="https://imgur.com/FX3skXb.gif">
+  <img alt="Drag n' Drop" target="_blank" src="https://i.imgur.com/FX3skXb.gif" height="190" width="32%">
+</a>
+<a href="http://www.metacade.com">
+  <img alt="Metacade" target="_blank" src="https://i.imgur.com/9CqBKV5.gif" height="190" width="32%">
+</a>
+<a href="https://vesta.janusvr.com/bepis/mansion">
+  <img alt="Mansion" target="_blank" src="https://imgur.com/pQAQ4yt.gif" height="190" width="32%">
+</a>
+
+
+## Features
+
+- Build immersive 3D environments for desktop, mobile, and VR devices using HTML and JS
+- Rendering functionality provided by Three.js / WebGL
+- Oculus Rift, Vive, GearVR, Daydream, and Cardboard support via WebVR API
+- Realtime collaboration across all devices via built-in networking
+- Import Collada, OBJ, glTF, and other popular 3d file formats
+- 3D positional audio
+- Gamepad support via the HTML5 Gamepad API
+- Supports hand tracking peripherals like Leap Motion, Oculus Touch, and Vive controllers
+- Support for 2d, sbs3d/ou3d, and 360 degree video textures using HTML5 Video
+- Scriptable client enables many customized uses
+
+## Using
+
+There are several different ways to use JanusWeb, depending on how much control you want to
+have over the whole system.
+
+### Use our viewer
+Our default viewer is always available at https://web.janusvr.com/.  You can write an HTML
+page with your [JanusVR Markup](http://janusvr.com/guide/markuplanguage/index.html) and host
+it anywhere you would normally host a static website.  Any regular webhost, AWS S3 static
+sites, CDNs, or even more exotic locations like [IPFS distributed filesystems](https://ipfs.io) will work.
+You can even put your mark-up onto sites like PasteBin or PiratePad.  Then just load the URL
+in our viewer by entering the URL into the navigation bar, and you can link directly to it, share
+on social media, or embed our viewer directly into other webpages, blog posts, or articles.
+
+See also **Using a specific version of JanusWeb** below.
+
+### Pull our scripts into your page
+Using the above method, all of your links would go through our servers.  If you'd prefer to
+link to your own servers, you can pull our JS into your page and use JanusWeb as a scriptable
+client via its API.  This looks something like this:
+
+```html
+<html>
+  <head>
+    <title>My JanusVR Room</title>
+  </head>
+  <body>
+    <FireBoxRoom>
+      <Room use_local_asset="room1">
+        <Object id="cube" pos="0 1 5" />
+        <Text col="1 0 0" pos="0 2 4">My First Room</Text>
+      </Room>
+    </FireBoxRoom>
+    <script src="https://web.janusvr.com/janusweb.js"></script>
+    <script>elation.janusweb.init({url: document.location.href})</script>
+  </body>
+</html>
 ```
 
-Once this finishes, you'll have everything needed to build your own JanusWeb client release.  If desired, check the settings in scripts/config.js, then run: 
+The `elation.janusweb.init()` function can take a number of arguments, and returns a promise which
+receives an instance of the client.  This client reference can be controlled via its API.  See the
+sections on **Arguments** and **Scripting** below.
 
-```sh
-npm run build
-``` 
+See also **Using a specific version of JanusWeb** below.
 
-This will generate a release in the ```build/``` directory.  Copy this directory recursively to its final location (eg, http://www.myserver.com/janusweb/), and you should be ready to go.
+### Install from ZIPs
+(TODO - we will start shipping zip builds of JanusWeb once we release v1.0)
+
+### Install from NPM
+(TODO - we will start shipping official NPM packages of JanusWeb once we release v1.0)
+```bash
+npm install janusweb
+```
+
+## Arguments
+JanusWeb supports several arguments at initialization time to control how it behaves.
+
+<table>
+  <tr><th> Name           </th><th> Description                            </th><th> Default                  </th></tr>
+
+  <tr><td> autoload       </td><td> Load URL by default or wait for script </td><td> true                     </td></tr>
+
+  <tr><td> crosshair      </td><td> Show player crosshair                  </td><td> true                     </td></tr>
+
+  <tr><td> homepage       </td><td> Default page to go to when user presses
+                                    home button                            </td><td> https://web.janusvr.com/ </td></tr>
+
+  <tr><td> networking     </td><td> Enable networking                      </td><td> true                     </td></tr>
+
+  <tr><td> picking        </td><td> Enable mouse interactions              </td><td> true                     </td></tr>
+
+  <tr><td> resolution     </td><td> If specified, restrict the renderer to
+                                    the specified size                     </td><td> (none)                   </td></tr>
+
+  <tr><td> server         </td><td> Presence server to connect to          </td><td> wss://presence.janusvr.com:5567/</td></tr>
+
+  <tr><td> shownavigation </td><td> Control visibility of navigation bar   </td><td> true                     </td></tr>
+
+  <tr><td> showchat       </td><td> Control visibility of chat             </td><td> true                     </td></tr>
+
+  <tr><td> stats          </td><td> Enable render performance stats        </td><td> false                    </td></tr>
+
+  <tr><td> url            </td><td> Default page to load                   </td><td> (homepage)               </td></tr>
+
+  <tr><td> urltemplate    </td><td> Optional template for generating URLs  </td><td> (none)                   </td></tr>
+
+  <tr><td> useWebVRPolyfill </td><td> Enable WebVR polyfill for mobile
+                                      phone compatibility                  </td><td> true                     </td></tr>
+
+  <tr><td> usevoip        </td><td> Enable or disable VOIP functionality
+                                    (NOTE - disabled pending browser support
+                                    for Opus via WebAudio)                 </td><td> false                    </td></tr>
+</table>
+
+## Scripting
+After initializing the client, `elation.janusweb.init()` returns a Promise which provides a reference to the client.
+You can programatically control this client to do all sorts of things.  For instance, we can make the client load a
+URL, wait for the world and all of its assets to load, and then take a screenshot of the world after a specified delay:
+
+```javascript
+var pageinfo = elation.utils.parseURL(document.location.href),
+    urlargs = pageinfo.args || {},
+    hashargs = pageinfo.hash || {};
+
+var url = elation.utils.any(hashargs.url, urlargs.url, 'http://www.janusvr.com/index.html'),
+    delay = elation.utils.any(hashargs.delay, urlargs.delay, 1000);
+
+elation.janusweb.init({
+  url: url,
+  resolution: '1920x1080',
+  showchat: false,
+  shownavigation: false
+}).then(function(client) {
+  elation.events.add(client.janusweb.currentroom, 'room_load_complete', function() {
+    setTimeout(function() {
+      client.hideMenu();
+      client.screenshot().then(function(imagefile) {
+        // upload imagefile somewhere via XHR
+        console.log('Screenshot complete!');
+      });
+    }, delay);
+  });
+});
+
+```
+
+Many other aspects of the JanusWeb client can be controlled this way as well.  Our users are
+always thinking up new and inventive ways of using the JanusWeb client.  Embed it in your blog
+posts, use it to render 3D content behind your 2d webpage, put a virtual security camera in your
+world and view a live stream of the virtual world from any web browser.  Control the virtual world
+via a web interface.  This is your scriptable live portal into the metaverse, to do with whatever
+you please.  The possibilities are endless!
+
+You can even run JanusWeb in NodeJS for headless server-side operations.  Use it to write a bot that
+wanders the metaverse, or run your game logic and physics on a server to have one authoritative
+source of state for your world.  If this sounds interesting to you let us know, we will be more
+than happy to help you through this (it's all very experimental right now!)
+
+
+## Build from source
+
+If you'd like to build JanusWeb from source, you can check it out from Github and build using the
+following steps:
+
+```bash
+$ git clone https://github.com/jbaicoianu/janusweb
+$ cd janusweb
+$ npm install --only=prod
+$ npm run build
+```
+
+This will give you a full build of the latest verson of JanusWeb in your `build/` directory.  You
+can then modify `build/index.html` however you see fit, and host it as suggested above.
+
+## Contributing
+
+JanusWeb is open source, and we welcome any contributions! Please do report bugs using GitHub Issues, and all pull requests will be considered. We could especially use help with documentation!
+
+## Who is responsible for this?
+
+JanusWeb was created by James Baicoianu, and is now an official open source project of JanusVR, Inc. The JanusWeb software and its API are published under the MIT license, and are free to use for whatever uses you can think of. If you build something cool, let us know!
 

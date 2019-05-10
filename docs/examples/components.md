@@ -16,19 +16,19 @@ Check the [Reference](https://github.com/jbaicoianu/janusweb/wiki/Scripting-Supp
 <a href="examples/components_media.md#presentation">
   <img alt="presentation" target="_blank" src="https://i.imgur.com/YwRPjE7.jpg" height="190" width="24%">
 </a>
-<a href="https://github.com/madjin/janus-custom-components/blob/master/media/index.md#projector">
+<a href="examples/components_media.md#projector">
   <img alt="projector" target="_blank" src="https://i.imgur.com/LWTge35.jpg" height="190" width="24%">
 </a>
-<a href="https://github.com/madjin/janus-custom-components/blob/master/media/index.md#recordplayer">
+<a href="examples/components_media.md#recordplayer">
   <img alt="recordplayer" target="_blank" src="https://i.imgur.com/gp57p35.jpg" height="190" width="24%">
 </a>
-<a href="https://github.com/madjin/janus-custom-components/blob/master/media/index.md#search">
+<a href="examples/components_media.md#search">
   <img alt="search" target="_blank" src="https://i.imgur.com/aX9JBBB.jpg" height="190" width="24%">
 </a>
-<a href="https://github.com/madjin/janus-custom-components/blob/master/media/index.md#stereosystem">
+<a href="examples/components_media.md#stereosystem">
   <img alt="stereosystem" target="_blank" src="https://i.imgur.com/e5myvoa.jpg" height="190" width="24%">
 </a>
-<a href="https://github.com/madjin/janus-custom-components/blob/master/media/index.md#videoscreen">
+<a href="examples/components_media.md#videoscreen">
   <img alt="videoscreen" target="_blank" src="https://i.imgur.com/t5x8rxN.jpg" height="190" width="24%">
 </a>
 
@@ -104,5 +104,5 @@ Check the [Reference](https://github.com/jbaicoianu/janusweb/wiki/Scripting-Supp
 
 ---
 
-## [Weapons](components_weapons.md)
+## [Weapons](examples/components_weapons.md)
 
