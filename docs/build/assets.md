@@ -74,6 +74,7 @@ The example below is of someone loading a picture of a wood plank into a webspac
 
 **tex_colorspace** (default "sRGB") - Can be "sRGB/linear". The colorspace to use for an objects associated textures. Typically only used when manually loading an asset's textures via tex0-tex9 attributes.
 
+---
 
 # AssetSound
 
@@ -101,6 +102,7 @@ Here is an example of how to use the AssetSound tag to add the sound "localmap.m
 
 **src** - The location of the sound file.
 
+---
 
 # AssetVideo
 
@@ -140,6 +142,7 @@ Here is an example of how to use the AssetVideo tag to add the video "las_firebo
 
 **reverse3d** - (default "false") Flips which half of each frame is shown to each eye, when either sbs3d or ou3d are set to true.
 
+---
 
 # AssetObject
 
@@ -182,6 +185,7 @@ Here is how to specify a material file (which may reference many textures):
 
 **tex_colorspace** (default "sRGB") - Can be "sRGB/linear". The colorspace to use for an objects associated textures. Typically only used when manually loading an asset's textures via tex0-tex9 attributes. Only effects the albedo textures loaded by the model file.
 
+---
 
 # AssetShader
 
@@ -208,6 +212,7 @@ Here is another example (both custom fragment and vertex shaders).
 
 **vertex_src** - (default "") The location of a GLSL vertex shader (plaintext file with GLSL code).
 
+---
 
 # AssetGhost
 
@@ -234,6 +239,7 @@ Below is an example of defining a ghost via a ghost file generated through Janus
 
 **src** - The location of the ghost recording file (a plaintext file).
 
+---
 
 # AssetWebsurface
 
@@ -267,6 +273,7 @@ Below is someone defining a 1920x1080 resolution AssetWebSurface and pointing it
 
 **show_url_bar** - Whether or not to show navigation controls on this asset.
 
+---
 
 # AssetScript
 
@@ -295,6 +302,8 @@ Below is an example of someone defining a JS file called "script.txt", which wil
 The id attribute is not required for this asset
 
 **src** - The location of the JavaScript file that will be executed.
+
+---
 
 
 # AssetRecording

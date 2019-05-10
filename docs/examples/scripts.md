@@ -71,7 +71,7 @@
 
 ---
 
-[Clickball](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/ball_withpos_reset.js)
+### [Clickball](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/ball_withpos_reset.js)
 
 ```html
 <FireBoxRoom>
@@ -401,7 +401,7 @@
 
 ---
 
-[Quadcopter](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/quadcopter.js)
+### [Quadcopter](https://github.com/madjin/janus-guide/blob/master/docs/examples/scripts/quadcopter.js)
 
 ```html
 <FireBoxRoom>
