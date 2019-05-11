@@ -27,3 +27,4 @@
  * [Unity to Janus](guide/unity.md)
  * [Vesta Basics](guide/vestabasics.md)
  * [Janus to Decentraland](guide/dclconvert.md)
+ * [Blender to JanusVR](guide/firevr.md)
