@@ -28,3 +28,4 @@
  * [Vesta Basics](guide/vestabasics.md)
  * [Janus to Decentraland](guide/dclconvert.md)
  * [Blender to JanusVR](guide/firevr.md)
+ * [Share to Dat](guide/dat.md)

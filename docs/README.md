@@ -9,11 +9,6 @@ Table of Contents:
 - [Rooms](https://github.com/madjin/janus-guide/blob/master/docs/build/room.md) - Section of JML that declares how assets appear in the web space
 - [Server](https://github.com/madjin/janus-guide/blob/master/docs/build/server.md) - Server API for the networking layer (WIP)
 
-:notebook: **Guides**: Useful tutorials made by the community
-
-- [Unity to JanusVR](https://github.com/madjin/janus-guide/blob/master/docs/guide/unity.md) - Guide on exporting unity scenes to webvr compatible JML
-- [Vesta Basics](https://github.com/madjin/janus-guide/blob/master/guide/tutorials/vestabasics.md) - Tutorial on how to use Vesta with native client editor
-- [Collision Meshes](https://github.com/madjin/janus-guide/blob/master/guide/tutorials/Collision-Meshes.md) - How to create your own collision mesh for use in janusweb
 
 :mount_fuji: **[JanusWeb](https://github.com/jbaicoianu/janusweb)**: Web framework for building interconnected 3D experiences
 
@@ -23,6 +18,12 @@ Table of Contents:
 - [Wiki](https://github.com/jbaicoianu/janusweb/wiki) - The janusweb wiki located on the Github repo
 - [Custom Components](https://github.com/madjin/janus-custom-components) - The current collection of ready to use janusweb custom components
 
+
+:notebook: **Guides**: Useful tutorials made by the community
+
+- [Unity to JanusVR](https://github.com/madjin/janus-guide/blob/master/docs/guide/unity.md) - Guide on exporting unity scenes to webvr compatible JML
+- [Vesta Basics](https://github.com/madjin/janus-guide/blob/master/guide/tutorials/vestabasics.md) - Tutorial on how to use Vesta with native client editor
+- [Collision Meshes](https://github.com/madjin/janus-guide/blob/master/guide/tutorials/Collision-Meshes.md) - How to create your own collision mesh for use in janusweb
 
 :pushpin: **Useful links**
 
