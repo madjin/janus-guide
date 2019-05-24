@@ -11,11 +11,11 @@ functions for translating between object-relative and world-relative coordinates
 
 A key part of being able to build reusable components for VR and the web is to be able to encapsulate code into reusable, extendable, and shareable chunks.  We've built our implementation based on the HTML5 Custom Elements spec, and we now expose an API to room scripts which makes it easy for room developers to define the objects they need to add interactivity and other advanced functionality to their sites.  We've also started a few side projects to build up some libraries of components we see as being useful to the creation of VR experiences as a whole:
 
- - [[janus-script-ui|https://github.com/jbaicoianu/janus-script-ui/]]: a collection of 3D/VR UI controls - buttons, toggles, sliders, etc
- - [[janus-script-layout|https://github.com/jbaicoianu/janus-script-layout/]]: a collection of components for quickly laying out groups of objects in 3D
- - [[janus-script-game|https://github.com/jbaicoianu/janus-script-game/]]: a collection of custom components inspired by gaming mechanics (doors, teleporters, etc)
- - [[janus-script-video|https://github.com/jbaicoianu/janus-script-video/]]: a collection of components for building advanced players for various media types
- - [[janus-script-audio|https://github.com/jbaicoianu/janus-script-audio/]]: a collection of components for wiring up positional audio and audio processing for your room
+ - [janus-script-ui](https://github.com/jbaicoianu/janus-script-ui/): a collection of 3D/VR UI controls - buttons, toggles, sliders, etc
+ - [janus-script-layout](https://github.com/jbaicoianu/janus-script-layout/): a collection of components for quickly laying out groups of objects in 3D
+ - [janus-script-game](https://github.com/jbaicoianu/janus-script-game/): a collection of custom components inspired by gaming mechanics (doors, teleporters, etc)
+ - [janus-script-video](https://github.com/jbaicoianu/janus-script-video/): a collection of components for building advanced players for various media types
+ - [janus-script-audio](https://github.com/jbaicoianu/janus-script-audio/): a collection of components for wiring up positional audio and audio processing for your room
 
 So what is a Custom Element?  Well, first let's look at a super-basic Janus room.  Following the markup reference at janusvr.com/guide/markuplanguage/index.html we start with a basic room:
 ```xml

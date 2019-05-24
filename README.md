@@ -42,9 +42,9 @@ Table of Contents:
 
 :pencil2: **To do**
 
-- update all the pictures
-- cover missing features
-- add more information about light / shadow in a blog
-- add links to examples for people to experiment
-- spicy tutorials with links to the 'ingredients' in recipe
-- refactor new and old documentation
+- [ ] update all the pictures
+- [ ] cover missing features
+- [ ] add more information about light / shadow in a blog
+- [ ] add links to examples for people to experiment
+- [ ] spicy tutorials with links to the 'ingredients' in recipe
+- [x] test frameworks to autogen beautiful themed documentation sites
