@@ -34,6 +34,7 @@ Most assets must have an id assigned to it. This id is their unique "identifier"
 
 AssetImage is used to define any standalone image file that will be used in the webspace. PNG, JPG, GIF and most other common formats are acceptable. Images with a transparency layer (such as with the PNG format) are also supported.
 
+![AssetImage](https://i.imgur.com/fISNIB0.jpg)
 
 The example below is of someone loading a picture of a wood plank into a webspace through the Assets section and giving it the id: woodplanks_img
 
@@ -80,6 +81,7 @@ The example below is of someone loading a picture of a wood plank into a webspac
 
 These are sounds which can be used within the webspace. Supported formats are dependent upon the multimedia capabilities of the underlying platform (e.g. DirectShow on Windows, gstreamer on Linux). Uncompressed WAV will work universally, but is not bandwidth friendly. MP2 or MP3 are compressed formats which seem to work universally and offer great compression.
 
+![AssetSound](https://i.imgur.com/dJXQSJI.jpg)
 
 Here is an example of how to use the AssetSound tag to add the sound "localmap.mp3" to the collection of assets, assigning it id "localmap_sound".
 
@@ -146,8 +148,9 @@ Here is an example of how to use the AssetVideo tag to add the video "las_firebo
 
 # AssetObject
 
-These are the 3D geometric objects which can be used within the FireBoxRoom. Supported formats are OBJ, DAE, 3DS and FBX.
+These are the 3D geometric objects which can be used within the FireBoxRoom. Supported formats are OBJ, DAE, 3DS, glTF, and FBX.
 
+![AssetObject](https://i.imgur.com/fISNIB0.jpg)
 
 The URL to the file is specified by the src attribute. You can also specify materials for the file using either a single texture file (specified with the tex attribute), or more traditionally by specifying the location of the material file (specified with the mtl attribute). Here is an example of the first method (specifying a single image as a texture).
 
