@@ -5,10 +5,10 @@
 Various weather simulations
 
 <a href="https://i.imgur.com/Uk61Df9.jpg">
-  <img alt="rain" target="_blank" src="https://i.imgur.com/Uk61Df9.jpg" height="240" width="50%">
+  <img alt="rain" target="_blank" src="https://i.imgur.com/Uk61Df9.jpg" height="190" width="49%">
 </a>
 <a href="https://i.imgur.com/uY7m9hd.jpg">
-  <img alt="snow" target="_blank" src="https://i.imgur.com/uY7m9hd.jpg" height="240" width="50%">
+  <img alt="snow" target="_blank" src="https://i.imgur.com/uY7m9hd.jpg" height="190" width="49%">
 </a>
 
 ---
@@ -18,16 +18,16 @@ Various weather simulations
 Display 360 content such as images and video in a variety of ways
 
 <a href="https://i.imgur.com/WSRT9wc.jpg">
-  <img alt="fullscreen" target="_blank" src="https://i.imgur.com/WSRT9wc.jpg" height="240" width="50%">
+  <img alt="fullscreen" target="_blank" src="https://i.imgur.com/WSRT9wc.jpg" height="190" width="49%">
 </a>
 <a href="https://i.imgur.com/qGzLKBG.jpg">
-  <img alt="shell" target="_blank" src="https://i.imgur.com/qGzLKBG.jpg" height="240" width="50%">
+  <img alt="shell" target="_blank" src="https://i.imgur.com/qGzLKBG.jpg" height="190" width="49%">
 </a>
 <a href="https://i.imgur.com/zjOMAs6.jpg">
-  <img alt="crystalball" target="_blank" src="https://i.imgur.com/zjOMAs6.jpg" height="240" width="50%">
+  <img alt="crystalball" target="_blank" src="https://i.imgur.com/zjOMAs6.jpg" height="190" width="49%">
 </a>
 <a href="https://i.imgur.com/1GqeRcb.jpg">
-  <img alt="gallery" target="_blank" src="https://i.imgur.com/1GqeRcb.jpg" height="240" width="50%">
+  <img alt="gallery" target="_blank" src="https://i.imgur.com/1GqeRcb.jpg" height="190" width="49%">
 </a>
 
 ---
@@ -37,10 +37,10 @@ Display 360 content such as images and video in a variety of ways
 Combination of components that includes streetlight, pushbutton, and slider
 
 <a href="https://i.imgur.com/5GdPPHg.jpg">
-  <img alt="streetlight" target="_blank" src="https://i.imgur.com/5GdPPHg.jpg" height="240" width="50%">
+  <img alt="streetlight" target="_blank" src="https://i.imgur.com/5GdPPHg.jpg" height="190" width="49%">
 </a>
 <a href="https://i.imgur.com/ReI03uz.jpg">
-  <img alt="lightswitch" target="_blank" src="https://i.imgur.com/ReI03uz.jpg" height="240" width="50%">
+  <img alt="lightswitch" target="_blank" src="https://i.imgur.com/ReI03uz.jpg" height="190" width="49%">
 </a>
 
 ---
@@ -50,13 +50,13 @@ Combination of components that includes streetlight, pushbutton, and slider
 Code samples involving gaze tracking
 
 <a href="https://i.imgur.com/woC3knB.jpg">
-  <img alt="detect" target="_blank" src="https://i.imgur.com/woC3knB.jpg" height="240" width="32%">
+  <img alt="detect" target="_blank" src="https://i.imgur.com/woC3knB.jpg" height="190" width="32%">
 </a>
 <a href="https://i.imgur.com/RIPgITI.jpg">
-  <img alt="events" target="_blank" src="https://i.imgur.com/RIPgITI.jpg" height="240" width="32%">
+  <img alt="events" target="_blank" src="https://i.imgur.com/RIPgITI.jpg" height="190" width="32%">
 </a>
 <a href="https://i.imgur.com/IkO8AN3.jpg">
-  <img alt="teleport" target="_blank" src="https://i.imgur.com/IkO8AN3.jpg" height="240" width="32%">
+  <img alt="teleport" target="_blank" src="https://i.imgur.com/IkO8AN3.jpg" height="190" width="32%">
 </a>
 
 ---
@@ -124,10 +124,10 @@ View demo: <https://vesta.janusvr.com/bai/minecraft-torch-test>
 Uses the changemachine component for initiating a ride through Vegas when Bitcoin is received (currently the BTC backend is down).
 
 <a href="https://i.imgur.com/7h4Ofre.jpg">
-  <img alt="payment" target="_blank" src="https://i.imgur.com/7h4Ofre.jpg" height="240" width="50%">
+  <img alt="payment" target="_blank" src="https://i.imgur.com/7h4Ofre.jpg" height="190" width="49%">
 </a>
 <a href="https://i.imgur.com/QPkS3Mw.jpg">
-  <img alt="ride" target="_blank" src="https://i.imgur.com/QPkS3Mw.jpg" height="240" width="50%">
+  <img alt="ride" target="_blank" src="https://i.imgur.com/QPkS3Mw.jpg" height="190" width="49%">
 </a>
 
 ---
@@ -145,10 +145,10 @@ Example of a sbs3D movie playing from Youtube in an outdoor cinema
 Example of Unity scene export and Tanks! Tutorial Unity WebGL export fully playable inside of an arcade cabinet.
 
 <a href="https://i.imgur.com/7psitPW.jpg">
-  <img alt="tanks" target="_blank" src="https://i.imgur.com/7psitPW.jpg" height="240" width="50%">
+  <img alt="tanks" target="_blank" src="https://i.imgur.com/7psitPW.jpg" height="190" width="49%">
 </a>
 <a href="https://i.imgur.com/niqzLTZ.jpg">
-  <img alt="assets" target="_blank" src="https://i.imgur.com/niqzLTZ.jpg" height="240" width="50%">
+  <img alt="assets" target="_blank" src="https://i.imgur.com/niqzLTZ.jpg" height="190" width="49%">
 </a>
 
 To learn about how you can export Unity scenes into JanusVR, check out this guide: <https://madjin.github.io/janus-guide/#/guide/unity>
