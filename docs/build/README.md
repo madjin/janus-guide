@@ -31,7 +31,7 @@ Movement keys are slightly different for JanusWeb. When you right click to selec
 
 Need some help getting started? We've got some templates for you to take advantage of. Feel free to use these templates on your personal website!
 
-- <https://github.com/madjin/janusvr-examples>
+- <https://github.com/janusvr-examples>
 - <https://vesta.janusvr.com/search/template/1>
 - <http://janusvr.com/docs/build/templates/index.html>
 
@@ -39,10 +39,10 @@ Need some help getting started? We've got some templates for you to take advanta
 
 ## Learn JML
 
-<http://janusvr.com/docs/build/introtojml/index.html>
+<https://madjin.github.io/janus-guide/#/examples/markup>
 
 ---
 
 ## Export to JML
 
-<https://github.com/madjin/janus-guide/blob/master/docs/guide/unity.md>
+<https://madjin.github.io/janus-guide/#/guide/unity>

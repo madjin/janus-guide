@@ -1,6 +1,6 @@
 # The Unofficial Guide to JanusVR
 
-Inspired by the [Metaverse](https://en.wikipedia.org/wiki/Metaverse) of Snow Crash and named after [Janus](https://en.wikipedia.org/wiki/Janus), the Roman God of passages, [JanusVR](https://janusvr.com) allows a spatial walk through the internet. The analogy is that webpages are rooms, and links connect rooms via portals (doorways which seamlessly connect rooms). The experience draws you into this metaverse whether you are strapped to a headset or on the move with a tablet. Here is a passage which describes the god Janus from the novel "The Light Between Oceans" by M. L. Stedman:
+Inspired by the [Metaverse](https://en.wikipedia.org/wiki/Metaverse) of Snow Crash and named after [Janus](https://en.wikipedia.org/wiki/Janus), the Roman God of passages, [JanusVR](https://janusvr.com) transforms the internet into a world you can visit and build in. The analogy is that webpages are rooms, and links connect rooms via portals (doorways which seamlessly connect rooms). The experience draws you into this metaverse whether you are strapped to a headset or on the move with a tablet. Here is a passage which describes the god Janus from the novel "The Light Between Oceans" by M. L. Stedman:
 
 > "You know Janus is where the word January comes from? It's named after the same god as this island. He's got two faces, back to back. Pretty ugly fellow." 
 >
@@ -12,9 +12,11 @@ To be precise about the meaning of the name Janus - it is in reference to the po
 
 - Author content using existing 3D modeling tools, with our extended HTML and javascript
 - Navigate using traditional gamer controls, touch, teleporting ghosts or 3D hand gestures
+- Open source native and web clients, networking server, and tools for porting content
+- Real-time physics, physically based rendering, spatialized audio
 - Customize your Avatar
 - Talk, chat and visually interact in 3D
-- Surf the 2D web in 3D
+- Surf the 2D web in 3D environments
 
 ---
 

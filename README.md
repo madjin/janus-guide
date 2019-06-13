@@ -42,9 +42,14 @@ Table of Contents:
 
 :pencil2: **To do**
 
+- [ ] install / download page
+- [ ] use the program (controls)
+- [ ] overview of current feature set
+- [ ] main background image
+- [ ] collapsable sidebar menus
 - [ ] update all the pictures
 - [ ] cover missing features
 - [ ] add more information about light / shadow in a blog
-- [ ] add links to examples for people to experiment
+- [ ] add links to demos of examples for people to experiment
 - [ ] spicy tutorials with links to the 'ingredients' in recipe
 - [x] test frameworks to autogen beautiful themed documentation sites
