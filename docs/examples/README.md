@@ -11,6 +11,8 @@ Various weather simulations
   <img alt="snow" target="_blank" src="https://i.imgur.com/uY7m9hd.jpg" height="190" width="49%">
 </a>
 
+Demo: <https://weather.hashbase.io>
+
 ---
 
 ## [360-viewer](https://github.com/janusvr-examples/360-viewer)
@@ -30,6 +32,8 @@ Display 360 content such as images and video in a variety of ways
   <img alt="gallery" target="_blank" src="https://i.imgur.com/1GqeRcb.jpg" height="190" width="49%">
 </a>
 
+Demo: <https://360-viewer.hashbase.io>
+
 ---
 
 ## [Streetlight](https://github.com/janusvr-examples/streetlight)
@@ -42,6 +46,8 @@ Combination of components that includes streetlight, pushbutton, and slider
 <a href="https://i.imgur.com/ReI03uz.jpg">
   <img alt="lightswitch" target="_blank" src="https://i.imgur.com/ReI03uz.jpg" height="190" width="49%">
 </a>
+
+Demo: <https://streetlight.hashbase.io>
 
 ---
 
@@ -58,6 +64,8 @@ Code samples involving gaze tracking
 <a href="https://i.imgur.com/IkO8AN3.jpg">
   <img alt="teleport" target="_blank" src="https://i.imgur.com/IkO8AN3.jpg" height="190" width="32%">
 </a>
+
+Demo: <https://gaze-detection.hashbase.io>
 
 ---
 
@@ -97,6 +105,8 @@ Collection of skybox templates and probes.
   <img alt="unity" target="_blank" src="https://i.imgur.com/UXbHvB9.jpg" height="190" width="32%">
 </a>
 
+Demo: <https://skyboxes.hashbase.io>
+
 ---
 
 ## [PBR-Demo](https://github.com/janusvr-examples/pbr-demo)
@@ -107,6 +117,8 @@ Example of using physically based rendering techniques
 
 View a demo: <https://vesta.janusvr.com/firefoxg/physically-based-rendering-pbr-metallic-demo>
 
+Dat demo: <https://pbr-demo.hashbase.io>
+
 ---
 
 ## [Torch](https://github.com/janusvr-examples/torch)
@@ -116,6 +128,8 @@ Flickering torch and flashlight example
 ![Torch](https://i.imgur.com/VqfQmC1g.jpg)
 
 View demo: <https://vesta.janusvr.com/bai/minecraft-torch-test>
+
+Dat demo: <dat://9a8fe22a4c2007283a9b7a9378da1bc628dfd395366cd3df6b8da57d6a88fd73/>
 
 ---
 
@@ -130,6 +144,8 @@ Uses the changemachine component for initiating a ride through Vegas when Bitcoi
   <img alt="ride" target="_blank" src="https://i.imgur.com/QPkS3Mw.jpg" height="190" width="49%">
 </a>
 
+Demo: <dat://be0958b5c744e7d34eb8c3a8f533d7c7c1f3d6727187bc9f830560dba857704b/>
+
 ---
 
 ## [Forest-Cinema](https://github.com/janusvr-examples/forest-cinema)
@@ -137,6 +153,8 @@ Uses the changemachine component for initiating a ride through Vegas when Bitcoi
 Example of a sbs3D movie playing from Youtube in an outdoor cinema
 
 ![Forest cinema](https://i.imgur.com/zpfojr4.jpg)
+
+Demo: <https://forest-cinema.hashbase.io> (currently broken)
 
 ---
 
@@ -162,6 +180,8 @@ To learn about how you can export Unity scenes into JanusVR, check out this guid
 Basic JML site example with some primitives and asset types
 
 ![hello world](https://i.imgur.com/qo2qUUJ.jpg)
+
+Demo: <https://hello-webvr.hashbase.io>
 
 ---
 
@@ -191,6 +211,8 @@ Samples of different avatars you can have in JanusVR
 
 ![X and Y Bots](https://i.imgur.com/7wHxx3c.jpg)
 
+Demo: <https://avatars.hashbase.io>
+
 ---
 
 ## [Presentation](https://github.com/janusvr-examples/presentation)
@@ -201,3 +223,4 @@ The 'n'ext and 'b'ack keys will take you through the presentation.
 
 ![presentation](https://i.imgur.com/m05g5BK.jpg)
 
+Demo: <dat://a1f092869d8679e7564f8bfdb30d01e0e1812f22d9159e65e944410409d1557a>
