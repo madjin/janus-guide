@@ -92,19 +92,38 @@ The JanusVR project has evolved into a suite of technology addressing different 
 
 ---
 
-Native C++ client for Windows/Linux/OSX: <https://github.com/janusvr/janus>
+### Native C++ client
+
+**<https://github.com/janusvr/janus>**
 
 ![Janus client](https://i.imgur.com/xVguGZb.jpg)
 
 ---
 
-Android client: <https://play.google.com/store/apps/details?id=org.janusvr>
+### Android Client
+
+**<https://play.google.com/store/apps/details?id=org.janusvr>**
+
+Port of the native client to Android phones.
 
 ![Android client in Vesta lobby](https://i.imgur.com/KCHf0b9.jpg)
 
 ---
 
-Three.js / WebGL client: <https://github.com/jbaicoianu/janusweb> 
+### Web Client
+
+**<https://github.com/jbaicoianu/janusweb>**
+
+- Build immersive 3D environments for desktop, mobile, and VR devices using HTML and JS
+- Rendering functionality provided by Three.js / WebGL
+- Oculus Rift, Vive, GearVR, Daydream, and Cardboard support via WebVR API
+- Realtime collaboration across all devices via built-in networking
+- Import Collada, OBJ, glTF, and other popular 3d file formats
+- 3D positional audio
+- Gamepad support via the HTML5 Gamepad API
+- Supports hand tracking peripherals like Leap Motion, Oculus Touch, and Vive controllers
+- Support for 2d, sbs3d/ou3d, and 360 degree video textures using HTML5 Video
+- Scriptable client enables many customized uses
 
 <a href="https://i.imgur.com/mw0Um3C.gif">
   <img alt="Crystalball" target="_blank" src="https://i.imgur.com/mw0Um3C.gif" height="190" width="32%">
@@ -127,13 +146,21 @@ Three.js / WebGL client: <https://github.com/jbaicoianu/janusweb>
 
 ---
 
-Tools to import and export between game engines: <https://github.com/janusvr/janus-tools>
+### Janus Tools
+
+**<https://github.com/janusvr/janus-tools>**
+
+Import and Export between different engines 
 
 ![Janus Tools](https://i.imgur.com/VpsamZV.jpg)
 
 ---
 
-Vesta: Social network for WebVR, Build Create and Share 3D worlds: <https://vesta.janusvr.com/> 
+### Vesta 
+
+**<https://vesta.janusvr.com/>** 
+
+Social network for WebVR, Build Create and Share 3D worlds: 
 
 ![Vesta 2D frontend with world select and building](https://i.imgur.com/xVPUoEK.jpg)
 
@@ -141,7 +168,11 @@ Vesta: Social network for WebVR, Build Create and Share 3D worlds: <https://vest
 
 ---
 
-Lightweight networking server: <https://github.com/janusvr/janus-server>
+### Janus Server
+
+**<https://github.com/janusvr/janus-server>**
+
+Lightweight networking server 
 
 - Networks all (web, android, native) Janus client browsers into social Janus sessions
 - Based on node.js, recording and playback
@@ -154,7 +185,11 @@ Lightweight networking server: <https://github.com/janusvr/janus-server>
 
 ---
 
-Extensible Markup language and Entity Component System: <https://madjin.github.io/janus-guide/#/>
+### JML
+
+**<https://madjin.github.io/janus-guide/#/examples/markup>**
+
+Extensible Markup language and Entity Component System 
 
 ![XML and JSON versions of JML](https://i.imgur.com/DOgVDEa.jpg)
 
@@ -165,7 +200,11 @@ Extensible Markup language and Entity Component System: <https://madjin.github.i
 
 ---
 
-Javascript translators to spatialize sites generatively: <https://web.janusvr.com/sites/https/reddit.com/r/pics>
+### JS Spatializers
+
+Demo: **<https://web.janusvr.com/sites/https/reddit.com/r/pics>**
+
+Javascript translators to spatialize sites generatively 
 
 JML is a language for defining immersive experiences on websites, while our spatialzers are customizable scripts that can convert any ordinary HTML page into JML, allowing anyone to make any part of the web (or all of it!) immersive.
 
