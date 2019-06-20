@@ -92,15 +92,17 @@ The JanusVR project has evolved into a suite of technology addressing different 
 
 ---
 
-### Native C++ client
+### Janus
 
 **<https://github.com/janusvr/janus>**
+
+Native C++ client
 
 ![Janus client](https://i.imgur.com/xVguGZb.jpg)
 
 ---
 
-### Android Client
+### Jandroid 
 
 **<https://play.google.com/store/apps/details?id=org.janusvr>**
 
@@ -110,9 +112,11 @@ Port of the native client to Android phones.
 
 ---
 
-### Web Client
+### JanusWeb
 
 **<https://github.com/jbaicoianu/janusweb>**
+
+Feature parity with Janus made with javascript to run in web browsers.
 
 - Build immersive 3D environments for desktop, mobile, and VR devices using HTML and JS
 - Rendering functionality provided by Three.js / WebGL
