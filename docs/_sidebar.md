@@ -1,6 +1,8 @@
 <!-- docs/_sidebar.md -->
 
 * [Home](/)
+ * [Table of Contents](README.md#table-of-contents)
+ * [Technology](README.md#technology)
 * [Build](build/README.md)
  * [Assets](build/assets.md)
  * [Room](build/room.md)

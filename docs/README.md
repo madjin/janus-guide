@@ -18,7 +18,39 @@ To be precise about the meaning of the name Janus - it is in reference to the po
 - Talk, chat and visually interact in 3D
 - Surf the 2D web in 3D environments
 
----
+***
+
+# Table of Contents
+
+- :wrench: [**Build**](https://madjin.github.io/janus-guide/#/build/README): Learn how to create immersive worlds with Janus
+  - [Assets](https://madjin.github.io/janus-guide/#/build/assets) - List of assets that can be used throughout a web space
+  - [Rooms](https://madjin.github.io/janus-guide/#/build/room) - Section of JML that declares how assets appear in the web space
+  - [Javascript](https://madjin.github.io/janus-guide/#/build/javascript) - Overview of scripting compatible with Janus native
+  - [Server](https://madjin.github.io/janus-guide/#/build/server) - Server API for the networking layer
+
+- :mount_fuji: [**JanusWeb**](https://madjin.github.io/janus-guide/#/wiki/README): Web framework for building interconnected 3D experiences
+  - [Loading Anatomy](https://madjin.github.io/janus-guide/#/wiki/anatomy) - Overview of how JanusWeb is loaded
+  - [Collision Meshes](https://madjin.github.io/janus-guide/#/wiki/collisionmeshes) - Learn how to setup collision detection
+  - [Controls](https://madjin.github.io/janus-guide/#/wiki/controls) - Control mapping system for VR controllers, gamepads, joysticks, etc
+  - [Custom Elements](https://madjin.github.io/janus-guide/#/wiki/customelements) - Extend functionality with custom-defined object types
+  - [JanusWeb UI](https://madjin.github.io/janus-guide/#/wiki/januswebui) - Create and extend the JanusWeb user interface
+
+- :open_file_folder: [**Examples**](https://madjin.github.io/janus-guide/#/examples/README): Presets for quickly getting started making worlds
+  - [Janus Markup](https://madjin.github.io/janus-guide/#/examples/markup) - Introduction to JML
+  - [Janus Scripts](https://madjin.github.io/janus-guide/#/examples/scripts) - Janus script examples (native compatibility)
+  - [Janus Components](https://madjin.github.io/janus-guide/#/examples/components?id=janus-custom-components) - Variety of custom components
+    - [Media](https://madjin.github.io/janus-guide/#/examples/components?id=media) - Powerful components for interactive media
+    - [Scenery](https://madjin.github.io/janus-guide/#/examples/components?id=scenery) - Fireworks, procedural nature, and water
+    - [Space](https://madjin.github.io/janus-guide/#/examples/components?id=space) - Experiment using the built-in physics force generators
+    - [Tools](https://madjin.github.io/janus-guide/#/examples/components?id=tools) - Bitcoin exchange and various lights
+    - [Utils](https://madjin.github.io/janus-guide/#/examples/components?id=utils) - Instancing, layouts, buttons, teleporters, and more
+
+- :notebook: [**Guides**](https://madjin.github.io/janus-guide/#/guide/README): Useful tutorials made by the community
+  - [Unity to JanusVR](https://madjin.github.io/janus-guide/#/guide/unity) - Guide on exporting unity scenes to webvr compatible JML
+  - [Vesta Basics](https://madjin.github.io/janus-guide/#/guide/vestabasics) - Tutorial on how to use Vesta with native client editor
+  - [Janus to Decentraland](https://madjin.github.io/janus-guide/#/guide/dclconvert) - Convert Janus scenes to DCL SDK
+  - [Blender to JanusVR](https://madjin.github.io/janus-guide/#/guide/firevr) - Learn about the Blender plugin for JanusVR
+  - [Share to Dat](https://madjin.github.io/janus-guide/#/guide/dat) - Distribute your virtual worlds over a P2P network
 
 ## Table of Contents
 
@@ -41,8 +73,8 @@ To be precise about the meaning of the name Janus - it is in reference to the po
   - [Janus Components](https://madjin.github.io/janus-guide/#/examples/components?id=janus-custom-components) - Variety of custom components
     - [Media](https://madjin.github.io/janus-guide/#/examples/components?id=media) - Powerful components for interactive media
     - [Scenery](https://madjin.github.io/janus-guide/#/examples/components?id=scenery) - Fireworks, procedural nature, and water
-    - [Space](https://madjin.github.io/janus-guide/#/examples/components?id=space) - Experiment using the built-in physics force generators 
-    - [Tools](https://madjin.github.io/janus-guide/#/examples/components?id=tools) - Bitcoin exchange and various lights 
+    - [Space](https://madjin.github.io/janus-guide/#/examples/components?id=space) - Experiment using the built-in physics force generators
+    - [Tools](https://madjin.github.io/janus-guide/#/examples/components?id=tools) - Bitcoin exchange and various lights
     - [Utils](https://madjin.github.io/janus-guide/#/examples/components?id=utils) - Instancing, layouts, buttons, teleporters, and more
 
 - :notebook: [**Guides**](https://madjin.github.io/janus-guide/#/guide/README): Useful tutorials made by the community
@@ -52,8 +84,98 @@ To be precise about the meaning of the name Janus - it is in reference to the po
   - [Blender to JanusVR](https://madjin.github.io/janus-guide/#/guide/firevr) - Learn about the Blender plugin for JanusVR
   - [Share to Dat](https://madjin.github.io/janus-guide/#/guide/dat) - Distribute your virtual worlds over a P2P network
 
+---
 
-***
+# Technology
+
+The JanusVR project has evolved into a suite of technology addressing different areas needed to catalyze the open and immersive web. 
+
+---
+
+Native C++ client for Windows/Linux/OSX: <https://github.com/janusvr/janus>
+
+![Janus client](https://i.imgur.com/xVguGZb.jpg)
+
+---
+
+Android client: <https://play.google.com/store/apps/details?id=org.janusvr>
+
+![Android client in Vesta lobby](https://i.imgur.com/KCHf0b9.jpg)
+
+---
+
+Three.js / WebGL client: <https://github.com/jbaicoianu/janusweb> 
+
+<a href="https://i.imgur.com/mw0Um3C.gif">
+  <img alt="Crystalball" target="_blank" src="https://i.imgur.com/mw0Um3C.gif" height="190" width="32%">
+</a>
+<a href="https://i.imgur.com/V6fqjVG.gif">
+  <img alt="Augmented Perception" target="_blank" src="https://i.imgur.com/V6fqjVG.gif" height="190" width="32%">
+</a>
+<a href="https://i.imgur.com/i1nIXI8.gif">
+  <img alt="Cinema" target="_blank" src="https://i.imgur.com/i1nIXI8.gif" height="190" width="32%">
+</a>
+<a href="https://i.imgur.com/FX3skXb.gif">
+  <img alt="Drag n' Drop" target="_blank" src="https://i.imgur.com/FX3skXb.gif" height="190" width="32%">
+</a>
+<a href="https://i.imgur.com/9CqBKV5.gif">
+  <img alt="Metacade" target="_blank" src="https://i.imgur.com/9CqBKV5.gif" height="190" width="32%">
+</a>
+<a href="https://imgur.com/pQAQ4yt.gif">
+  <img alt="Mansion" target="_blank" src="https://imgur.com/pQAQ4yt.gif" height="190" width="32%">
+</a>
+
+---
+
+Tools to import and export between game engines: <https://github.com/janusvr/janus-tools>
+
+![Janus Tools](https://i.imgur.com/VpsamZV.jpg)
+
+---
+
+Vesta: Social network for WebVR, Build Create and Share 3D worlds: <https://vesta.janusvr.com/> 
+
+![Vesta 2D frontend with world select and building](https://i.imgur.com/xVPUoEK.jpg)
+
+![JS spatializer for exploring Vesta in 3D (Early Access)](https://i.imgur.com/sXT0CiU.jpg)
+
+---
+
+Lightweight networking server: <https://github.com/janusvr/janus-server>
+
+- Networks all (web, android, native) Janus client browsers into social Janus sessions
+- Based on node.js, recording and playback
+- Syncs text, voice, and editing in-world per site
+- Private/Public/Party mode and local network support
+
+![Group of players gathering together](https://i.imgur.com/fnNmqKK.jpg)
+
+![Multiplayer support in Janus is open source](https://i.imgur.com/6RXHCGB.jpg)
+
+---
+
+Extensible Markup language and Entity Component System: <https://madjin.github.io/janus-guide/#/>
+
+![XML and JSON versions of JML](https://i.imgur.com/DOgVDEa.jpg)
+
+- Markup language examples: <https://madjin.github.io/janus-guide/#/examples/markup>
+- Custom component examples: <https://madjin.github.io/janus-guide/#/examples/components?id=janus-custom-components>
+
+![JML and the result 3D site](https://i.imgur.com/oTsRSIp.jpg)
+
+---
+
+Javascript translators to spatialize sites generatively: <https://web.janusvr.com/sites/https/reddit.com/r/pics>
+
+JML is a language for defining immersive experiences on websites, while our spatialzers are customizable scripts that can convert any ordinary HTML page into JML, allowing anyone to make any part of the web (or all of it!) immersive.
+
+Source to Reddit site translator: <https://github.com/jbaicoianu/janusweb/tree/master/media/assets/translator/reddit>
+
+![Reddit site translator](https://i.imgur.com/i25kRic.jpg)
+
+![Error code translators](https://i.imgur.com/eHj1VE3.jpg)
+
+---
 
 :pencil2: **To do**
 
