@@ -1,6 +1,6 @@
 # The Unofficial Guide to JanusVR
 
-Inspired by the [Metaverse](https://en.wikipedia.org/wiki/Metaverse) of Snow Crash and named after [Janus](https://en.wikipedia.org/wiki/Janus), the Roman God of passages, [JanusVR](https://janusvr.com) transforms the internet into a world you can visit and build in. The analogy is that webpages are rooms, and links connect rooms via portals (doorways which seamlessly connect rooms). The experience draws you into this metaverse whether you are strapped to a headset or on the move with a tablet. Here is a passage which describes the god Janus from the novel "The Light Between Oceans" by M. L. Stedman:
+Inspired by the [Metaverse](https://en.wikipedia.org/wiki/Metaverse) of Snow Crash and named after [Janus](https://en.wikipedia.org/wiki/Janus), the Roman God of passages, [JanusVR](https://janusvr.com) transforms the entire internet into a MMO world you can visit and build in. The analogy is that webpages are rooms, and links connect rooms via portals (doorways which seamlessly connect rooms). The experience draws you into this metaverse whether you are strapped to a headset or on the move with a tablet. Here is a passage which describes the god Janus from the novel "The Light Between Oceans" by M. L. Stedman:
 
 > "You know Janus is where the word January comes from? It's named after the same god as this island. He's got two faces, back to back. Pretty ugly fellow." 
 >
