@@ -6,6 +6,7 @@
  * [Install](home/install.md)
  * [Controls](home/controls.md)
  * [Gallery](home/gallery.md)
+ * [Use Cases](home/usecases.md)
 * [Build](build/README.md)
  * [Assets](build/assets.md)
  * [Room](build/room.md)
