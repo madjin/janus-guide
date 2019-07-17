@@ -29,20 +29,15 @@ Janus excels at reducing content creation time and effort; the visual code editi
 
 ### Hologram Presentations
 
-There are cheap and highly effective techniques for simulcasting presentations into the virtual world. 
+There are cheap and highly effective techniques for simulcasting presentations into the virtual world. The presenter needs to just be in front of a plain background such as green screen or a special depthsense camera for this technique to be effective. The playback contains audio and video.
 
 ![](https://i.imgur.com/uAJwc5N.jpg)
 ![](https://i.imgur.com/PCeWAO5.jpg)
 
-The presenter needs to just be in front of a plain background such as green screen or a special depthsense camera for this technique to be effective. The playback contains audio and video.
+This technique can also be applied to stream virtual content from one platform to another. In this screenshot you are seeing a VR talk show hosted in VRChat being played back in Janus.
 
 ![](https://i.imgur.com/1fnGFfc.jpg)
 ![](https://i.imgur.com/Mq0G7b9.gif)
-
-This technique can also be applied to stream virtual content from one platform to another. In this screenshot you are seeing a VR talk show hosted in VRChat being played back in Janus.
-
-![](https://svvr.nyc3.digitaloceanspaces.com/multiverse/portal-side-digital.gif)
-![](https://svvr.nyc3.digitaloceanspaces.com/multiverse/portal-side-physical.gif)
 
 JanusWeb has the ability to play depthkit video using a shader. This innovation reduces the reliance on green screen setups in physical spaces to stream/archive content into digital spaces.
 
@@ -102,7 +97,7 @@ Another enterprise use-case for Janus is a generalized system for 3D network vis
 
 Live network visualizations can help sysadmins and security analysts spot issues much faster than reading traditional text logs. Check out the video example below for an idea of how that looks:
 
-[![Janusweb](https://img.youtube.com/vi/1tGqdnUizLE/0.jpg =1000x)](https://www.youtube.com/watch?v=1tGqdnUizLE)
+[![Janusweb](https://img.youtube.com/vi/1tGqdnUizLE/0.jpg)](https://www.youtube.com/watch?v=1tGqdnUizLE)
 
 ---
 
