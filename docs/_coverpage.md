@@ -2,10 +2,10 @@
 
 # Janus Guide
 
-> Build the Immersive Web
+> The Internet of Experiences
 
-- Lightweight and extensible framework
-- Powerful features out of the box
+- Powerful features out of the box for collaboration
+- Lightweight and extensible web framework
 - VR/AR made with open standards
 
 [GitHub](https://github.com/madjin/janus-guide/)
