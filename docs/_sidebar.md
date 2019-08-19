@@ -1,8 +1,8 @@
 <!-- docs/_sidebar.md -->
 
 * [Home](/)
- * [Table of Contents](README.md#table-of-contents)
- * [Technology](README.md#technology)
+ * [Table of Contents](home/toc.md)
+ * [About](home/about.md)
  * [Install](home/install.md)
  * [Controls](home/controls.md)
  * [Gallery](home/gallery.md)
