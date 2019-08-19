@@ -28,6 +28,8 @@ Multiple scripts may be loaded into a room. JanusVR's Javascript language is ess
 
 ***
 
+---
+
 ## The "room" Object
 
 The room and all of its elements are easily accessible through a global object known as "room". The "room" Object allows developers to change or observe aspects of the webspace, ranging from contents to environmental factors like gravity. It also comes equipped with useful callbacks for developers to take advantage of.
@@ -215,6 +217,8 @@ room.onKeyDown = function(event)
 
 ***
 
+---
+
 ## Script Objects
 
 Script Objects are essentially the contents of any given webspace. These objects contain attributes that define their styling and other various aspects of their existence. All script objects can be accessed via the room.objects dictionary. Any room content may be marked with a "js_id" attribute that will allow it to be referenced and altered in the Javascript. You can find more on this dictionary in the [Room Object](http://janusvr.com/docs/build/roomobject/index.html) portion of the documentation.
@@ -312,6 +316,8 @@ Each vector attribute contains an "x", "y" and "z" property.
 
 ***
 
+---
+
 ## The "player" Object
 
 The "player" object is another global object. Similar to objects within "room.objects", it contains the player's attribute for reference and modification. The "player" Object allows the developer to change or observe aspects of the player whilst they are in their webspace. It is important to note that this is not usable in the global scope, as it is not created before the onLoad callback.
@@ -365,6 +371,8 @@ else if (player.hand1_active) {
 - **player.handX_trackpad.x** - Returns a floating point number between -1 and 1 representing the x coordinate of the Vive Trackpad/Oculus Touch Stick. Reverts to 0 when not being used.
 - **player.handX_trackpad.y** - Returns a floating point number between -1 and 1 representing the y coordinate of the Vive Trackpad/Oculus Touch Stick. Reverts to 0 when not being used.
 
+---
+
 ## Vector Functions & Misc.
 
 There are several built-in functions that allow you to operate on room elements' attributes.
@@ -410,6 +418,79 @@ function parseLastViewed(ev) {
  var response_text = xhr.responseText;
 }
 ```
+
+---
+
+## Site Translators
+
+Site translators are JS scripts users can write that tell Janus how to interpret an existing 2D website as a 3D space.
+
+#### Installing a Site Translator
+
+The title of your site translator script tells Janus which domain you're translating into 3D. For instance, a translator script titled "example.com.js" translates the 2D website "www.example.com" into 3D. The translator will apply to all pages within that domain, e.g. "www.example.com/page1", so it is up to you to check the URL of the current page in the translator script and decide how to render the page accordingly. The URL of the current 2D page is accessible through the variable `window.janus.url`.
+
+Place the translator script in a folder titled "translators" inside your "assets" folder, and navigate to the domain you're translating in Janus to test it. The script can be reloaded with `F5` if you're already inside that room.
+
+#### Understanding the createroom Function
+
+The translator's job is to define the createroom function. The syntax for that is:
+
+```javascript
+window.janus.createroom = function() { // Room creation code goes here }
+```
+
+This function will be called as soon as the DOM is loaded. Typically, you will want to iterate over some DOM elements, and map each of them to something in the 3D environment. You should open up the page you're translating in any 2D browser (e.g. Chrome, Firefox), and inspect the source to find the DOM elements you're interested in translating. The `getElementsByClassName` function will especially come in handy. You can find more functions for accessing DOM elements here. The following snippet provides an example of finding all posts on a Tumblr blog and extracting the title and the body:
+
+```javascript
+var tumblr_posts = document.getElementsByClassName("post_content");
+
+for (var i = 0; i < tumblr_posts.length; i++) {
+ var post_title = tumblr_posts[i].getElementsByClassName("post_title")[0];
+ var post_body = tumblr_posts[i].getElementsByClassName("post_body")[0];
+ // Create objects to correspond to post title and body...
+}
+```
+
+#### Creating Assets and Objects
+
+You can create the same kinds of assets and objects you can create in JML pages, only using a different syntax. The syntax for creating assets is as follows:
+
+```javascript
+window.janus.createasset("object", {id:"Cube", src:translator_path+"Cube.fbx"});
+```
+
+This loads a 3D model from an FBX file. The `translator_path` variable points to the location of all asset files. You can then add the 3D model to the room using the following syntax:
+
+```javascript
+window.janus.createobject("object", {id:"Cube", js_id:"Cube0", lighting:"true", collision_id:"Cube", pos:"0 0 0", scale:"20 0.1 20", fwd:"1 0 0"});
+```
+
+#### Adding User Interaction
+
+You could use the `onclick` and `oncollision` attributes to add user interaction to objects. For example:
+
+```javascript
+window.janus.createobject("object", {id:"Cube", js_id:"Cube0", onclick:"cubeClick()"})
+```
+
+This sets the `onclick` function to `cubeClick()`.
+
+The next step is to actually define that function. To do that, you need to create an additional JS file, and add it as a script asset (using the below example.)
+
+```javascript
+window.janus.createasset("script", {src:"[path_to_script]"});
+```
+
+In that file, you can define the function as such:
+
+```javascript
+cubeClick = function() {}
+```
+
+You can also define other script asset functions in the same file as usual, such as `room.update`.
+
+
+---
 
 #### Miscellaneous Functions
 
