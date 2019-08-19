@@ -17,7 +17,7 @@ JanusVR is a 3D internet browser and editor where users can meet and create VR c
 
 **<https://github.com/janusvr/janus>**
 
-Native C++ client
+Native C++ client for browsing and editing the immersive web.
 
 ![Janus client](https://i.imgur.com/xVguGZb.jpg)
 
@@ -27,7 +27,7 @@ Native C++ client
 
 **<https://play.google.com/store/apps/details?id=org.janusvr>**
 
-Port of the native client to Android phones.
+Port of the native client to Android devices.
 
 ![Android client in Vesta lobby](https://i.imgur.com/KCHf0b9.jpg)
 
@@ -37,7 +37,7 @@ Port of the native client to Android phones.
 
 **<https://github.com/jbaicoianu/janusweb>**
 
-Feature parity with Janus made with javascript to run in web browsers.
+Web client built from the ground up with feature parity to native Janus to run on standard web browsers.
 
 - Build immersive 3D environments for desktop, mobile, and VR devices using HTML and JS
 - Rendering functionality provided by Three.js / WebGL
@@ -75,7 +75,12 @@ Feature parity with Janus made with javascript to run in web browsers.
 
 **<https://github.com/janusvr/janus-tools>**
 
-Import and Export between different engines 
+Import and Export scenes between different game engines and development environments using open source plugins. 
+
+- Export from Unity / Unreal / Blender to WebVR
+- Out of the box multiplayer support with Janus Presence
+- Build maps 10x faster with your team using Janus
+- Recycle content back into your favorite development environments
 
 ![Janus Tools](https://i.imgur.com/VpsamZV.jpg)
 
@@ -85,7 +90,7 @@ Import and Export between different engines
 
 **<https://vesta.janusvr.com/>** 
 
-Social network for WebVR, Build Create and Share 3D worlds: 
+Social network for WebVR: Discover, build, and easily embed virtual worlds to your website! You can follow other creators, leave comments, and fork projects to remix other creations. Vesta is like the Neocities / Myspace / Glitch / Newgrounds of WebVR content.
 
 ![Vesta 2D frontend with world select and building](https://i.imgur.com/xVPUoEK.jpg)
 
@@ -97,7 +102,7 @@ Social network for WebVR, Build Create and Share 3D worlds:
 
 **<https://github.com/janusvr/janus-server>**
 
-Lightweight networking server 
+Lightweight networking server to enable multiplayer interaction and real-time collaboration. 
 
 - Networks all (web, android, native) Janus client browsers into social Janus sessions
 - Based on node.js, recording and playback
@@ -114,7 +119,7 @@ Lightweight networking server
 
 **<https://madjin.github.io/janus-guide/#/examples/markup>**
 
-Extensible Markup language and Entity Component System 
+Extensible Markup language and Entity Component System for authoring VR sites. 
 
 ![XML and JSON versions of JML](https://i.imgur.com/DOgVDEa.jpg)
 
@@ -129,9 +134,9 @@ Extensible Markup language and Entity Component System
 
 Demo: **<https://web.janusvr.com/sites/https/reddit.com/r/pics>**
 
-Javascript translators to spatialize sites generatively 
+Javascript translators dynamically generate 3D sites from data.
 
-JML is a language for defining immersive experiences on websites, while our spatialzers are customizable scripts that can convert any ordinary HTML page into JML, allowing anyone to make any part of the web (or all of it!) immersive.
+JML is a language for defining immersive experiences on websites, while the JSspatialzers are customizable scripts that can convert any ordinary HTML page into JML, allowing anyone to make any part of the web (or all of it!) immersive.
 
 Source to Reddit site translator: <https://github.com/jbaicoianu/janusweb/tree/master/media/assets/translator/reddit>
 
