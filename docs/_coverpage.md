@@ -15,6 +15,3 @@
 
 ![](_media/bg2.jpg)
 
-<!-- background color -->
-
-![color](#f0f0f0)
